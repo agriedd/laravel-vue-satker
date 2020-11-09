@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestStoreAdmin;
+use App\Http\Requests\RequestUpdateAdmin;
 use App\Http\Resources\AdminCollection;
 use App\Response\Res;
 use App\User;
@@ -33,27 +34,15 @@ class AdminController extends Controller{
         );
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function show(User $admin){
+        return new AdminCollection($admin);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(RequestUpdateAdmin $request, User $admin){
+        $data = $request->validated();
+        return Res::update(
+            $admin->update($data)
+        );
     }
 
     /**

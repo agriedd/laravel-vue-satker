@@ -1,12 +1,7 @@
 <template>
     <div>
         <v-card-text class="d-flex">
-            <v-flex class="pr-4">
-                <v-text-field type="search" hide-details outlined dense placeholder="Temukan..." v-model="search"/>
-            </v-flex>
-            <v-btn icon @click="openModal('tambah')">
-                <v-icon>mdi-plus</v-icon>
-            </v-btn>
+            <v-text-field type="search" hide-details outlined dense placeholder="Temukan..." v-model="search"/>
         </v-card-text>
         <v-data-table
             :headers="headers"
@@ -18,7 +13,7 @@
             fixed-header
             :footer-props="{'items-per-page-options':[5, 10, 20, 30, 50, 100]}">
             <template #item.action="{ item }">
-                <v-btn icon>
+                <v-btn icon @click="openModal('ubah', item.id)">
                     <v-icon small>mdi-pencil</v-icon>
                 </v-btn>
                 <v-btn icon>
@@ -100,9 +95,11 @@ export default {
                 this.lazyTransition = null;
             }, 800);
         },
-        openModal(t){
+        openModal(t, id = null){
             if(t == 'tambah')
                 this.$emit('modal:tambah')
+            else if(t == 'ubah')
+                this.$emit('modal:ubah', id)
         }
     },
     watch: {

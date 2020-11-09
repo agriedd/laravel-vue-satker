@@ -5,12 +5,12 @@
                 <v-card rounded="0">
                     <div>
                         <v-card-text>
-                            Form Tambah Admin
+                            Form Ubah Admin
                         </v-card-text>
                         <v-divider/>
                     </div>
                     <v-card-text>
-                        <form-tambah-admin v-if="dialog"></form-tambah-admin>
+                        <form-ubah-admin v-if="dialog" @loading="loading = $event"/>
                     </v-card-text>
                     <div>
                         <v-divider/>
@@ -20,7 +20,7 @@
                             </v-btn>
                             <v-spacer></v-spacer>
                             <v-btn text type="submit" :loading="loading" color="primary">
-                                Tambah
+                                Simpan
                             </v-btn>
                         </v-card-actions>
                     </div>
@@ -34,10 +34,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormTambahAdmin from './FormTambahAdmin.vue'
+import FormUbahAdmin from './FormUbahAdmin.vue'
 export default {
     components: {
-        FormTambahAdmin,
+        FormUbahAdmin,
     },
     data(){
         return {
@@ -50,20 +50,20 @@ export default {
     },
     computed: {
         ...mapState({
-            modal_tambah: state => state.admin.modal.tambah,
+            modal_ubah: state => state.admin.modal.ubah,
         }),
         dialog: {
             set(val){
-                this.$emit('modal:tambah', val)
+                this.$emit('modal:ubah', val)
             },
             get(){
-                return this.modal_tambah
+                return this.modal_ubah
             }
         },
     },
     methods: {
         ...mapActions({
-            storeAdmin: 'admin/store',
+            updateAdmin: 'admin/update',
         }),
         ...mapMutations({
             setError: 'admin/SET_ERRORS',
@@ -72,7 +72,8 @@ export default {
             this.loading = true
 
             let formdata = new FormData(e.target)
-            let res = await this.storeAdmin(formdata).catch(e => {
+            formdata.append('_method', 'PUT')
+            let res = await this.updateAdmin(formdata).catch(e => {
                 
                 if(e.response.status == 422)
                     this.setError(e.response.data.errors)

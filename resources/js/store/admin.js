@@ -30,14 +30,28 @@ export default {
                 if(res) resolve(res)
             })
         },
-        async show(context){},
+        async show(context, params){
+            let id = params.id
+            if(id)
+                return new Promise(async(resolve, reject)=>{
+                    let res = await axios.get(api(`admin/${id}`), { params: params }).catch(e => reject(e))
+                    if(res) resolve(res)
+                })
+        },
         store(context, data){
             return new Promise(async(resolve, reject)=>{
                 let res = await axios.post(api('admin'), data).catch(e => reject(e))
                 if(res) resolve(res)
             })
         },
-        async update(context, data){},
+        async update(context, data){
+            let id = context.state.selected.id
+            if(id)
+                return new Promise(async(resolve, reject)=>{
+                    let res = await axios.post(api(`admin/${id}`), data).catch(e => reject(e))
+                    if(res) resolve(res)
+                })
+        },
         async destroy(context, data){},
     },
     mutations: {
@@ -55,6 +69,9 @@ export default {
         },
         CLEAR_ERRORS(state, payload){
             state.errors = {}
+        },
+        SET_ID(state, payload){
+            state.selected.id = payload
         }
     },
 }

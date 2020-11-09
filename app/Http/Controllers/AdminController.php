@@ -12,13 +12,6 @@ class AdminController extends Controller{
     }
 
     public function index(){
-        
-        // Auth::guard()->logout();
-
-        // request()->session()->invalidate();
-
-        // request()->session()->regenerateToken();
-
         return view('pages.admin.index', [
             'user'  => Auth::guard()->user()
         ]);

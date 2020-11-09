@@ -5,7 +5,9 @@
         :mini-variant="minidrawer"
         mini-variant-width="80"
         width="275"
-        class="nav-drawer">
+        class="nav-drawer"
+        :color="color"
+        dark>
         <template v-slot:prepend>
             <div>
                 <!-- <InfoAdmin>
@@ -106,10 +108,13 @@ export default {
             get(){ return this.statusMiniDrawer },
             set(val){ this.setMiniDrawer(val) }
         },
+        color(){
+            return null
+            return this.$vuetify.theme.dark ? 'dark' : 'dark'
+        }
     },
     data(){
         return {
-            color: 'light',
             expandOnHover: false,
             miniVariant: false,
             right: false,

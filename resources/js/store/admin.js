@@ -8,28 +8,17 @@ export default {
     state: {
         data: [],
         user: {},
-        links: {},
-        meta: {
-            page: 1,
-            itemsPerPage: 10,
-            sortBy: ['created_at'],
-            sortDesc: [true],
-            groupBy: [],
-            groupDesc: [],
-            mustSort: false,
-            multiSort: false,
-        },
         selected: {
             id:     null,
             ids:    [],
             data:   null,
             datas:  []
         },
-        total: 0,
-        search: '',
-        params: {},
-
-        loading: false,
+        modal: {
+            tambah: false,
+            ubah: false,
+        },
+        errors: {},
     },
     getters: {
 
@@ -37,17 +26,35 @@ export default {
     actions: {
         get(context, params = {}){
             return new Promise(async(resolve, reject)=>{
-                let res = await axios.get(api('admin'), params).catch(e => reject(e))
-                if(res)
-                    resolve(res)
+                let res = await axios.get(api('admin'), { params: params }).catch(e => reject(e))
+                if(res) resolve(res)
             })
         },
         async show(context){},
-        async store(context, data){},
+        store(context, data){
+            return new Promise(async(resolve, reject)=>{
+                let res = await axios.post(api('admin'), data).catch(e => reject(e))
+                if(res) resolve(res)
+            })
+        },
         async update(context, data){},
         async destroy(context, data){},
     },
     mutations: {
-
+        SET_MODAL_TAMBAH(state, payload){
+            state.modal.tambah = payload
+        },
+        SET_MODAL_UBAH(state, payload){
+            state.modal.ubah = payload
+        },
+        SET_ERRORS(state, payload){
+            state.errors = payload
+        },
+        CLEAR_ERROR(state, payload){
+            state.errors[payload] = null
+        },
+        CLEAR_ERRORS(state, payload){
+            state.errors = {}
+        }
     },
 }

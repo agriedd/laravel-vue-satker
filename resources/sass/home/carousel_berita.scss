@@ -1,0 +1,23 @@
+.grid-carousel-berita{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 80px repeat(2, 1fr);
+    grid-gap: 1px;
+
+    &>.grid-carousel-berita--main{
+        grid-column: 1/span 6;
+        grid-row: 1/span 3;
+    }
+    &>.grid-carousel-berita--item-1{
+        grid-column: 7/span 4;
+        grid-row: 1/span 2;
+    }
+    &>.grid-carousel-berita--item-2{
+        grid-column: 7/span 4;
+        grid-row: 3/span 1;
+    }
+    &>.grid-carousel-berita--item-3{
+        grid-column: 11/span 2;
+        grid-row: 1/span 3;
+    }
+}

@@ -1,0 +1,9 @@
+
+.bg-login{
+    --background-color: #bfd8ef;
+    background-color: var(--background-color);
+
+    .login-section{
+        &-prepend{}
+    }
+}

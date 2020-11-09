@@ -2,8 +2,19 @@
     'appjs'     => 'app.js',
     'appcss'    => 'app.css',
 ])
+@push('meta')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="token" content="{{ $user->api_token }}">
+    <meta name="theme-color" content="#272727">
+    <meta name="app_host" content="{{url('/')}}">
+    <meta name="id_user" content="{{ auth()->user()->id }}">
+@endpush
+@push('css')
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.materialdesignicons.com/5.6.55/css/materialdesignicons.min.css" rel="stylesheet">
+@endpush
 @section('content')
     <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid inventore maxime nesciunt iure ipsum, dolorem excepturi tenetur necessitatibus? Repudiandae nobis eos ipsa numquam consectetur! Rerum blanditiis beatae perspiciatis nam dolore.
+        <panel-admin></panel-admin>
     </div>
 @endsection

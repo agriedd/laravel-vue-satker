@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.home')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 py-5">
-            <div class="card mx-auto shadow border-0" style="max-width: 400px">
+            <div class="card mx-auto shadow border-0 py-5" style="max-width: 400px">
                 <div class="card-body">
                     <div class="display-6 font-weight-bold text-dark">
                         Login

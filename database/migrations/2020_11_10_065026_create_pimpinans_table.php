@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStrukturOrganisasisTable extends Migration
+class CreatePimpinansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,17 @@ class CreateStrukturOrganisasisTable extends Migration
      */
     public function up()
     {
-        Schema::create('struktur_organisasi', function (Blueprint $table) {
-            $table->id('id_struktur');
+        Schema::create('pimpinan', function (Blueprint $table) {
+            $table->id('id_pimpinan');
             $table->timestamps();
+            $table->string('nip')->nullable();
+            $table->string('nama');
+            $table->string('pangkat');
+            $table->date('tanggal_lahir');
+            $table->string('tempat_lahir');
+            $table->string('alamat');
             $table->unsignedBigInteger('id_satker');
-            $table->text('gambar');
-
+            
             $table->foreign('id_satker')
                 ->references('id_satker')
                 ->on('satker_1')
@@ -34,6 +39,6 @@ class CreateStrukturOrganisasisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('struktur_organisasi');
+        Schema::dropIfExists('pimpinan');
     }
 }

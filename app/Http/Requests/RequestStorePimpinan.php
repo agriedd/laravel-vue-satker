@@ -25,11 +25,12 @@ class RequestStorePimpinan extends FormRequest
     {
         return [
             'id_satker'         => 'required|exists:satker_1,id_satker',
-            'nama'              => 'required|unique:pimpinan,nip',
+            'nama'              => 'required',
+            'nip'               => 'required|unique:pimpinan,nip',
             'pangkat'           => 'required',
             'tempat_lahir'      => 'required',
             'tanggal_lahir'     => 'required|date',
-            'alamat'            => 'nullable',
+            'alamat'            => 'required',
         ];
     }
 }

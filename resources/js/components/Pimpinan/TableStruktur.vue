@@ -22,17 +22,10 @@
                     <info-satker-hover :value="item.satker"/>
                 </v-menu>
             </template>
-            <template #item.gambar="{ item }">
-                <v-menu content-class="shadow-lg" open-on-hover max-width="400" min-width="300">
-                    <template #activator="{ attrs, on }">
-                        <div v-bind="attrs" v-on="on" class="pa-3">
-                            <v-img max-height="3rem" height="3rem" width="3rem" class="rounded mx-auto" :src="item.gambar_url" aspect-ratio="1"></v-img>
-                        </div>
-                    </template>
-                    <v-card>
-                        <v-img :src="item.gambar_url"/>
-                    </v-card>
-                </v-menu>
+            <template #item.tanggal_lahir="{ item }">
+                <div>
+                    {{ item.tempat_lahir }}, {{ item.tanggal_lahir }}
+                </div>
             </template>
             <template #item.action="{ item }">
                 <v-btn icon @click="openModal('ubah', item.id_struktur)">
@@ -61,9 +54,11 @@ export default {
         return {
             items: [],
             headers: [
-                { text: 'ID', align: 'start', sortable: true, value: 'id_struktur' },
+                { text: 'NIP', align: 'start', sortable: true, value: 'nip' },
+                { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
                 { text: 'Satker', align: 'start', sortable: true, value: 'id_satker' },
-                { text: 'Gambar', align: 'center', sortable: false, value: 'gambar' },
+                { text: 'TTL', align: 'start', sortable: true, value: 'tanggal_lahir' },
+                { text: 'Pangkat', align: 'start', sortable: true, value: 'pangkat' },
                 { text: '', align: 'end', sortable: false, value: 'action' },
             ],
             options: {
@@ -88,12 +83,12 @@ export default {
     },
     methods: {
         ...mapActions({
-            getStruktur: 'struktur/get',
+            getPimpinan: 'pimpinan/get',
         }),
         async getData(){
             this.loading = true
 
-            let res = await this.getStruktur({...this.options, search: this.search}).catch(e => {
+            let res = await this.getPimpinan({...this.options, search: this.search}).catch(e => {
                 this.snackbar.status = true
                 this.snackbar.message = e.message
                 this.loading = false

@@ -5,12 +5,12 @@
                 <v-card rounded="0">
                     <div>
                         <v-card-text>
-                            Form Tambah Pimpinan
+                            Form Tambah Bidang
                         </v-card-text>
                         <v-divider/>
                     </div>
                     <v-card-text>
-                        <form-tambah-pimpinan v-if="dialog"></form-tambah-pimpinan>
+                        <form-tambah-bidang v-if="dialog"></form-tambah-bidang>
                     </v-card-text>
                     <div>
                         <v-divider/>
@@ -34,10 +34,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormTambahPimpinan from './FormTambahPimpinan.vue'
+import FormTambahBidang from './FormTambahBidang.vue'
 export default {
     components: {
-        FormTambahPimpinan,
+        FormTambahBidang,
     },
     data(){
         return {
@@ -50,7 +50,7 @@ export default {
     },
     computed: {
         ...mapState({
-            modal_tambah: state => state.pimpinan.modal.tambah,
+            modal_tambah: state => state.bidang.modal.tambah,
         }),
         dialog: {
             set(val){
@@ -63,16 +63,16 @@ export default {
     },
     methods: {
         ...mapActions({
-            storePimpinan: 'pimpinan/store',
+            storebidang: 'bidang/store',
         }),
         ...mapMutations({
-            setError: 'pimpinan/SET_ERRORS',
+            setError: 'bidang/SET_ERRORS',
         }),
         async submit(e){
             this.loading = true
 
             let formdata = new FormData(e.target)
-            let res = await this.storePimpinan(formdata).catch(e => {
+            let res = await this.storebidang(formdata).catch(e => {
                 
                 if(e.response.status == 422)
                     this.setError(e.response.data.errors)

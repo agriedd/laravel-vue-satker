@@ -21,8 +21,8 @@
                             @modal:hapus="openModal('hapus', true, $event)"
                             @modal:info="openModal('info', true, $event)">
                             <template #default="{ update }">
-                                <!-- <modal-tambah-bidang @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
-                                <modal-ubah-bidang @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
+                                <modal-tambah-bidang @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
+                                <!-- <modal-ubah-bidang @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
                                 <modal-hapus-bidang @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
                                 <modal-info-bidang @modal:info="openModal('info', $event)" @done="update(null)"/> -->
                             </template>
@@ -36,7 +36,7 @@
 <script>
 import AppBar from '../AppBar/AppBarDefault.vue'
 import TableBidang from './TableBidang.vue'
-// import ModalTambahPimpinan from './ModalTambahPimpinan.vue'
+import ModalTambahBidang from './ModalTambahBidang.vue'
 // import ModalUbahPimpinan from './ModalUbahPimpinan.vue'
 // import ModalHapusPimpinan from './ModalHapusPimpinan.vue'
 // import ModalInfoPimpinan from './ModalInfoPimpinan.vue'
@@ -45,7 +45,7 @@ export default {
     components: {
         AppBar,
         TableBidang,
-        // ModalTambahPimpinan,
+        ModalTambahBidang,
         // ModalUbahPimpinan,
         // ModalHapusPimpinan,
         // ModalInfoPimpinan,

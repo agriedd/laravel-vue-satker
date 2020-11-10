@@ -37,9 +37,6 @@
                 @change="clear('tempat_lahir')"/>
         </div>
         <div>
-            <input-tanggal-lahir @clear:error="clear('tanggal_lahir')" :errors="errors" v-model="form.tanggal_lahir"/>
-        </div>
-        <div>
             <v-text-field 
                 label="Alamat" 
                 name="alamat" 
@@ -50,7 +47,6 @@
     </div>
 </template>
 <script>
-import statusSatker from './statusSatker'
 import InputPilihSatker from '../Satker/InputPilihSatker.vue'
 import InputTanggalLahir from './InputPilihTanggalLahir.vue'
 import { mapMutations, mapState } from 'vuex'
@@ -61,40 +57,19 @@ export default {
     },
     data(){
         return {
-            form: {
-                tanggal_lahir: null,
-                file_gambar: null,
-                encode_gambar: null,
-            },
+            form: {},
             rules: {},
-            status_satker: statusSatker,
         }
     },
     computed: {
         ...mapState({
-            errors: state => state.pimpinan.errors
+            errors: state => state.bidang.errors
         }),
     },
     methods: {
         ...mapMutations({
-            clear: 'pimpinan/CLEAR_ERROR'
+            clear: 'bidang/CLEAR_ERROR'
         }),
-        getImage(){
-            if(this.form.file_gambar){
-                let reader = new FileReader();
-                reader.onload = e =>{
-                    this.form.encode_gambar = reader.result;
-                }
-                reader.readAsDataURL(this.form.file_gambar);
-                return
-            }
-            this.encode_gambar = null;
-        }
     },
-    watch: {
-        'form.file_gambar': function(val){
-            this.getImage()
-        }
-    }
 }
 </script>

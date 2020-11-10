@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Bidang;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RequestStoreBidang;
 use App\Http\Resources\BidangCollection;
+use App\Response\Res;
 use Illuminate\Http\Request;
 
 class BidangController extends Controller{
@@ -27,15 +29,11 @@ class BidangController extends Controller{
         );
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function store(RequestStoreBidang $request){
+        $data = $request->validated();
+        return Res::store(
+            Bidang::create($data)
+        );
     }
 
     /**

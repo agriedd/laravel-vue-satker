@@ -10,39 +10,32 @@
         </div>
         <div>
             <v-text-field
-                label="NIP" 
-                name="nip" 
-                :error-messages="errors.nip"
-                @change="clear('nip')"/>
+                label="Nama Kepala Bidang" 
+                name="nama_kepala_b" 
+                :error-messages="errors.nama_kepala_b"
+                @change="clear('nama_kepala_b')"
+                append-icon="mdi-acount"/>
         </div>
         <div>
             <v-text-field
-                label="Nama" 
-                name="nama" 
-                :error-messages="errors.nama"
-                @change="clear('nama')"/>
+                label="Nama Bidang" 
+                name="nama_bidang" 
+                :error-messages="errors.nama_bidang"
+                @change="clear('nama_bidang')"/>
+        </div>
+        <div>
+            <v-textarea
+                label="Visi dan Misi" 
+                name="visi_misi" 
+                :error-messages="errors.visi_misi"
+                @change="clear('visi_misi')"/>
         </div>
         <div>
             <v-text-field
-                label="Pangkat Atau Golongan" 
-                name="pangkat" 
-                :error-messages="errors.pangkat"
-                @change="clear('pangkat')"/>
-        </div>
-        <div>
-            <v-text-field
-                label="Tempat Lahir" 
-                name="tempat_lahir" 
-                :error-messages="errors.tempat_lahir"
-                @change="clear('tempat_lahir')"/>
-        </div>
-        <div>
-            <v-text-field 
-                label="Alamat" 
-                name="alamat" 
-                :error-messages="errors.alamat" 
-                @change="clear('alamat')"
-                append-icon="mdi-map-marker"/>
+                label="Tujuan" 
+                name="tujuan" 
+                :error-messages="errors.tujuan"
+                @change="clear('tujuan')"/>
         </div>
     </div>
 </template>

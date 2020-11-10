@@ -5,12 +5,12 @@
                 <v-card rounded="0">
                     <div>
                         <v-card-text>
-                            Form Tambah Sturktur Organisasi
+                            Form Tambah Pimpinan
                         </v-card-text>
                         <v-divider/>
                     </div>
                     <v-card-text>
-                        <form-tambah-struktur v-if="dialog"></form-tambah-struktur>
+                        <!-- <form-tambah-struktur v-if="dialog"></form-tambah-struktur> -->
                     </v-card-text>
                     <div>
                         <v-divider/>

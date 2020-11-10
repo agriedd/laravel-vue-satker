@@ -22,9 +22,9 @@ export default {
             },
             listtop: [
                 // { title: "Awal", icon: "mdi-home", link: "/admin/" },
+                { title: "Satker", icon: "mdi-bookmark", link: "/admin/satker"},
             ],
             listbottom: [
-                { title: "Satker", icon: "mdi-bookmark", link: "/admin/satker"},
                 // { title: "Inventaris", icon: "mdi-package-variant", link: "/admin/inventaris" },
                 // { title: "Laporan", icon: "mdi-printer", link: "/admin/laporan", active: false, items: [
                 //     { title: "Jemaat", icon: "mdi-account-group", link: "/admin/laporan/kk"},
@@ -33,6 +33,7 @@ export default {
                 //     { title: "Sidi", icon: "mdi-account-outline", link: "/admin/laporan/sidi"},
                 //     { title: "Nikah", icon: "mdi-ring", link: "/admin/laporan/nikah"},
                 // ] },
+                { title: "Struktur", icon: "mdi-bookmark", link: "/admin/struktur"},
                 { title: "Admin", icon: "mdi-shield-account-variant", link: "/admin/admin"},
             ],
             listgroup: [

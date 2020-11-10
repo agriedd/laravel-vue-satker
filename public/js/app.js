@@ -4602,12 +4602,12 @@ __webpack_require__.r(__webpack_exports__);
         dense: true
       },
       listtop: [// { title: "Awal", icon: "mdi-home", link: "/admin/" },
-      ],
-      listbottom: [{
+      {
         title: "Satker",
         icon: "mdi-bookmark",
         link: "/admin/satker"
-      }, // { title: "Inventaris", icon: "mdi-package-variant", link: "/admin/inventaris" },
+      }],
+      listbottom: [// { title: "Inventaris", icon: "mdi-package-variant", link: "/admin/inventaris" },
       // { title: "Laporan", icon: "mdi-printer", link: "/admin/laporan", active: false, items: [
       //     { title: "Jemaat", icon: "mdi-account-group", link: "/admin/laporan/kk"},
       //     { title: "Ulang Tahun", icon: "mdi-cake-variant", link: "/admin/laporan/ulang-tahun" },
@@ -4616,6 +4616,10 @@ __webpack_require__.r(__webpack_exports__);
       //     { title: "Nikah", icon: "mdi-ring", link: "/admin/laporan/nikah"},
       // ] },
       {
+        title: "Struktur",
+        icon: "mdi-bookmark",
+        link: "/admin/struktur"
+      }, {
         title: "Admin",
         icon: "mdi-shield-account-variant",
         link: "/admin/admin"
@@ -4792,6 +4796,114 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return !this.minidrawer;
     }
   })
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/StrukturOrganisasi/PageStruktur.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/StrukturOrganisasi/PageStruktur.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AppBar_AppBarDefault_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../AppBar/AppBarDefault.vue */ "./resources/js/components/AppBar/AppBarDefault.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+ // import TableSatker from './TableSatker.vue'
+// import ModalTambahSatker from './ModalTambahSatker.vue'
+// import ModalUbahSatker from './ModalUbahSatker.vue'
+// import ModalHapusSatker from './ModalHapusSatker.vue'
+// import ModalInfoSatker from './ModalInfoSatker.vue'
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    AppBar: _AppBar_AppBarDefault_vue__WEBPACK_IMPORTED_MODULE_0__["default"] // TableSatker,
+    // ModalTambahSatker,
+    // ModalUbahSatker,
+    // ModalHapusSatker,
+    // ModalInfoSatker,
+
+  },
+  computed: {},
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({
+    setModalTambah: 'satker/SET_MODAL_TAMBAH',
+    setModalUbah: 'satker/SET_MODAL_UBAH',
+    setModalHapus: 'satker/SET_MODAL_HAPUS',
+    setModalInfo: 'satker/SET_MODAL_INFO',
+    setId: 'satker/SET_ID'
+  })), {}, {
+    openModal: function openModal(t) {
+      var e = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+      var id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+      switch (t) {
+        default:
+        case 'tambah':
+          this.setModalTambah(e);
+          break;
+
+        case 'ubah':
+          this.setId(id);
+          this.setModalUbah(e);
+          break;
+
+        case 'hapus':
+          this.setId(id);
+          this.setModalHapus(e);
+          break;
+
+        case 'info':
+          this.setId(id);
+          this.setModalInfo(e);
+          break;
+      }
+    }
+  }),
+  created: function created() {}
 });
 
 /***/ }),
@@ -45968,6 +46080,95 @@ var render = function() {
       })
     ],
     2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/StrukturOrganisasi/PageStruktur.vue?vue&type=template&id=90bec132&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/StrukturOrganisasi/PageStruktur.vue?vue&type=template&id=90bec132& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("app-bar", { attrs: { color: "blue" } }),
+      _vm._v(" "),
+      _c(
+        "v-main",
+        [
+          _c(
+            "v-container",
+            {
+              staticStyle: {
+                "margin-top": "-68px",
+                "z-index": "1",
+                position: "relative"
+              }
+            },
+            [
+              _c(
+                "v-card",
+                { staticClass: "shadow" },
+                [
+                  _c(
+                    "v-toolbar",
+                    { attrs: { flat: "" } },
+                    [
+                      _c("v-toolbar-title", { staticClass: "grey--text" }, [
+                        _vm._v(
+                          "\n                        Daftar Struktur Organisasi\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          on: {
+                            click: function($event) {
+                              return _vm.openModal("tambah")
+                            }
+                          }
+                        },
+                        [_c("v-icon", [_vm._v("mdi-plus")])],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _c("div")
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
   )
 }
 var staticRenderFns = []
@@ -108419,6 +108620,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/StrukturOrganisasi/PageStruktur.vue":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/StrukturOrganisasi/PageStruktur.vue ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PageStruktur_vue_vue_type_template_id_90bec132___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PageStruktur.vue?vue&type=template&id=90bec132& */ "./resources/js/components/StrukturOrganisasi/PageStruktur.vue?vue&type=template&id=90bec132&");
+/* harmony import */ var _PageStruktur_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PageStruktur.vue?vue&type=script&lang=js& */ "./resources/js/components/StrukturOrganisasi/PageStruktur.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PageStruktur_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PageStruktur_vue_vue_type_template_id_90bec132___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PageStruktur_vue_vue_type_template_id_90bec132___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/StrukturOrganisasi/PageStruktur.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/StrukturOrganisasi/PageStruktur.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/StrukturOrganisasi/PageStruktur.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PageStruktur_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PageStruktur.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/StrukturOrganisasi/PageStruktur.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PageStruktur_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/StrukturOrganisasi/PageStruktur.vue?vue&type=template&id=90bec132&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/StrukturOrganisasi/PageStruktur.vue?vue&type=template&id=90bec132& ***!
+  \****************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PageStruktur_vue_vue_type_template_id_90bec132___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PageStruktur.vue?vue&type=template&id=90bec132& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/StrukturOrganisasi/PageStruktur.vue?vue&type=template&id=90bec132&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PageStruktur_vue_vue_type_template_id_90bec132___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PageStruktur_vue_vue_type_template_id_90bec132___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/configs/main.js":
 /*!**************************************!*\
   !*** ./resources/js/configs/main.js ***!
@@ -108624,10 +108894,12 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_0__["default"].Store({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Admin_PageAdmin_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Admin/PageAdmin.vue */ "./resources/js/components/Admin/PageAdmin.vue");
 /* harmony import */ var _components_Satker_PageSatker_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Satker/PageSatker.vue */ "./resources/js/components/Satker/PageSatker.vue");
+/* harmony import */ var _components_StrukturOrganisasi_PageStruktur_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/StrukturOrganisasi/PageStruktur.vue */ "./resources/js/components/StrukturOrganisasi/PageStruktur.vue");
 /**
  * 
  * ROUTE
  */
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ([{
@@ -108638,6 +108910,10 @@ __webpack_require__.r(__webpack_exports__);
   path: '/admin/satker',
   component: _components_Satker_PageSatker_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   name: 'page.satker'
+}, {
+  path: '/admin/struktur',
+  component: _components_StrukturOrganisasi_PageStruktur_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+  name: 'page.struktur'
 }]);
 
 /***/ }),

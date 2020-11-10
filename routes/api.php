@@ -22,5 +22,5 @@ Route::resources([
     'admin' => 'Api\AdminController',
     'satker' => 'Api\SatkerController',
     'struktur' => 'Api\StrukturController',
-    'pimpinana' => 'Api\PimpinanController',
+    'pimpinan' => 'Api\PimpinanController',
 ]);

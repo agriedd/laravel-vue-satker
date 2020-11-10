@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RequestStorePimpinan;
+use App\Pimpinan;
+use App\Response\Res;
 use Illuminate\Http\Request;
 
 class PimpinanController extends Controller{
@@ -11,13 +14,14 @@ class PimpinanController extends Controller{
     
     }
 
-    public function store(Request $request){
-
+    public function store(RequestStorePimpinan $request){
+        $data = $request->validated();
+        return Res::store(
+            Pimpinan::create($data)
+        );
     }
 
-    public function show($id)
-    {
-        //
+    public function show($id){
     }
 
     /**

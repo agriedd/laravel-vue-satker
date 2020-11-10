@@ -54,11 +54,11 @@ export default {
     },
     methods: {
         ...mapMutations({
-            setModalTambah: 'struktur/SET_MODAL_TAMBAH',
-            setModalUbah: 'struktur/SET_MODAL_UBAH',
-            setModalHapus: 'struktur/SET_MODAL_HAPUS',
-            setModalInfo: 'struktur/SET_MODAL_INFO',
-            setId: 'struktur/SET_ID',
+            setModalTambah: 'pimpinan/SET_MODAL_TAMBAH',
+            setModalUbah: 'pimpinan/SET_MODAL_UBAH',
+            setModalHapus: 'pimpinan/SET_MODAL_HAPUS',
+            setModalInfo: 'pimpinan/SET_MODAL_INFO',
+            setId: 'pimpinan/SET_ID',
         }),
         openModal(t, e = true, id = null){
             switch (t) {

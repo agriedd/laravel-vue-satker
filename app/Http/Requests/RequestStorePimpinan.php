@@ -13,7 +13,7 @@ class RequestStorePimpinan extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class RequestStorePimpinan extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id_satker'         => 'required|exists:satker_1,id_satker',
+            'nama'              => 'required|unique:pimpinan,nip',
+            'pangkat'           => 'required',
+            'tempat_lahir'      => 'required',
+            'tanggal_lahir'     => 'required|date',
+            'alamat'            => 'nullable',
         ];
     }
 }

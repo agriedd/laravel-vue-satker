@@ -10,7 +10,7 @@
                         <v-divider/>
                     </div>
                     <v-card-text>
-                        <!-- <form-tambah-struktur v-if="dialog"></form-tambah-struktur> -->
+                        <form-tambah-pimpinan v-if="dialog"></form-tambah-pimpinan>
                     </v-card-text>
                     <div>
                         <v-divider/>
@@ -34,10 +34,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormTambahStruktur from './FormTambahStruktur.vue'
+import FormTambahPimpinan from './FormTambahPimpinan.vue'
 export default {
     components: {
-        FormTambahStruktur,
+        FormTambahPimpinan,
     },
     data(){
         return {
@@ -50,7 +50,7 @@ export default {
     },
     computed: {
         ...mapState({
-            modal_tambah: state => state.struktur.modal.tambah,
+            modal_tambah: state => state.pimpinan.modal.tambah,
         }),
         dialog: {
             set(val){
@@ -63,16 +63,16 @@ export default {
     },
     methods: {
         ...mapActions({
-            storeStruktur: 'struktur/store',
+            storePimpinan: 'pimpinan/store',
         }),
         ...mapMutations({
-            setError: 'struktur/SET_ERRORS',
+            setError: 'pimpinan/SET_ERRORS',
         }),
         async submit(e){
             this.loading = true
 
             let formdata = new FormData(e.target)
-            let res = await this.storeStruktur(formdata).catch(e => {
+            let res = await this.storePimpinan(formdata).catch(e => {
                 
                 if(e.response.status == 422)
                     this.setError(e.response.data.errors)

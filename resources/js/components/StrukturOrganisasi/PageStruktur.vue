@@ -15,18 +15,18 @@
                     </v-toolbar>
                     <v-divider/>
                     <div>
-                        <!-- <table-satker 
+                        <table-satker 
                             @modal:tambah="openModal('tambah')" 
                             @modal:ubah="openModal('ubah', true, $event)" 
                             @modal:hapus="openModal('hapus', true, $event)"
                             @modal:info="openModal('info', true, $event)">
                             <template #default="{ update }">
-                                <modal-tambah-satker @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
-                                <modal-ubah-satker @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
+                                <modal-tambah-struktur @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
+                                <!-- <modal-ubah-satker @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
                                 <modal-hapus-satker @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
-                                <modal-info-satker @modal:info="openModal('info', $event)" @done="update(null)"/>
+                                <modal-info-satker @modal:info="openModal('info', $event)" @done="update(null)"/> -->
                             </template>
-                        </table-satker> -->
+                        </table-satker>
                     </div>
                 </v-card>
             </v-container>
@@ -35,8 +35,8 @@
 </template>
 <script>
 import AppBar from '../AppBar/AppBarDefault.vue'
-// import TableSatker from './TableSatker.vue'
-// import ModalTambahSatker from './ModalTambahSatker.vue'
+import TableSatker from './TableSatker.vue'
+import ModalTambahStruktur from './ModalTambahStruktur.vue'
 // import ModalUbahSatker from './ModalUbahSatker.vue'
 // import ModalHapusSatker from './ModalHapusSatker.vue'
 // import ModalInfoSatker from './ModalInfoSatker.vue'
@@ -44,8 +44,8 @@ import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
         AppBar,
-        // TableSatker,
-        // ModalTambahSatker,
+        TableSatker,
+        ModalTambahStruktur,
         // ModalUbahSatker,
         // ModalHapusSatker,
         // ModalInfoSatker,
@@ -54,11 +54,11 @@ export default {
     },
     methods: {
         ...mapMutations({
-            setModalTambah: 'satker/SET_MODAL_TAMBAH',
-            setModalUbah: 'satker/SET_MODAL_UBAH',
-            setModalHapus: 'satker/SET_MODAL_HAPUS',
-            setModalInfo: 'satker/SET_MODAL_INFO',
-            setId: 'satker/SET_ID',
+            setModalTambah: 'struktur/SET_MODAL_TAMBAH',
+            setModalUbah: 'struktur/SET_MODAL_UBAH',
+            setModalHapus: 'struktur/SET_MODAL_HAPUS',
+            setModalInfo: 'struktur/SET_MODAL_INFO',
+            setId: 'struktur/SET_ID',
         }),
         openModal(t, e = true, id = null){
             switch (t) {

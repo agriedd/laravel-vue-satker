@@ -35,6 +35,7 @@ export default {
                 // ] },
                 { title: "Struktur", icon: "mdi-bookmark", link: "/admin/struktur"},
                 { title: "Pimpinan", icon: "mdi-account", link: "/admin/pimpinan"},
+                { title: "Bidang", icon: "mdi-dropbox", link: "/admin/bidang"},
                 { title: "Admin", icon: "mdi-shield-account-variant", link: "/admin/admin"},
             ],
             listgroup: [

@@ -41,13 +41,6 @@ class PimpinanController extends Controller{
         return new PimpinanCollection($pimpinan);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(RequestUpdatePimpinan $request, Pimpinan $pimpinan){
         $data = $request->validated();
         return Res::store(
@@ -55,14 +48,7 @@ class PimpinanController extends Controller{
         );
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function destroy(Pimpinan $pimpinan){
+        return Res::delete($pimpinan->delete());
     }
 }

@@ -2,11 +2,17 @@
     <div class="px-3">
         <div>
             <h3>
-                {{ struktur.satker.nama }}
+                {{ pimpinan.nama }}
             </h3>
             <div>
-                <div class="d-flex justify-center" style="position: relative; width: 100%">
-                    <v-img :src="struktur.gambar_url" class="rounded" max-width="100%" max-height="50vh"/>
+                <div class="text--disabled">
+                    {{ pimpinan.nip }}
+                </div>
+                <div class="text--disabled">
+                    {{ pimpinan.satker.nama }}
+                </div>
+                <div class="text--disabled">
+                    {{ pimpinan.pangkat }}
                 </div>
             </div>
         </div>
@@ -22,27 +28,27 @@ import { mapActions, mapMutations, mapState } from 'vuex'
 export default {
     data(){
         return {
-            struktur: {},
+            pimpinan: {},
         }
     },
     computed: {
         ...mapState({
-            errors: state => state.struktur.errors,
-            id: state => state.struktur.selected.id,
+            errors: state => state.pimpinan.errors,
+            id: state => state.pimpinan.selected.id,
         }),
     },
     methods: {
         ...mapMutations({
-            clear: 'struktur/CLEAR_ERROR'
+            clear: 'pimpinan/CLEAR_ERROR'
         }),
         ...mapActions({
-            showstruktur: 'struktur/show',
+            showpimpinan: 'pimpinan/show',
         }),
         async getData(){
             
             this.$emit('loading', true)
 
-            let res = await this.showstruktur({id: this.id}).catch(e => {
+            let res = await this.showpimpinan({id: this.id}).catch(e => {
                 this.$emit('loading', false)
             })
             this.$emit('loading', false)
@@ -50,7 +56,7 @@ export default {
                 let data = res.data.data
                 for (const key in data) {
                     if (data.hasOwnProperty(key)) {
-                        this.$set(this.struktur, key, data[key])
+                        this.$set(this.pimpinan, key, data[key])
                     }
                 }
             }

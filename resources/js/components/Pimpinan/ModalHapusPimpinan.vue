@@ -10,7 +10,7 @@
                         <v-divider/>
                     </div>
                     <v-card-text>
-                        <info-struktur v-if="dialog" @loading="loading = $event"/>
+                        <info-pimpinan v-if="dialog" @loading="loading = $event"/>
                     </v-card-text>
                     <div>
                         <v-divider/>
@@ -34,10 +34,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import InfoStruktur from './InfoStruktur.vue'
+import InfoPimpinan from './InfoPimpinan.vue'
 export default {
     components: {
-        InfoStruktur,
+        InfoPimpinan,
     },
     data(){
         return {
@@ -50,7 +50,7 @@ export default {
     },
     computed: {
         ...mapState({
-            modal_hapus: state => state.struktur.modal.hapus,
+            modal_hapus: state => state.pimpinan.modal.hapus,
         }),
         dialog: {
             set(val){
@@ -63,10 +63,10 @@ export default {
     },
     methods: {
         ...mapActions({
-            deleteStruktur: 'struktur/destroy',
+            deleteStruktur: 'pimpinan/destroy',
         }),
         ...mapMutations({
-            setError: 'struktur/SET_ERRORS',
+            setError: 'pimpinan/SET_ERRORS',
         }),
         async submit(e){
             this.loading = true

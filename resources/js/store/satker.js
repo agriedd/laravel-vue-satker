@@ -18,6 +18,7 @@ export default {
             tambah: false,
             ubah: false,
             hapus: false,
+            info: false,
         },
         errors: {},
     },
@@ -71,6 +72,9 @@ export default {
         },
         SET_MODAL_HAPUS(state, payload){
             state.modal.hapus = payload
+        },
+        SET_MODAL_INFO(state, payload){
+            state.modal.info = payload
         },
         SET_ERRORS(state, payload){
             state.errors = payload

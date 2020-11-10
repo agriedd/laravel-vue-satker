@@ -15,11 +15,16 @@
                     </v-toolbar>
                     <v-divider/>
                     <div>
-                        <table-satker @modal:tambah="openModal('tambah')" @modal:ubah="openModal('ubah', true, $event)" @modal:hapus="openModal('hapus', true, $event)">
+                        <table-satker 
+                            @modal:tambah="openModal('tambah')" 
+                            @modal:ubah="openModal('ubah', true, $event)" 
+                            @modal:hapus="openModal('hapus', true, $event)"
+                            @modal:info="openModal('info', true, $event)">
                             <template #default="{ update }">
                                 <modal-tambah-satker @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
                                 <modal-ubah-satker @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
                                 <modal-hapus-satker @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
+                                <modal-info-satker @modal:info="openModal('info', $event)" @done="update(null)"/>
                             </template>
                         </table-satker>
                     </div>
@@ -34,6 +39,7 @@ import TableSatker from './TableSatker.vue'
 import ModalTambahSatker from './ModalTambahSatker.vue'
 import ModalUbahSatker from './ModalUbahSatker.vue'
 import ModalHapusSatker from './ModalHapusSatker.vue'
+import ModalInfoSatker from './ModalInfoSatker.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
@@ -42,6 +48,7 @@ export default {
         ModalTambahSatker,
         ModalUbahSatker,
         ModalHapusSatker,
+        ModalInfoSatker,
     },
     computed: {
     },
@@ -50,6 +57,7 @@ export default {
             setModalTambah: 'satker/SET_MODAL_TAMBAH',
             setModalUbah: 'satker/SET_MODAL_UBAH',
             setModalHapus: 'satker/SET_MODAL_HAPUS',
+            setModalInfo: 'satker/SET_MODAL_INFO',
             setId: 'satker/SET_ID',
         }),
         openModal(t, e = true, id = null){
@@ -65,6 +73,10 @@ export default {
                 case 'hapus':
                     this.setId(id)
                     this.setModalHapus(e)
+                    break;
+                case 'info':
+                    this.setId(id)
+                    this.setModalInfo(e)
                     break;
             }
         }

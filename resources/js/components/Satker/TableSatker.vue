@@ -142,6 +142,8 @@ export default {
                 this.$emit('modal:ubah', id)
             else if(t == 'hapus')
                 this.$emit('modal:hapus', id)
+            else if(t == 'info')
+                this.$emit('modal:info', id)
         }
     },
     watch: {

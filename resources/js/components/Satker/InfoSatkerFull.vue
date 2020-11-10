@@ -48,16 +48,19 @@
                 <div class="border-left" style="border-left: 1px solid rgba(0,0,0,.15)">
                     <div class="fill-height"></div>
                 </div>
-                <v-card-text class="overflow-auto fill-height">
-                    <div v-if="tab == 0">
+                <div class="overflow-auto fill-height" style="width: 100%">
+                    <v-card-text v-if="tab == 0">
                         <list-struktur :params="{ id_satker: satker.id_satker }"></list-struktur>
+                    </v-card-text>
+                    <div v-else-if="tab == 1">
+                        <list-pimpinan :params="{ id_satker: satker.id_satker }"></list-pimpinan>
                     </div>
                     <div v-else class="py-10 d-flex justify-center flex-column">
                         <div class="text--disabled mx-auto">
                             Informasi Satker {{ tab }}
                         </div>
                     </div>
-                </v-card-text>
+                </div>
             </div>
         </v-col>
     </v-row>
@@ -66,10 +69,12 @@
 import { mapActions, mapMutations, mapState } from 'vuex'
 import ListItem from '../List/ListItem.vue'
 import ListStruktur from '../StrukturOrganisasi/ListStruktur.vue'
+import ListPimpinan from '../Pimpinan/ListPimpinan.vue'
 export default {
     components: {
         ListItem,
         ListStruktur,
+        ListPimpinan,
     },
     data(){
         return {

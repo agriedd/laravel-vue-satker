@@ -2,31 +2,7 @@
     <v-row no-gutters class="fill-height">
         <v-col cols="12" sm="6">
             <div>
-                <v-list>
-                    <list-item v-model="pimpinan.nama" label="Nama Pimpinan"></list-item>
-                    <list-item v-model="pimpinan.nip" label="NIP"></list-item>
-                    <list-item v-model="pimpinan.pangkat" label="Pangkat / Golongan">
-                        <v-list-item-icon>
-                            <v-icon>mdi-crown</v-icon>
-                        </v-list-item-icon>
-                    </list-item>
-                    <v-divider/>
-                    <list-item v-model="pimpinan.tempat_lahir" label="Tempat Lahir">
-                        <v-list-item-icon>
-                            <v-icon>mdi-map-marker</v-icon>
-                        </v-list-item-icon>
-                    </list-item>
-                    <list-item v-model="pimpinan.tanggal_lahir" label="Tanggal Lahir">
-                        <v-list-item-icon>
-                            <v-icon>mdi-calendar</v-icon>
-                        </v-list-item-icon>
-                    </list-item>
-                    <list-item v-model="pimpinan.alamat" label="Alamat">
-                        <v-list-item-icon>
-                            <v-icon>mdi-map-marker</v-icon>
-                        </v-list-item-icon>
-                    </list-item>
-                    <v-divider/>
+                <info-pimpinan-template :pimpinan="pimpinan">
                     <v-list-item-group v-model="tab" color="primary">
                         <list-item v-model="pimpinan.satker.nama" label="Nama Satker" key="0">
                             <v-list-item-action-text>
@@ -38,7 +14,7 @@
                         </list-item>
                     </v-list-item-group>
                     <v-divider/>
-                </v-list>
+                </info-pimpinan-template>
             </div>
         </v-col>
         <v-col cols="12" sm="6">
@@ -59,10 +35,12 @@
 import { mapActions, mapMutations, mapState } from 'vuex'
 import ListItem from '../List/ListItem.vue'
 import InfoSatker from '../Satker/InfoSatkerHover.vue'
+import InfoPimpinanTemplate from './InfoPimpinanTemplate.vue'
 export default {
     components: {
         ListItem,
         InfoSatker,
+        InfoPimpinanTemplate,
     },
     data(){
         return {

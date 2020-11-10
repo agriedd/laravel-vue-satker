@@ -24,7 +24,7 @@
                                 <modal-tambah-pimpinan @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
                                 <modal-ubah-pimpinan @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
                                 <modal-hapus-pimpinan @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
-                                <!-- <modal-info-struktur @modal:info="openModal('info', $event)" @done="update(null)"/> -->
+                                <modal-info-pimpinan @modal:info="openModal('info', $event)" @done="update(null)"/>
                             </template>
                         </table-pimpinan>
                     </div>
@@ -39,7 +39,7 @@ import TablePimpinan from './TablePimpinan.vue'
 import ModalTambahPimpinan from './ModalTambahPimpinan.vue'
 import ModalUbahPimpinan from './ModalUbahPimpinan.vue'
 import ModalHapusPimpinan from './ModalHapusPimpinan.vue'
-// import ModalInfoStruktur from './ModalInfoStruktur.vue'
+import ModalInfoPimpinan from './ModalInfoPimpinan.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
@@ -48,7 +48,7 @@ export default {
         ModalTambahPimpinan,
         ModalUbahPimpinan,
         ModalHapusPimpinan,
-        // ModalInfoStruktur,
+        ModalInfoPimpinan,
     },
     computed: {
     },

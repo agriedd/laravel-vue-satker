@@ -16,7 +16,7 @@
                 <v-btn icon @click="openModal('ubah', item.id)">
                     <v-icon small>mdi-pencil</v-icon>
                 </v-btn>
-                <v-btn icon>
+                <v-btn icon @click="openModal('hapus', item.id)">
                     <v-icon small>mdi-delete</v-icon>
                 </v-btn>
             </template>
@@ -100,6 +100,8 @@ export default {
                 this.$emit('modal:tambah')
             else if(t == 'ubah')
                 this.$emit('modal:ubah', id)
+            else if(t == 'hapus')
+                this.$emit('modal:hapus', id)
         }
     },
     watch: {

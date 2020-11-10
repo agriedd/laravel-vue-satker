@@ -17,6 +17,7 @@ export default {
         modal: {
             tambah: false,
             ubah: false,
+            hapus: false,
         },
         errors: {},
     },
@@ -52,7 +53,14 @@ export default {
                     if(res) resolve(res)
                 })
         },
-        async destroy(context, data){},
+        async destroy(context, data){
+            let id = context.state.selected.id
+            if(id)
+                return new Promise(async(resolve, reject)=>{
+                    let res = await axios.post(api(`admin/${id}`), data).catch(e => reject(e))
+                    if(res) resolve(res)
+                })
+        },
     },
     mutations: {
         SET_MODAL_TAMBAH(state, payload){
@@ -60,6 +68,9 @@ export default {
         },
         SET_MODAL_UBAH(state, payload){
             state.modal.ubah = payload
+        },
+        SET_MODAL_HAPUS(state, payload){
+            state.modal.hapus = payload
         },
         SET_ERRORS(state, payload){
             state.errors = payload

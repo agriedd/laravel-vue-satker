@@ -9,6 +9,7 @@ use App\Http\Resources\AdminCollection;
 use App\Response\Res;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller{
 
@@ -40,6 +41,7 @@ class AdminController extends Controller{
 
     public function update(RequestUpdateAdmin $request, User $admin){
         $data = $request->validated();
+        $data['password'] = Hash::make($data['password']);
         return Res::update(
             $admin->update($data)
         );
@@ -51,8 +53,9 @@ class AdminController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy(User $admin){
+        return Res::delete(
+            $admin->delete()
+        );
     }
 }

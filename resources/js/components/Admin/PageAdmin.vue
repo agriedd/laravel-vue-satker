@@ -15,10 +15,11 @@
                     </v-toolbar>
                     <v-divider/>
                     <div>
-                        <table-admin @modal:tambah="openModal('tambah')" @modal:ubah="openModal('ubah', true, $event)">
+                        <table-admin @modal:tambah="openModal('tambah')" @modal:ubah="openModal('ubah', true, $event)" @modal:hapus="openModal('hapus', true, $event)">
                             <template #default="{ update }">
                                 <modal-tambah-admin @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
                                 <modal-ubah-admin @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
+                                <modal-hapus-admin @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
                             </template>
                         </table-admin>
                     </div>
@@ -32,6 +33,7 @@ import AppBar from '../AppBar/AppBarDefault.vue'
 import TableAdmin from './TableAdmin.vue'
 import ModalTambahAdmin from './ModalTambahAdmin.vue'
 import ModalUbahAdmin from './ModalUbahAdmin.vue'
+import ModalHapusAdmin from './ModalHapusAdmin.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
@@ -39,6 +41,7 @@ export default {
         AppBar,
         ModalTambahAdmin,
         ModalUbahAdmin,
+        ModalHapusAdmin,
     },
     computed: {
     },
@@ -46,9 +49,11 @@ export default {
         ...mapMutations({
             setModalTambah: 'admin/SET_MODAL_TAMBAH',
             setModalUbah: 'admin/SET_MODAL_UBAH',
+            setModalHapus: 'admin/SET_MODAL_HAPUS',
             setId: 'admin/SET_ID',
         }),
         openModal(t, e = true, id = null){
+            console.log(t,e,id);
             switch (t) {
                 default:
                 case 'tambah':
@@ -57,6 +62,10 @@ export default {
                 case 'ubah':
                     this.setId(id)
                     this.setModalUbah(e)
+                    break;
+                case 'hapus':
+                    this.setId(id)
+                    this.setModalHapus(e)
                     break;
             }
         }

@@ -6,7 +6,7 @@
                 <v-card class="shadow">
                     <v-toolbar flat>
                         <v-toolbar-title class="grey--text">
-                            Daftar Admin
+                            Daftar Satker
                         </v-toolbar-title>
                         <v-spacer></v-spacer>
                         <v-btn icon @click="openModal('tambah')">
@@ -15,13 +15,13 @@
                     </v-toolbar>
                     <v-divider/>
                     <div>
-                        <table-admin @modal:tambah="openModal('tambah')" @modal:ubah="openModal('ubah', true, $event)" @modal:hapus="openModal('hapus', true, $event)">
-                            <template #default="{ update }">
+                        <table-satker @modal:tambah="openModal('tambah')" @modal:ubah="openModal('ubah', true, $event)" @modal:hapus="openModal('hapus', true, $event)">
+                            <!-- <template #default="{ update }">
                                 <modal-tambah-admin @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
                                 <modal-ubah-admin @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
                                 <modal-hapus-admin @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
-                            </template>
-                        </table-admin>
+                            </template> -->
+                        </table-satker>
                     </div>
                 </v-card>
             </v-container>
@@ -30,18 +30,18 @@
 </template>
 <script>
 import AppBar from '../AppBar/AppBarDefault.vue'
-import TableAdmin from './TableAdmin.vue'
-import ModalTambahAdmin from './ModalTambahAdmin.vue'
-import ModalUbahAdmin from './ModalUbahAdmin.vue'
-import ModalHapusAdmin from './ModalHapusAdmin.vue'
+import TableSatker from './TableSatker.vue'
+// import ModalTambahAdmin from './ModalTambahAdmin.vue'
+// import ModalUbahAdmin from './ModalUbahAdmin.vue'
+// import ModalHapusAdmin from './ModalHapusAdmin.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
-        TableAdmin,
         AppBar,
-        ModalTambahAdmin,
-        ModalUbahAdmin,
-        ModalHapusAdmin,
+        TableSatker,
+        // ModalTambahAdmin,
+        // ModalUbahAdmin,
+        // ModalHapusAdmin,
     },
     computed: {
     },

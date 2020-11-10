@@ -11,9 +11,8 @@ class RequestUpdatePimpinan extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
-    {
-        return false;
+    public function authorize(){
+        return true;
     }
 
     /**
@@ -23,8 +22,15 @@ class RequestUpdatePimpinan extends FormRequest
      */
     public function rules()
     {
+        $id_pimpinan = request()->route('pimpinan')->id_pimpinan;
         return [
-            //
+            'id_satker'         => 'required|exists:satker_1,id_satker',
+            'nama'              => 'required',
+            'nip'               => "required|unique:pimpinan,nip,{$id_pimpinan},id_pimpinan",
+            'pangkat'           => 'required',
+            'tempat_lahir'      => 'required',
+            'tanggal_lahir'     => 'required|date',
+            'alamat'            => 'required',
         ];
     }
 }

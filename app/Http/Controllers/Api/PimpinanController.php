@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestStorePimpinan;
+use App\Http\Requests\RequestUpdatePimpinan;
 use App\Http\Resources\PimpinanCollection;
 use App\Pimpinan;
 use App\Response\Res;
@@ -36,7 +37,8 @@ class PimpinanController extends Controller{
         );
     }
 
-    public function show($id){
+    public function show(Pimpinan $pimpinan){
+        return new PimpinanCollection($pimpinan);
     }
 
     /**
@@ -46,9 +48,11 @@ class PimpinanController extends Controller{
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(RequestUpdatePimpinan $request, Pimpinan $pimpinan){
+        $data = $request->validated();
+        return Res::store(
+            $pimpinan->update($data)
+        );
     }
 
     /**

@@ -15,18 +15,18 @@
                     </v-toolbar>
                     <v-divider/>
                     <div>
-                        <table-struktur 
+                        <table-pimpinan 
                             @modal:tambah="openModal('tambah')" 
                             @modal:ubah="openModal('ubah', true, $event)" 
                             @modal:hapus="openModal('hapus', true, $event)"
                             @modal:info="openModal('info', true, $event)">
                             <template #default="{ update }">
-                                <modal-tambah-struktur @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
-                                <!-- <modal-ubah-struktur @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
-                                <modal-hapus-struktur @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
+                                <modal-tambah-pimpinan @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
+                                <modal-ubah-pimpinan @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
+                                <!-- <modal-hapus-struktur @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
                                 <modal-info-struktur @modal:info="openModal('info', $event)" @done="update(null)"/> -->
                             </template>
-                        </table-struktur>
+                        </table-pimpinan>
                     </div>
                 </v-card>
             </v-container>
@@ -35,18 +35,18 @@
 </template>
 <script>
 import AppBar from '../AppBar/AppBarDefault.vue'
-import TableStruktur from './TableStruktur.vue'
-import ModalTambahStruktur from './ModalTambahStruktur.vue'
-// import ModalUbahStruktur from './ModalUbahStruktur.vue'
+import TablePimpinan from './TablePimpinan.vue'
+import ModalTambahPimpinan from './ModalTambahPimpinan.vue'
+import ModalUbahPimpinan from './ModalUbahPimpinan.vue'
 // import ModalHapusStruktur from './ModalHapusStruktur.vue'
 // import ModalInfoStruktur from './ModalInfoStruktur.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
         AppBar,
-        TableStruktur,
-        ModalTambahStruktur,
-        // ModalUbahStruktur,
+        TablePimpinan,
+        ModalTambahPimpinan,
+        ModalUbahPimpinan,
         // ModalHapusStruktur,
         // ModalInfoStruktur,
     },

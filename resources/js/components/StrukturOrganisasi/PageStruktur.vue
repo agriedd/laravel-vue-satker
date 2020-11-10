@@ -15,7 +15,7 @@
                     </v-toolbar>
                     <v-divider/>
                     <div>
-                        <table-satker 
+                        <table-struktur 
                             @modal:tambah="openModal('tambah')" 
                             @modal:ubah="openModal('ubah', true, $event)" 
                             @modal:hapus="openModal('hapus', true, $event)"
@@ -26,7 +26,7 @@
                                 <modal-hapus-satker @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
                                 <modal-info-satker @modal:info="openModal('info', $event)" @done="update(null)"/> -->
                             </template>
-                        </table-satker>
+                        </table-struktur>
                     </div>
                 </v-card>
             </v-container>
@@ -35,7 +35,7 @@
 </template>
 <script>
 import AppBar from '../AppBar/AppBarDefault.vue'
-import TableSatker from './TableSatker.vue'
+import TableStruktur from './TableStruktur.vue'
 import ModalTambahStruktur from './ModalTambahStruktur.vue'
 // import ModalUbahSatker from './ModalUbahSatker.vue'
 // import ModalHapusSatker from './ModalHapusSatker.vue'
@@ -44,7 +44,7 @@ import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
         AppBar,
-        TableSatker,
+        TableStruktur,
         ModalTambahStruktur,
         // ModalUbahSatker,
         // ModalHapusSatker,

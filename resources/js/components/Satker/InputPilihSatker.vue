@@ -8,7 +8,7 @@
         hide-no-data
         hide-selected
         :item-text="itemText"
-        item-value="id"
+        item-value="id_satker"
         :label="label"
         required
         v-bind="$attrs"
@@ -43,6 +43,10 @@ export default {
             search: '',
             items: [],
             loading: false,
+            snackbar: {
+                status: false,
+                message: "Error!",
+            }
         }
     },
     methods: {
@@ -53,7 +57,7 @@ export default {
             this.loading = true
 
             let res = await this.getSatker({
-                id: this.id_satker
+                id_satker: this.id_satker
             }).catch(e=>{
                 this.snackbar.status = true
                 this.snackbar.message = e.message

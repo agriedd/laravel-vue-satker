@@ -17,6 +17,9 @@ class SatkerController extends Controller{
                 $search = request('search');
                 return $query->where('nama', 'like', "%{$search}%");
             })
+            ->when(request()->filled('id_satker'), function($query){
+                return $query->orWhere('id_satker', (int) request('id_satker'));
+            })
             ->when(request()->filled('sortBy'), function($query){
                 $sortBy = is_array(request('sortBy')) ? request('sortBy')[0] : request('sortBy');
                 $sortDesc = is_array(request('sortDesc')) ? request('sortDesc')[0] : request('sortDesc');

@@ -13,7 +13,7 @@
                 label="Nama Gambar" 
                 name="gambar" 
                 :error-messages="errors.gambar" 
-                @change="clear('gambar'), e"
+                @change="clear('gambar')"
                 v-model="form.file_gambar"
                 prepend-icon
                 append-icon="mdi-image"/>

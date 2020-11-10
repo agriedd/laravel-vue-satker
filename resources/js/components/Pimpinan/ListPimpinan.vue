@@ -40,11 +40,17 @@
                         </v-list-item-group>
                     </v-list>
                     <v-list v-else-if="!loading">
-                        <v-list-item>
-                            <v-list-title>
-                                Tidak Ada Data Pimpinan
-                            </v-list-title>
-                        </v-list-item>
+                        <div class="text-center">
+                            Tidak Ada Data Pimpinan
+                        </div>
+                        <div class="d-flex justify-center py-5">
+                            <v-btn icon large :to="{ name: 'page.pimpinan' }" link color="primary">
+                                <v-icon large>mdi-plus</v-icon>
+                            </v-btn>
+                        </div>
+                        <div class="text-center">
+                            Tambah Pimpinan
+                        </div>
                     </v-list>
                     <v-list v-else-if="loading">
                         <div class="d-flex justify-center py-10">

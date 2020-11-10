@@ -40,11 +40,17 @@
                         </v-list-item-group>
                     </v-list>
                     <v-list v-else-if="!loading">
-                        <v-list-item>
-                            <v-list-title>
-                                Tidak Ada Data Bidang
-                            </v-list-title>
-                        </v-list-item>
+                        <div class="text-center">
+                            Tidak Ada Data Bidang
+                        </div>
+                        <div class="d-flex justify-center py-5">
+                            <v-btn icon large :to="{ name: 'page.bidang' }" link color="primary">
+                                <v-icon large>mdi-plus</v-icon>
+                            </v-btn>
+                        </div>
+                        <div class="text-center">
+                            Tambah Bidang
+                        </div>
                     </v-list>
                     <v-list v-else-if="loading">
                         <div class="d-flex justify-center py-10">

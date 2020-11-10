@@ -23,9 +23,10 @@
                 @change="clear('iso')"/>
         </div>
         <div>
-            <v-text-field 
-                label="Status" 
+            <v-select 
+                label="Status Satker" 
                 name="status" 
+                :items="status_satker"
                 :error-messages="errors.status" 
                 @change="clear('status')"/>
         </div>
@@ -39,6 +40,7 @@
     </div>
 </template>
 <script>
+import statusSatker from './statusSatker'
 import { mapMutations, mapState } from 'vuex'
 export default {
     data(){
@@ -46,7 +48,8 @@ export default {
             form: {
                 password: null,
             },
-            rules: {}
+            rules: {},
+            status_satker: statusSatker,
         }
     },
     computed: {

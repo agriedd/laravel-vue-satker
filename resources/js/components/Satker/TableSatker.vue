@@ -12,12 +12,45 @@
             @update:options="update($event)"
             fixed-header
             :footer-props="{'items-per-page-options':[5, 10, 20, 30, 50, 100]}">
+            <template #item.nama="{ item }">
+                <v-menu content-class="shadow-lg" open-on-hover max-width="400" min-width="300">
+                    <template #activator="{ attrs, on }">
+                        <div v-bind="attrs" v-on="on">
+                            {{ item.nama }}
+                        </div>
+                    </template>
+                    <v-list>
+                        <list-item v-model="item.nama" label="Nama"/>
+                        <list-item v-model="item.iso" label="ISO"/>
+                        <list-item v-model="item.alamat" label="Alamat">
+                            <v-list-item-icon>
+                                <v-icon>mdi-map-marker</v-icon>
+                            </v-list-item-icon>
+                        </list-item>
+                        <list-item v-model="item.status" label="Status"/>
+                        <v-divider/>
+                        <list-item v-model="item.lain_lain" label="Keterangan">
+                            <v-list-item-icon>
+                                <v-icon>mdi-map-marker</v-icon>
+                            </v-list-item-icon>
+                        </list-item>
+                    </v-list>
+                </v-menu>
+            </template>
+            <template #item.status="{ item }">
+                <v-chip small :color="item.status == 'BUMN' ? 'blue' : 'pink'">
+                    {{ item.status }}
+                </v-chip>
+            </template>
             <template #item.action="{ item }">
                 <v-btn icon @click="openModal('ubah', item.id)">
                     <v-icon small>mdi-pencil</v-icon>
                 </v-btn>
                 <v-btn icon @click="openModal('hapus', item.id)">
                     <v-icon small>mdi-delete</v-icon>
+                </v-btn>
+                <v-btn icon @click="openModal('info', item.id)">
+                    <v-icon small>mdi-arrow-left</v-icon>
                 </v-btn>
             </template>
         </v-data-table>
@@ -27,14 +60,20 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
+import ListItem from '../List/ListItem.vue'
 export default {
+    components: {
+        ListItem,
+    },
     data(){
         return {
             items: [],
             headers: [
-                { text: 'ID', align: 'start', sortable: true, value: 'id' },
+                { text: 'ID', align: 'start', sortable: true, value: 'id_satker' },
                 { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
-                { text: 'Email', align: 'start', sortable: true, value: 'email' },
+                { text: 'Alamat', align: 'start', sortable: true, value: 'alamat' },
+                { text: 'ISO', align: 'start', sortable: true, value: 'iso' },
+                { text: 'Status', align: 'start', sortable: true, value: 'status' },
                 { text: '', align: 'end', sortable: false, value: 'action' },
             ],
             options: {
@@ -72,8 +111,6 @@ export default {
 
             this.loading = false
             
-            return console.log(res);
-
             if(res){
                 this.items = res.data.data
                 let meta = res.data.meta

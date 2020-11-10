@@ -19,6 +19,9 @@ class StrukturController extends Controller{
                 $search = request('search');
                 // return $query->where('id_', 'like', "%{$search}%");
             })
+            ->when(request()->filled('id_satker'), function($query){
+                return $query->where('id_satker', request('id_satker'));
+            })
             ->when(request()->filled('sortBy'), function($query){
                 $sortBy = is_array(request('sortBy')) ? request('sortBy')[0] : request('sortBy');
                 $sortDesc = is_array(request('sortDesc')) ? request('sortDesc')[0] : request('sortDesc');

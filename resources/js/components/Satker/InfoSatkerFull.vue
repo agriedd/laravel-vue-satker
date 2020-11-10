@@ -19,7 +19,7 @@
                             </v-list-item-icon>
                         </list-item>
                         <v-divider/>
-                        <v-list-item-group v-model="tab">
+                        <v-list-item-group v-model="tab" color="primary">
                             <list-item value="Struktur Organisasi" label="Struktur organisasi satker" key="struktur">
                                 <v-list-item-icon>
                                     <v-icon>mdi-chevron-right</v-icon>
@@ -49,7 +49,10 @@
                     <div class="fill-height"></div>
                 </div>
                 <v-card-text class="overflow-auto fill-height">
-                    <div class="py-10 d-flex justify-center flex-column">
+                    <div v-if="tab == 0">
+                        <list-struktur :params="{ id_satker: satker.id_satker }"></list-struktur>
+                    </div>
+                    <div v-else class="py-10 d-flex justify-center flex-column">
                         <div class="text--disabled mx-auto">
                             Informasi Satker {{ tab }}
                         </div>
@@ -62,9 +65,11 @@
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
 import ListItem from '../List/ListItem.vue'
+import ListStruktur from '../StrukturOrganisasi/ListStruktur.vue'
 export default {
     components: {
         ListItem,
+        ListStruktur,
     },
     data(){
         return {

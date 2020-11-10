@@ -10,7 +10,7 @@
                         <v-divider/>
                     </div>
                     <v-card-text>
-                        <info-satker v-if="dialog" @loading="loading = $event"/>
+                        <info-struktur v-if="dialog" @loading="loading = $event"/>
                     </v-card-text>
                     <div>
                         <v-divider/>
@@ -34,10 +34,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import InfoSatker from './InfoSatker.vue'
+import InfoStruktur from './InfoStruktur.vue'
 export default {
     components: {
-        InfoSatker,
+        InfoStruktur,
     },
     data(){
         return {
@@ -50,7 +50,7 @@ export default {
     },
     computed: {
         ...mapState({
-            modal_hapus: state => state.satker.modal.hapus,
+            modal_hapus: state => state.struktur.modal.hapus,
         }),
         dialog: {
             set(val){
@@ -63,17 +63,17 @@ export default {
     },
     methods: {
         ...mapActions({
-            deleteSatker: 'satker/destroy',
+            deleteStruktur: 'struktur/destroy',
         }),
         ...mapMutations({
-            setError: 'satker/SET_ERRORS',
+            setError: 'struktur/SET_ERRORS',
         }),
         async submit(e){
             this.loading = true
 
             let formdata = new FormData(e.target)
             formdata.append('_method', 'DELETE')
-            let res = await this.deleteSatker(formdata).catch(e => {
+            let res = await this.deleteStruktur(formdata).catch(e => {
                 
                 if(e.response.status == 422)
                     this.setError(e.response.data.errors)

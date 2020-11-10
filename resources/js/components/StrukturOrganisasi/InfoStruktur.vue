@@ -2,13 +2,12 @@
     <div class="px-3">
         <div>
             <h3>
-                {{ satker.nama }}
+                {{ struktur.satker.nama }}
             </h3>
             <div>
-                {{ satker.iso }}
-            </div>
-            <div>
-                {{ satker.status }}
+                <div class="d-flex justify-center" style="position: relative; width: 100%">
+                    <v-img :src="struktur.gambar_url" class="rounded" max-width="100%" max-height="50vh"/>
+                </div>
             </div>
         </div>
         <div class="pt-10">
@@ -23,27 +22,27 @@ import { mapActions, mapMutations, mapState } from 'vuex'
 export default {
     data(){
         return {
-            satker: {},
+            struktur: {},
         }
     },
     computed: {
         ...mapState({
-            errors: state => state.satker.errors,
-            id: state => state.satker.selected.id,
+            errors: state => state.struktur.errors,
+            id: state => state.struktur.selected.id,
         }),
     },
     methods: {
         ...mapMutations({
-            clear: 'satker/CLEAR_ERROR'
+            clear: 'struktur/CLEAR_ERROR'
         }),
         ...mapActions({
-            showsatker: 'satker/show',
+            showstruktur: 'struktur/show',
         }),
         async getData(){
             
             this.$emit('loading', true)
 
-            let res = await this.showsatker({id: this.id}).catch(e => {
+            let res = await this.showstruktur({id: this.id}).catch(e => {
                 this.$emit('loading', false)
             })
             this.$emit('loading', false)
@@ -51,7 +50,7 @@ export default {
                 let data = res.data.data
                 for (const key in data) {
                     if (data.hasOwnProperty(key)) {
-                        this.$set(this.satker, key, data[key])
+                        this.$set(this.struktur, key, data[key])
                     }
                 }
             }

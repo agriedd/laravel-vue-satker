@@ -23,8 +23,8 @@
                             <template #default="{ update }">
                                 <modal-tambah-struktur @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
                                 <modal-ubah-struktur @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
-                                <!-- <modal-hapus-satker @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
-                                <modal-info-satker @modal:info="openModal('info', $event)" @done="update(null)"/> -->
+                                <modal-hapus-struktur @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
+                                <!-- <modal-info-satker @modal:info="openModal('info', $event)" @done="update(null)"/> -->
                             </template>
                         </table-struktur>
                     </div>
@@ -38,7 +38,7 @@ import AppBar from '../AppBar/AppBarDefault.vue'
 import TableStruktur from './TableStruktur.vue'
 import ModalTambahStruktur from './ModalTambahStruktur.vue'
 import ModalUbahStruktur from './ModalUbahStruktur.vue'
-// import ModalHapusSatker from './ModalHapusSatker.vue'
+import ModalHapusStruktur from './ModalHapusStruktur.vue'
 // import ModalInfoSatker from './ModalInfoSatker.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
@@ -47,7 +47,7 @@ export default {
         TableStruktur,
         ModalTambahStruktur,
         ModalUbahStruktur,
-        // ModalHapusSatker,
+        ModalHapusStruktur,
         // ModalInfoSatker,
     },
     computed: {

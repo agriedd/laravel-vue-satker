@@ -55,6 +55,9 @@
                     <div v-else-if="tab == 1">
                         <list-pimpinan :params="{ id_satker: satker.id_satker }"></list-pimpinan>
                     </div>
+                    <div v-else-if="tab == 2">
+                        <list-bidang :params="{ id_satker: satker.id_satker }"></list-bidang>
+                    </div>
                     <div v-else class="py-10 d-flex justify-center flex-column">
                         <div class="text--disabled mx-auto">
                             Informasi Satker {{ tab }}
@@ -70,11 +73,13 @@ import { mapActions, mapMutations, mapState } from 'vuex'
 import ListItem from '../List/ListItem.vue'
 import ListStruktur from '../StrukturOrganisasi/ListStruktur.vue'
 import ListPimpinan from '../Pimpinan/ListPimpinan.vue'
+import ListBidang from '../Bidang/ListBidang.vue'
 export default {
     components: {
         ListItem,
         ListStruktur,
         ListPimpinan,
+        ListBidang,
     },
     data(){
         return {

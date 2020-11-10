@@ -12,7 +12,7 @@
                             </v-list-item-action>
                         </v-list-item>
                         <v-divider></v-divider>
-                        <info-pimpinan-template :pimpinan="pimpinan"/>
+                        <info-bidang-template :bidang="bidang"/>
                     </v-list>
                 </div>
                 <div v-else>
@@ -28,10 +28,10 @@
                                     </v-list-item-icon>
                                     <v-list-item-content>
                                         <v-list-item-title>
-                                            {{ item.nama }}
+                                            {{ item.nama_bidang }}
                                         </v-list-item-title>
                                         <v-list-item-subtitle>
-                                            {{ item.nip }}
+                                            {{ item.nama_kepala_b }}
                                         </v-list-item-subtitle>
                                     </v-list-item-content>
                                 </v-list-item>
@@ -42,7 +42,7 @@
                     <v-list v-else-if="!loading">
                         <v-list-item>
                             <v-list-title>
-                                Tidak Ada Data Pimpinan
+                                Tidak Ada Data Bidang
                             </v-list-title>
                         </v-list-item>
                     </v-list>
@@ -60,16 +60,16 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import InfoPimpinanTemplate from './InfoPimpinanTemplate.vue'
+import InfoBidangTemplate from './InfoBidangTemplate.vue'
 export default {
     components: {
-        InfoPimpinanTemplate,
+        InfoBidangTemplate,
     },
     props: {
         params: Object,
     },
     computed: {
-        pimpinan(){
+        bidang(){
             return this.items[this.id]
         }
     },
@@ -99,7 +99,7 @@ export default {
     },
     methods: {
         ...mapActions({
-            getpimpinan: 'pimpinan/get',
+            getpimpinan: 'bidang/get',
         }),
         async getData(){
             this.loading = true

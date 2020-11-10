@@ -41,12 +41,10 @@
 </template>
 <script>
 import InputPilihSatker from '../Satker/InputPilihSatker.vue'
-import InputTanggalLahir from './InputPilihTanggalLahir.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
         InputPilihSatker,
-        InputTanggalLahir,
     },
     data(){
         return {

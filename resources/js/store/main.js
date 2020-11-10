@@ -9,7 +9,8 @@
  import struktur from './struktur'
  import pimpinan from './pimpinan'
  import bidang from './bidang'
+ import petugas from './petugas'
 
  export default {
-    admin, navbar, satker, struktur, pimpinan, bidang,
+    admin, navbar, satker, struktur, pimpinan, bidang, petugas,
  }

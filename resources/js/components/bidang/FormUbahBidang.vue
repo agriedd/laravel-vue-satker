@@ -46,11 +46,9 @@
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
 import InputPilihSatker from '../Satker/InputPilihSatker.vue'
-import InputTanggalLahir from './InputPilihTanggalLahir.vue'
 export default {
     components: {
         InputPilihSatker,
-        InputTanggalLahir,
     },
     data(){
         return {

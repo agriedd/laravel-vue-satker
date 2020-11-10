@@ -1,7 +1,7 @@
 <template>
     <v-row no-gutters class="fill-height">
-        <v-col cols="12" sm="6">
-            <div>
+        <v-col cols="12" sm="6" style="border-right: 1px solid rgba(0,0,0,.15)">
+            <div class="fill-height">
                 <info-bidang-template :bidang="bidang">
                     <v-list-item-group v-model="tab" color="primary">
                         <list-item v-model="bidang.satker.nama" label="Nama Satker" key="0">
@@ -36,7 +36,7 @@
             </div>
         </v-col>
         <v-col cols="12" sm="6">
-            <div class="d-flex fill-height" style="border-left: 1px solid rgba(0,0,0,.15)">
+            <div class="d-flex" style="position: sticky; top: 0px">
                 <v-card-text :key="tab" class="grow pa-0">
                     <info-satker :value="bidang.satker" v-if="tab == 0"/>
                 </v-card-text>

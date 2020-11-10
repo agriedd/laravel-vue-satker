@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestStoreSatker;
+use App\Http\Requests\RequestUpdateSatker;
 use App\Http\Resources\SatkerCollection;
 use App\Response\Res;
 use App\Satker;
-use Illuminate\Http\Request;
 
 class SatkerController extends Controller{
 
@@ -33,37 +33,18 @@ class SatkerController extends Controller{
         );
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function show(Satker $satker){
+        return new SatkerCollection($satker);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(RequestUpdateSatker $request, Satker $satker){
+        $data = $request->validated();
+        return Res::update(
+            $satker->update($data)
+        );
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function destroy(Satker $satker){
+        return Res::delete($satker->delete());
     }
 }

@@ -5,12 +5,12 @@
                 <v-card rounded="0">
                     <div>
                         <v-card-text>
-                            Form Ubah Admin
+                            Form Ubah Data Satker
                         </v-card-text>
                         <v-divider/>
                     </div>
                     <v-card-text>
-                        <form-ubah-admin v-if="dialog" @loading="loading = $event"/>
+                        <form-ubah-satker v-if="dialog" @loading="loading = $event"/>
                     </v-card-text>
                     <div>
                         <v-divider/>
@@ -34,10 +34,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormUbahAdmin from './FormUbahAdmin.vue'
+import FormUbahSatker from './FormUbahSatker.vue'
 export default {
     components: {
-        FormUbahAdmin,
+        FormUbahSatker,
     },
     data(){
         return {
@@ -50,7 +50,7 @@ export default {
     },
     computed: {
         ...mapState({
-            modal_ubah: state => state.admin.modal.ubah,
+            modal_ubah: state => state.satker.modal.ubah,
         }),
         dialog: {
             set(val){
@@ -63,17 +63,17 @@ export default {
     },
     methods: {
         ...mapActions({
-            updateAdmin: 'admin/update',
+            updateSatker: 'satker/update',
         }),
         ...mapMutations({
-            setError: 'admin/SET_ERRORS',
+            setError: 'satker/SET_ERRORS',
         }),
         async submit(e){
             this.loading = true
 
             let formdata = new FormData(e.target)
             formdata.append('_method', 'PUT')
-            let res = await this.updateAdmin(formdata).catch(e => {
+            let res = await this.updateSatker(formdata).catch(e => {
                 
                 if(e.response.status == 422)
                     this.setError(e.response.data.errors)

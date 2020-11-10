@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RequestStoreSatker extends FormRequest{
+class RequestUpdateSatker extends FormRequest{
 
     public function authorize(){
         return true;

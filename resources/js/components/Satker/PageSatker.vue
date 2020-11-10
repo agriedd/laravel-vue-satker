@@ -18,8 +18,8 @@
                         <table-satker @modal:tambah="openModal('tambah')" @modal:ubah="openModal('ubah', true, $event)" @modal:hapus="openModal('hapus', true, $event)">
                             <template #default="{ update }">
                                 <modal-tambah-satker @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
-                                <!-- <modal-ubah-admin @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
-                                <modal-hapus-admin @modal:hapus="openModal('hapus', $event)" @done="update(null)"/> -->
+                                <modal-ubah-satker @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
+                                <!-- <modal-hapus-admin @modal:hapus="openModal('hapus', $event)" @done="update(null)"/> -->
                             </template>
                         </table-satker>
                     </div>
@@ -32,7 +32,7 @@
 import AppBar from '../AppBar/AppBarDefault.vue'
 import TableSatker from './TableSatker.vue'
 import ModalTambahSatker from './ModalTambahSatker.vue'
-// import ModalUbahAdmin from './ModalUbahAdmin.vue'
+import ModalUbahSatker from './ModalUbahSatker.vue'
 // import ModalHapusAdmin from './ModalHapusAdmin.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
@@ -40,7 +40,7 @@ export default {
         AppBar,
         TableSatker,
         ModalTambahSatker,
-        // ModalUbahAdmin,
+        ModalUbahSatker,
         // ModalHapusAdmin,
     },
     computed: {
@@ -48,9 +48,9 @@ export default {
     methods: {
         ...mapMutations({
             setModalTambah: 'satker/SET_MODAL_TAMBAH',
-            setModalUbah: 'admin/SET_MODAL_UBAH',
-            setModalHapus: 'admin/SET_MODAL_HAPUS',
-            setId: 'admin/SET_ID',
+            setModalUbah: 'satker/SET_MODAL_UBAH',
+            setModalHapus: 'satker/SET_MODAL_HAPUS',
+            setId: 'satker/SET_ID',
         }),
         openModal(t, e = true, id = null){
             switch (t) {

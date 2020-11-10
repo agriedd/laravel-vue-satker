@@ -111,7 +111,6 @@ export default {
         }
     },
     created(){
-        this.getData()
     }
 }
 </script>

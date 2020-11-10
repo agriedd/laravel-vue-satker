@@ -10,7 +10,7 @@
                         <v-divider/>
                     </div>
                     <v-card-text>
-                        <info-pimpinan v-if="dialog" @loading="loading = $event"/>
+                        <info-bidang v-if="dialog" @loading="loading = $event"/>
                     </v-card-text>
                     <div>
                         <v-divider/>
@@ -34,10 +34,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import InfoPimpinan from './InfoPimpinan.vue'
+import InfoBidang from './InfoBidang.vue'
 export default {
     components: {
-        InfoPimpinan,
+        InfoBidang,
     },
     data(){
         return {
@@ -50,7 +50,7 @@ export default {
     },
     computed: {
         ...mapState({
-            modal_hapus: state => state.pimpinan.modal.hapus,
+            modal_hapus: state => state.bidang.modal.hapus,
         }),
         dialog: {
             set(val){
@@ -63,10 +63,10 @@ export default {
     },
     methods: {
         ...mapActions({
-            deleteStruktur: 'pimpinan/destroy',
+            deleteStruktur: 'bidang/destroy',
         }),
         ...mapMutations({
-            setError: 'pimpinan/SET_ERRORS',
+            setError: 'bidang/SET_ERRORS',
         }),
         async submit(e){
             this.loading = true

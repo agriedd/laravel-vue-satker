@@ -23,8 +23,8 @@
                             <template #default="{ update }">
                                 <modal-tambah-bidang @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
                                 <modal-ubah-bidang @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
-                                <!-- <modal-hapus-bidang @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
-                                <modal-info-bidang @modal:info="openModal('info', $event)" @done="update(null)"/> -->
+                                <modal-hapus-bidang @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
+                                <!-- <modal-info-bidang @modal:info="openModal('info', $event)" @done="update(null)"/> -->
                             </template>
                         </table-bidang>
                     </div>
@@ -38,7 +38,7 @@ import AppBar from '../AppBar/AppBarDefault.vue'
 import TableBidang from './TableBidang.vue'
 import ModalTambahBidang from './ModalTambahBidang.vue'
 import ModalUbahBidang from './ModalUbahBidang.vue'
-// import ModalHapusPimpinan from './ModalHapusPimpinan.vue'
+import ModalHapusBidang from './ModalHapusBidang.vue'
 // import ModalInfoPimpinan from './ModalInfoPimpinan.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
@@ -47,7 +47,7 @@ export default {
         TableBidang,
         ModalTambahBidang,
         ModalUbahBidang,
-        // ModalHapusPimpinan,
+        ModalHapusBidang,
         // ModalInfoPimpinan,
     },
     computed: {

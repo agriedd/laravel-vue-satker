@@ -59,12 +59,12 @@ export default {
     },
     methods: {
         ...mapActions({
-            getAdmin: 'satker/get',
+            getSatker: 'satker/get',
         }),
         async getData(){
             this.loading = true
 
-            let res = await this.getAdmin({...this.options, search: this.search}).catch(e => {
+            let res = await this.getSatker({...this.options, search: this.search}).catch(e => {
                 this.snackbar.status = true
                 this.snackbar.message = e.message
                 this.loading = false

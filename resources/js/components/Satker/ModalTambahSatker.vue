@@ -5,12 +5,12 @@
                 <v-card rounded="0">
                     <div>
                         <v-card-text>
-                            Form Tambah Admin
+                            Form Tambah Satker
                         </v-card-text>
                         <v-divider/>
                     </div>
                     <v-card-text>
-                        <form-tambah-admin v-if="dialog"></form-tambah-admin>
+                        <form-tambah-satker v-if="dialog"></form-tambah-satker>
                     </v-card-text>
                     <div>
                         <v-divider/>
@@ -34,10 +34,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormTambahAdmin from './FormTambahAdmin.vue'
+import FormTambahSatker from './FormTambahSatker.vue'
 export default {
     components: {
-        FormTambahAdmin,
+        FormTambahSatker,
     },
     data(){
         return {
@@ -50,7 +50,7 @@ export default {
     },
     computed: {
         ...mapState({
-            modal_tambah: state => state.admin.modal.tambah,
+            modal_tambah: state => state.satker.modal.tambah,
         }),
         dialog: {
             set(val){
@@ -63,16 +63,16 @@ export default {
     },
     methods: {
         ...mapActions({
-            storeAdmin: 'admin/store',
+            storeSatker: 'satker/store',
         }),
         ...mapMutations({
-            setError: 'admin/SET_ERRORS',
+            setError: 'satker/SET_ERRORS',
         }),
         async submit(e){
             this.loading = true
 
             let formdata = new FormData(e.target)
-            let res = await this.storeAdmin(formdata).catch(e => {
+            let res = await this.storeSatker(formdata).catch(e => {
                 
                 if(e.response.status == 422)
                     this.setError(e.response.data.errors)

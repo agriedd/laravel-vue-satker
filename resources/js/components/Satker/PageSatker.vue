@@ -16,11 +16,11 @@
                     <v-divider/>
                     <div>
                         <table-satker @modal:tambah="openModal('tambah')" @modal:ubah="openModal('ubah', true, $event)" @modal:hapus="openModal('hapus', true, $event)">
-                            <!-- <template #default="{ update }">
-                                <modal-tambah-admin @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
-                                <modal-ubah-admin @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
-                                <modal-hapus-admin @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
-                            </template> -->
+                            <template #default="{ update }">
+                                <modal-tambah-satker @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
+                                <!-- <modal-ubah-admin @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
+                                <modal-hapus-admin @modal:hapus="openModal('hapus', $event)" @done="update(null)"/> -->
+                            </template>
                         </table-satker>
                     </div>
                 </v-card>
@@ -31,7 +31,7 @@
 <script>
 import AppBar from '../AppBar/AppBarDefault.vue'
 import TableSatker from './TableSatker.vue'
-// import ModalTambahAdmin from './ModalTambahAdmin.vue'
+import ModalTambahSatker from './ModalTambahSatker.vue'
 // import ModalUbahAdmin from './ModalUbahAdmin.vue'
 // import ModalHapusAdmin from './ModalHapusAdmin.vue'
 import { mapMutations, mapState } from 'vuex'
@@ -39,7 +39,7 @@ export default {
     components: {
         AppBar,
         TableSatker,
-        // ModalTambahAdmin,
+        ModalTambahSatker,
         // ModalUbahAdmin,
         // ModalHapusAdmin,
     },
@@ -47,7 +47,7 @@ export default {
     },
     methods: {
         ...mapMutations({
-            setModalTambah: 'admin/SET_MODAL_TAMBAH',
+            setModalTambah: 'satker/SET_MODAL_TAMBAH',
             setModalUbah: 'admin/SET_MODAL_UBAH',
             setModalHapus: 'admin/SET_MODAL_HAPUS',
             setId: 'admin/SET_ID',

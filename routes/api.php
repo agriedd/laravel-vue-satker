@@ -20,4 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resources([
     'admin' => 'Api\AdminController',
+    'satker' => 'Api\SatkerController',
 ]);

@@ -3134,6 +3134,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
  // import SettingsDialog from '../Modal/Settings/SettingDefault'
 // import InfoAdmin from '../Info/Admin/InfoAdmin.vue'
@@ -3244,82 +3249,35 @@ __webpack_require__.r(__webpack_exports__);
       configs: {
         dense: true
       },
-      listtop: [{
-        title: "Awal",
-        icon: "mdi-home",
-        link: "/admin/"
-      }],
+      listtop: [// { title: "Awal", icon: "mdi-home", link: "/admin/" },
+      ],
       listbottom: [{
-        title: "Organisasi",
-        icon: "mdi-account-group",
-        link: "/admin/organisasi"
-      }, {
-        title: "Inventaris",
-        icon: "mdi-package-variant",
-        link: "/admin/inventaris"
-      }, {
-        title: "Laporan",
-        icon: "mdi-printer",
-        link: "/admin/laporan",
-        active: false,
-        items: [{
-          title: "Jemaat",
-          icon: "mdi-account-group",
-          link: "/admin/laporan/kk"
-        }, {
-          title: "Ulang Tahun",
-          icon: "mdi-cake-variant",
-          link: "/admin/laporan/ulang-tahun"
-        }, {
-          title: "Baptis",
-          icon: "mdi-human-baby-changing-table",
-          link: "/admin/laporan/baptis"
-        }, {
-          title: "Sidi",
-          icon: "mdi-account-outline",
-          link: "/admin/laporan/sidi"
-        }, {
-          title: "Nikah",
-          icon: "mdi-ring",
-          link: "/admin/laporan/nikah"
-        }]
-      }, {
+        title: "Satker",
+        icon: "mdi-bookmark",
+        link: "/admin/satker"
+      }, // { title: "Inventaris", icon: "mdi-package-variant", link: "/admin/inventaris" },
+      // { title: "Laporan", icon: "mdi-printer", link: "/admin/laporan", active: false, items: [
+      //     { title: "Jemaat", icon: "mdi-account-group", link: "/admin/laporan/kk"},
+      //     { title: "Ulang Tahun", icon: "mdi-cake-variant", link: "/admin/laporan/ulang-tahun" },
+      //     { title: "Baptis", icon: "mdi-human-baby-changing-table", link: "/admin/laporan/baptis"},
+      //     { title: "Sidi", icon: "mdi-account-outline", link: "/admin/laporan/sidi"},
+      //     { title: "Nikah", icon: "mdi-ring", link: "/admin/laporan/nikah"},
+      // ] },
+      {
         title: "Admin",
         icon: "mdi-shield-account-variant",
         link: "/admin/admin"
       }],
-      listgroup: [{
-        title: "Jemaat",
-        icon: "mdi-account-group",
-        active: false,
-        items: [{
-          title: "Kepala Keluarga",
-          icon: "mdi-account",
-          link: "/admin/jemaat/kk"
-        }, {
-          title: "Daftar Jemaat",
-          icon: "mdi-account-group",
-          link: "/admin/jemaat"
-        }]
-      }, {
-        title: "Pelayan",
-        icon: "mdi-shield-account",
-        link: "/admin/jemaat",
-        active: false,
-        items: [{
-          title: "Daftar Pendeta",
-          icon: "mdi-shield-account",
-          link: "/admin/pendeta"
-        }, {
-          title: "Daftar Majelis",
-          icon: "mdi-account-group",
-          link: "/admin/majelis"
-        }, {
-          title: "Daftar Pegawai",
-          icon: "mdi-account",
-          link: "/admin/pegawai"
-        }]
-      }]
+      listgroup: [// { title: "Jemaat", icon: "mdi-account-group", active: false, items: [
+        //     { title: "Kepala Keluarga", icon: "mdi-account", link: "/admin/jemaat/kk" },
+        //     { title: "Daftar Jemaat", icon: "mdi-account-group", link: "/admin/jemaat" },
+        // ] },
+        // { title: "Pelayan", icon: "mdi-shield-account", link: "/admin/jemaat", active: false, items: [
+        //     { title: "Daftar Pendeta", icon: "mdi-shield-account", link: "/admin/pendeta" },
+        //     { title: "Daftar Majelis", icon: "mdi-account-group", link: "/admin/majelis" },
+        //     { title: "Daftar Pegawai", icon: "mdi-account", link: "/admin/pegawai" },
+        // ] },
+      ]
     };
   },
   computed: {}
@@ -42308,272 +42266,336 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("v-navigation-drawer", {
-    staticClass: "nav-drawer",
-    attrs: {
-      app: "",
-      "mini-variant": _vm.minidrawer,
-      "mini-variant-width": "80",
-      width: "275",
-      color: _vm.color,
-      dark: ""
-    },
-    scopedSlots: _vm._u([
-      {
-        key: "prepend",
-        fn: function() {
-          return [_c("div", [_c("v-divider")], 1)]
-        },
-        proxy: true
+  return _c(
+    "v-navigation-drawer",
+    {
+      staticClass: "nav-drawer",
+      attrs: {
+        app: "",
+        "mini-variant": _vm.minidrawer,
+        "mini-variant-width": "80",
+        width: "275",
+        color: _vm.color,
+        dark: ""
       },
-      {
-        key: "append",
-        fn: function() {
-          return [
-            _c("v-divider"),
-            _vm._v(" "),
-            !_vm.minidrawer
-              ? _c(
-                  "v-row",
-                  [
-                    _c(
-                      "v-col",
-                      {
-                        staticClass: "mx-auto",
-                        staticStyle: { "max-width": "250px" },
-                        attrs: { cols: "12" }
-                      },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "flex-wrap d-flex" },
-                          [
-                            _c(
-                              "v-btn",
-                              {
-                                attrs: { text: "", icon: "" },
-                                on: {
-                                  click: function($event) {
-                                    return _vm.openSettings()
-                                  }
-                                }
-                              },
-                              [_c("v-icon", [_vm._v("mdi-cog")])],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "v-tooltip",
-                              {
-                                attrs: { top: "" },
-                                scopedSlots: _vm._u(
-                                  [
-                                    {
-                                      key: "activator",
-                                      fn: function(ref) {
-                                        var on = ref.on
-                                        var attrs = ref.attrs
-                                        return [
-                                          _c(
-                                            "v-btn",
-                                            _vm._g(
-                                              _vm._b(
-                                                {
-                                                  attrs: { text: "", icon: "" },
-                                                  on: { click: _vm.toggleMode }
-                                                },
-                                                "v-btn",
-                                                attrs,
-                                                false
-                                              ),
-                                              on
-                                            ),
-                                            [
-                                              !_vm.$vuetify.theme.dark
-                                                ? _c("v-icon", [
-                                                    _vm._v("mdi-weather-night")
-                                                  ])
-                                                : _c("v-icon", [
-                                                    _vm._v("mdi-weather-sunny")
-                                                  ])
-                                            ],
-                                            1
-                                          )
-                                        ]
-                                      }
-                                    }
-                                  ],
-                                  null,
-                                  false,
-                                  4020381651
-                                )
-                              },
-                              [_vm._v(" "), _c("span", [_vm._v("Ganti Tema")])]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "d-inline-block" }, [
-                              _c(
-                                "form",
-                                {
-                                  staticClass: "wrap d-inline-block",
-                                  attrs: {
-                                    action:
-                                      _vm.$store.state.navbar.host + "logout",
-                                    method: "POST"
-                                  }
-                                },
-                                [
-                                  _c("input", {
-                                    attrs: { type: "hidden", name: "_token" },
-                                    domProps: {
-                                      value: _vm.$store.state.navbar.token
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-tooltip",
-                                    {
-                                      attrs: { top: "" },
-                                      scopedSlots: _vm._u(
-                                        [
-                                          {
-                                            key: "activator",
-                                            fn: function(ref) {
-                                              var on = ref.on
-                                              var attrs = ref.attrs
-                                              return [
-                                                _c(
-                                                  "v-btn",
-                                                  _vm._g(
-                                                    _vm._b(
-                                                      {
-                                                        attrs: {
-                                                          text: "",
-                                                          icon: "",
-                                                          type: "submit"
-                                                        }
-                                                      },
-                                                      "v-btn",
-                                                      attrs,
-                                                      false
-                                                    ),
-                                                    on
-                                                  ),
-                                                  [
-                                                    _c("v-icon", [
-                                                      _vm._v("mdi-power")
-                                                    ])
-                                                  ],
-                                                  1
-                                                )
-                                              ]
-                                            }
-                                          }
-                                        ],
-                                        null,
-                                        false,
-                                        973372267
-                                      )
-                                    },
-                                    [
-                                      _vm._v(" "),
-                                      _c("span", [_vm._v("Keluar")])
-                                    ]
-                                  )
-                                ],
-                                1
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "v-tooltip",
-                              {
-                                attrs: { top: "" },
-                                scopedSlots: _vm._u(
-                                  [
-                                    {
-                                      key: "activator",
-                                      fn: function(ref) {
-                                        var on = ref.on
-                                        var attrs = ref.attrs
-                                        return [
-                                          _c(
-                                            "v-btn",
-                                            _vm._g(
-                                              _vm._b(
-                                                {
-                                                  staticClass: "ml-auto",
-                                                  attrs: { text: "", icon: "" },
-                                                  on: { click: _vm.toggleMini }
-                                                },
-                                                "v-btn",
-                                                attrs,
-                                                false
-                                              ),
-                                              on
-                                            ),
-                                            [
-                                              _c("v-icon", [
-                                                _vm._v("mdi-chevron-left")
-                                              ])
-                                            ],
-                                            1
-                                          )
-                                        ]
-                                      }
-                                    }
-                                  ],
-                                  null,
-                                  false,
-                                  2843619524
-                                )
-                              },
-                              [_vm._v(" "), _c("span", [_vm._v("Minimalis")])]
-                            )
-                          ],
-                          1
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                )
-              : [
+      scopedSlots: _vm._u([
+        {
+          key: "prepend",
+          fn: function() {
+            return [
+              _c(
+                "div",
+                [
                   _c(
                     "v-list",
-                    { attrs: { nav: "" } },
                     [
                       _c(
                         "v-list-item",
-                        {
-                          on: {
-                            click: function($event) {
-                              return _vm.toggleMini()
-                            }
-                          }
-                        },
-                        [_c("v-icon", [_vm._v("mdi-chevron-right")])],
+                        [
+                          _c(
+                            "v-list-item-content",
+                            [
+                              _c("v-list-item-title", [
+                                _vm._v(
+                                  "\n                            Nama Admin Login\n                        "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("v-list-item-subtitle", [
+                                _vm._v(
+                                  "\n                            Email@domain.com\n                        "
+                                )
+                              ])
+                            ],
+                            1
+                          )
+                        ],
                         1
-                      ),
-                      _vm._v(" "),
-                      _c("v-list-item", [_c("v-icon", [_vm._v("mdi-cog")])], 1)
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider")
+                ],
+                1
+              )
+            ]
+          },
+          proxy: true
+        },
+        {
+          key: "append",
+          fn: function() {
+            return [
+              _c("v-divider"),
+              _vm._v(" "),
+              !_vm.minidrawer
+                ? _c(
+                    "v-row",
+                    [
+                      _c(
+                        "v-col",
+                        {
+                          staticClass: "mx-auto",
+                          staticStyle: { "max-width": "250px" },
+                          attrs: { cols: "12" }
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "flex-wrap d-flex" },
+                            [
+                              _c(
+                                "v-btn",
+                                {
+                                  attrs: { text: "", icon: "" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.openSettings()
+                                    }
+                                  }
+                                },
+                                [_c("v-icon", [_vm._v("mdi-cog")])],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-tooltip",
+                                {
+                                  attrs: { top: "" },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "activator",
+                                        fn: function(ref) {
+                                          var on = ref.on
+                                          var attrs = ref.attrs
+                                          return [
+                                            _c(
+                                              "v-btn",
+                                              _vm._g(
+                                                _vm._b(
+                                                  {
+                                                    attrs: {
+                                                      text: "",
+                                                      icon: ""
+                                                    },
+                                                    on: {
+                                                      click: _vm.toggleMode
+                                                    }
+                                                  },
+                                                  "v-btn",
+                                                  attrs,
+                                                  false
+                                                ),
+                                                on
+                                              ),
+                                              [
+                                                !_vm.$vuetify.theme.dark
+                                                  ? _c("v-icon", [
+                                                      _vm._v(
+                                                        "mdi-weather-night"
+                                                      )
+                                                    ])
+                                                  : _c("v-icon", [
+                                                      _vm._v(
+                                                        "mdi-weather-sunny"
+                                                      )
+                                                    ])
+                                              ],
+                                              1
+                                            )
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    null,
+                                    false,
+                                    4020381651
+                                  )
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c("span", [_vm._v("Ganti Tema")])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "d-inline-block" }, [
+                                _c(
+                                  "form",
+                                  {
+                                    staticClass: "wrap d-inline-block",
+                                    attrs: {
+                                      action:
+                                        _vm.$store.state.navbar.host + "logout",
+                                      method: "POST"
+                                    }
+                                  },
+                                  [
+                                    _c("input", {
+                                      attrs: { type: "hidden", name: "_token" },
+                                      domProps: {
+                                        value: _vm.$store.state.navbar.token
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-tooltip",
+                                      {
+                                        attrs: { top: "" },
+                                        scopedSlots: _vm._u(
+                                          [
+                                            {
+                                              key: "activator",
+                                              fn: function(ref) {
+                                                var on = ref.on
+                                                var attrs = ref.attrs
+                                                return [
+                                                  _c(
+                                                    "v-btn",
+                                                    _vm._g(
+                                                      _vm._b(
+                                                        {
+                                                          attrs: {
+                                                            text: "",
+                                                            icon: "",
+                                                            type: "submit"
+                                                          }
+                                                        },
+                                                        "v-btn",
+                                                        attrs,
+                                                        false
+                                                      ),
+                                                      on
+                                                    ),
+                                                    [
+                                                      _c("v-icon", [
+                                                        _vm._v("mdi-power")
+                                                      ])
+                                                    ],
+                                                    1
+                                                  )
+                                                ]
+                                              }
+                                            }
+                                          ],
+                                          null,
+                                          false,
+                                          973372267
+                                        )
+                                      },
+                                      [
+                                        _vm._v(" "),
+                                        _c("span", [_vm._v("Keluar")])
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "v-tooltip",
+                                {
+                                  attrs: { top: "" },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "activator",
+                                        fn: function(ref) {
+                                          var on = ref.on
+                                          var attrs = ref.attrs
+                                          return [
+                                            _c(
+                                              "v-btn",
+                                              _vm._g(
+                                                _vm._b(
+                                                  {
+                                                    staticClass: "ml-auto",
+                                                    attrs: {
+                                                      text: "",
+                                                      icon: ""
+                                                    },
+                                                    on: {
+                                                      click: _vm.toggleMini
+                                                    }
+                                                  },
+                                                  "v-btn",
+                                                  attrs,
+                                                  false
+                                                ),
+                                                on
+                                              ),
+                                              [
+                                                _c("v-icon", [
+                                                  _vm._v("mdi-chevron-left")
+                                                ])
+                                              ],
+                                              1
+                                            )
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    null,
+                                    false,
+                                    2843619524
+                                  )
+                                },
+                                [_vm._v(" "), _c("span", [_vm._v("Minimalis")])]
+                              )
+                            ],
+                            1
+                          )
+                        ]
+                      )
                     ],
                     1
                   )
-                ]
-          ]
+                : [
+                    _c(
+                      "v-list",
+                      { attrs: { nav: "" } },
+                      [
+                        _c(
+                          "v-list-item",
+                          {
+                            on: {
+                              click: function($event) {
+                                return _vm.toggleMini()
+                              }
+                            }
+                          },
+                          [_c("v-icon", [_vm._v("mdi-chevron-right")])],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-list-item",
+                          [_c("v-icon", [_vm._v("mdi-cog")])],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ]
+            ]
+          },
+          proxy: true
+        }
+      ]),
+      model: {
+        value: _vm.drawer,
+        callback: function($$v) {
+          _vm.drawer = $$v
         },
-        proxy: true
+        expression: "drawer"
       }
-    ]),
-    model: {
-      value: _vm.drawer,
-      callback: function($$v) {
-        _vm.drawer = $$v
-      },
-      expression: "drawer"
-    }
-  })
+    },
+    [_vm._v(" "), _c("sidebar-nav")],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

@@ -10,17 +10,22 @@
         dark>
         <template v-slot:prepend>
             <div>
-                <!-- <InfoAdmin>
-                    <v-list-item-action>
-                        <v-btn icon @click="toggleDrawerTambahan()">
-                            <v-icon>mdi-chevron-triple-left</v-icon>
-                        </v-btn>
-                    </v-list-item-action>
-                </InfoAdmin> -->
+                <v-list>
+                    <v-list-item>
+                        <v-list-item-content>
+                            <v-list-item-title>
+                                Nama Admin Login
+                            </v-list-item-title>
+                            <v-list-item-subtitle>
+                                Email@domain.com
+                            </v-list-item-subtitle>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
                 <v-divider/>
             </div>
         </template>
-        <!-- <sidebar-nav/> -->
+        <sidebar-nav/>
         <template v-slot:append>
             <v-divider/>
             <v-row v-if="!minidrawer">

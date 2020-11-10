@@ -1,5 +1,5 @@
 <template>    
-    <v-list-item>
+    <v-list-item v-bind="$attrs">
         <v-list-item-content>
             <v-list-item-subtitle>
                 {{ label }}

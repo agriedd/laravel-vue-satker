@@ -24,7 +24,7 @@
                                 <modal-tambah-bidang @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
                                 <modal-ubah-bidang @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
                                 <modal-hapus-bidang @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
-                                <!-- <modal-info-bidang @modal:info="openModal('info', $event)" @done="update(null)"/> -->
+                                <modal-info-bidang @modal:info="openModal('info', $event)" @done="update(null)"/>
                             </template>
                         </table-bidang>
                     </div>
@@ -39,7 +39,7 @@ import TableBidang from './TableBidang.vue'
 import ModalTambahBidang from './ModalTambahBidang.vue'
 import ModalUbahBidang from './ModalUbahBidang.vue'
 import ModalHapusBidang from './ModalHapusBidang.vue'
-// import ModalInfoPimpinan from './ModalInfoPimpinan.vue'
+import ModalInfoBidang from './ModalInfoBidang.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
@@ -48,7 +48,7 @@ export default {
         ModalTambahBidang,
         ModalUbahBidang,
         ModalHapusBidang,
-        // ModalInfoPimpinan,
+        ModalInfoBidang,
     },
     computed: {
     },

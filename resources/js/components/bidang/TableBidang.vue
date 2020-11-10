@@ -22,11 +22,6 @@
                     <info-satker-hover :value="item.satker"/>
                 </v-menu>
             </template>
-            <template #item.tanggal_lahir="{ item }">
-                <div>
-                    {{ item.tempat_lahir }}, {{ item.tanggal_lahir }}
-                </div>
-            </template>
             <template #item.action="{ item }">
                 <v-btn icon @click="openModal('ubah', item.id_pimpinan)">
                     <v-icon small>mdi-pencil</v-icon>
@@ -54,11 +49,10 @@ export default {
         return {
             items: [],
             headers: [
-                { text: 'NIP', align: 'start', sortable: true, value: 'nip' },
-                { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
+                { text: 'ID', align: 'start', sortable: true, value: 'id_bidang' },
+                { text: 'Nama Bidang', align: 'start', sortable: true, value: 'nama_bidang' },
+                { text: 'Nama Kepala', align: 'start', sortable: true, value: 'nama_kepala_b' },
                 { text: 'Satker', align: 'start', sortable: true, value: 'id_satker' },
-                { text: 'TTL', align: 'start', sortable: true, value: 'tanggal_lahir' },
-                { text: 'Pangkat', align: 'start', sortable: true, value: 'pangkat' },
                 { text: '', align: 'end', sortable: false, value: 'action' },
             ],
             options: {
@@ -83,12 +77,12 @@ export default {
     },
     methods: {
         ...mapActions({
-            getPimpinan: 'pimpinan/get',
+            getBidang: 'bidang/get',
         }),
         async getData(){
             this.loading = true
 
-            let res = await this.getPimpinan({...this.options, search: this.search}).catch(e => {
+            let res = await this.getBidang({...this.options, search: this.search}).catch(e => {
                 this.snackbar.status = true
                 this.snackbar.message = e.message
                 this.loading = false

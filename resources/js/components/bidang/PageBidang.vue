@@ -15,18 +15,18 @@
                     </v-toolbar>
                     <v-divider/>
                     <div>
-                        <!-- <table-bidang 
+                        <table-bidang 
                             @modal:tambah="openModal('tambah')" 
                             @modal:ubah="openModal('ubah', true, $event)" 
                             @modal:hapus="openModal('hapus', true, $event)"
                             @modal:info="openModal('info', true, $event)">
                             <template #default="{ update }">
-                                <modal-tambah-bidang @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
+                                <!-- <modal-tambah-bidang @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
                                 <modal-ubah-bidang @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
                                 <modal-hapus-bidang @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
-                                <modal-info-bidang @modal:info="openModal('info', $event)" @done="update(null)"/>
+                                <modal-info-bidang @modal:info="openModal('info', $event)" @done="update(null)"/> -->
                             </template>
-                        </table-bidang> -->
+                        </table-bidang>
                     </div>
                 </v-card>
             </v-container>
@@ -35,7 +35,7 @@
 </template>
 <script>
 import AppBar from '../AppBar/AppBarDefault.vue'
-// import TablePimpinan from './TablePimpinan.vue'
+import TableBidang from './TableBidang.vue'
 // import ModalTambahPimpinan from './ModalTambahPimpinan.vue'
 // import ModalUbahPimpinan from './ModalUbahPimpinan.vue'
 // import ModalHapusPimpinan from './ModalHapusPimpinan.vue'
@@ -44,7 +44,7 @@ import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
         AppBar,
-        // TablePimpinan,
+        TableBidang,
         // ModalTambahPimpinan,
         // ModalUbahPimpinan,
         // ModalHapusPimpinan,

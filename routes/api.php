@@ -23,4 +23,5 @@ Route::resources([
     'satker' => 'Api\SatkerController',
     'struktur' => 'Api\StrukturController',
     'pimpinan' => 'Api\PimpinanController',
+    'bidang' => 'Api\BidangController',
 ]);

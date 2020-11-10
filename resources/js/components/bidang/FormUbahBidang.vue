@@ -10,47 +10,36 @@
         </div>
         <div>
             <v-text-field
-                label="NIP" 
-                name="nip" 
-                :error-messages="errors.nip"
-                @change="clear('nip')"
-                v-model="form.nip"/>
+                label="Nama Kepala Bidang" 
+                name="nama_kepala_b" 
+                :error-messages="errors.nama_kepala_b"
+                @change="clear('nama_kepala_b')"
+                append-icon="mdi-acount"
+                v-model="form.nama_kepala_b"/>
         </div>
         <div>
             <v-text-field
-                label="Nama" 
-                name="nama" 
-                :error-messages="errors.nama"
-                @change="clear('nama')"
-                v-model="form.nama"/>
+                label="Nama Bidang" 
+                name="nama_bidang" 
+                :error-messages="errors.nama_bidang"
+                @change="clear('nama_bidang')"
+                v-model="form.nama_bidang"/>
+        </div>
+        <div>
+            <v-textarea
+                label="Visi dan Misi" 
+                name="visi_misi" 
+                :error-messages="errors.visi_misi"
+                @change="clear('visi_misi')"
+                v-model="form.visi_misi"/>
         </div>
         <div>
             <v-text-field
-                label="Pangkat Atau Golongan" 
-                name="pangkat" 
-                :error-messages="errors.pangkat"
-                @change="clear('pangkat')"
-                v-model="form.pangkat"/>
-        </div>
-        <div>
-            <v-text-field
-                label="Tempat Lahir" 
-                name="tempat_lahir" 
-                :error-messages="errors.tempat_lahir"
-                @change="clear('tempat_lahir')"
-                v-model="form.tempat_lahir"/>
-        </div>
-        <div>
-            <input-tanggal-lahir @clear:error="clear('tanggal_lahir')" :errors="errors" v-model="form.tanggal_lahir"/>
-        </div>
-        <div>
-            <v-text-field 
-                label="Alamat" 
-                name="alamat" 
-                :error-messages="errors.alamat" 
-                @change="clear('alamat')"
-                append-icon="mdi-map-marker"
-                v-model="form.alamat"/>
+                label="Tujuan" 
+                name="tujuan" 
+                :error-messages="errors.tujuan"
+                @change="clear('tujuan')"
+                v-model="form.tujuan"/>
         </div>
     </div>
 </template>
@@ -71,16 +60,16 @@ export default {
     },
     computed: {
         ...mapState({
-            errors: state => state.pimpinan.errors,
-            id: state => state.pimpinan.selected.id,
+            errors: state => state.bidang.errors,
+            id: state => state.bidang.selected.id,
         }),
     },
     methods: {
         ...mapMutations({
-            clear: 'pimpinan/CLEAR_ERROR'
+            clear: 'bidang/CLEAR_ERROR'
         }),
         ...mapActions({
-            showSatker: 'pimpinan/show',
+            showSatker: 'bidang/show',
         }),
         async getData(){
             

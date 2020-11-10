@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Bidang;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestStoreBidang;
+use App\Http\Requests\RequestUpdateBidang;
 use App\Http\Resources\BidangCollection;
 use App\Response\Res;
 use Illuminate\Http\Request;
@@ -36,27 +37,15 @@ class BidangController extends Controller{
         );
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function show(Bidang $bidang){
+        return new BidangCollection($bidang);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(RequestUpdateBidang $request, Bidang $bidang){
+        $data = $request->validated();
+        return Res::update(
+            $bidang->update($data)
+        );
     }
 
     /**

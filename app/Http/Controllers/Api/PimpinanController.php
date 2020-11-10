@@ -43,7 +43,7 @@ class PimpinanController extends Controller{
 
     public function update(RequestUpdatePimpinan $request, Pimpinan $pimpinan){
         $data = $request->validated();
-        return Res::store(
+        return Res::update(
             $pimpinan->update($data)
         );
     }

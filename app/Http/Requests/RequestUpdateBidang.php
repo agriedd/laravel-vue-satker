@@ -13,7 +13,7 @@ class RequestUpdateBidang extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class RequestUpdateBidang extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nama_bidang'       => 'required',
+            'nama_kepala_b'     => 'required',
+            'id_satker'         => 'required|exists:satker_1,id_satker',
+            'visi_misi'         => 'required',
+            'tujuan'            => 'required',
         ];
     }
 }

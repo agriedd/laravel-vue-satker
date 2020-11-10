@@ -34,6 +34,7 @@ export default {
                 //     { title: "Nikah", icon: "mdi-ring", link: "/admin/laporan/nikah"},
                 // ] },
                 { title: "Struktur", icon: "mdi-bookmark", link: "/admin/struktur"},
+                { title: "Pimpinan", icon: "mdi-account", link: "/admin/pimpinan"},
                 { title: "Admin", icon: "mdi-shield-account-variant", link: "/admin/admin"},
             ],
             listgroup: [

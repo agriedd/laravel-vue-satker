@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestStoreStruktur;
+use App\Http\Requests\RequestUpdateStruktur;
 use App\Http\Resources\StrukturCollection;
 use App\Response\Res;
 use App\StrukturOrganisasi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class StrukturController extends Controller{
 
@@ -37,37 +39,28 @@ class StrukturController extends Controller{
         );
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function show(StrukturOrganisasi $struktur){
+        return new StrukturCollection($struktur);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(RequestUpdateStruktur $request, StrukturOrganisasi $struktur){
+        $data = $request->validated();
+        if($request->gambar){
+            $nama_gambar_old = $struktur->gambar;
+            $nama_gambar = $request->gambar->store('/struktur', 'public');
+            $data['gambar'] = $nama_gambar;
+            if($nama_gambar && Storage::disk('public')->exists($nama_gambar_old)){
+                Storage::disk('public')->delete($nama_gambar_old);
+            }
+        }
+        return Res::update(
+            $struktur->update($data)
+        );
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function destroy(StrukturOrganisasi $struktur){
+        return Res::delete(
+            $struktur->delete()
+        );
     }
 }

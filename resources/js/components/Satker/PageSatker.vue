@@ -19,7 +19,7 @@
                             <template #default="{ update }">
                                 <modal-tambah-satker @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
                                 <modal-ubah-satker @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
-                                <!-- <modal-hapus-admin @modal:hapus="openModal('hapus', $event)" @done="update(null)"/> -->
+                                <modal-hapus-satker @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
                             </template>
                         </table-satker>
                     </div>
@@ -33,7 +33,7 @@ import AppBar from '../AppBar/AppBarDefault.vue'
 import TableSatker from './TableSatker.vue'
 import ModalTambahSatker from './ModalTambahSatker.vue'
 import ModalUbahSatker from './ModalUbahSatker.vue'
-// import ModalHapusAdmin from './ModalHapusAdmin.vue'
+import ModalHapusSatker from './ModalHapusSatker.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
@@ -41,7 +41,7 @@ export default {
         TableSatker,
         ModalTambahSatker,
         ModalUbahSatker,
-        // ModalHapusAdmin,
+        ModalHapusSatker,
     },
     computed: {
     },

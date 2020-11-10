@@ -2,10 +2,13 @@
     <div class="px-3">
         <div>
             <h3>
-                {{ admin.nama }}
+                {{ satker.nama }}
             </h3>
             <div>
-                {{ admin.email }}
+                {{ satker.iso }}
+            </div>
+            <div>
+                {{ satker.status }}
             </div>
         </div>
         <div class="pt-10">
@@ -20,27 +23,27 @@ import { mapActions, mapMutations, mapState } from 'vuex'
 export default {
     data(){
         return {
-            admin: {},
+            satker: {},
         }
     },
     computed: {
         ...mapState({
-            errors: state => state.admin.errors,
-            id: state => state.admin.selected.id,
+            errors: state => state.satker.errors,
+            id: state => state.satker.selected.id,
         }),
     },
     methods: {
         ...mapMutations({
-            clear: 'admin/CLEAR_ERROR'
+            clear: 'satker/CLEAR_ERROR'
         }),
         ...mapActions({
-            showAdmin: 'admin/show',
+            showsatker: 'satker/show',
         }),
         async getData(){
             
             this.$emit('loading', true)
 
-            let res = await this.showAdmin({id: this.id}).catch(e => {
+            let res = await this.showsatker({id: this.id}).catch(e => {
                 this.$emit('loading', false)
             })
             this.$emit('loading', false)
@@ -48,7 +51,7 @@ export default {
                 let data = res.data.data
                 for (const key in data) {
                     if (data.hasOwnProperty(key)) {
-                        this.$set(this.admin, key, data[key])
+                        this.$set(this.satker, key, data[key])
                     }
                 }
             }

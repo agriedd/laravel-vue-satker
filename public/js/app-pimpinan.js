@@ -2083,6 +2083,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2095,7 +2097,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       items: [],
-      headers_: [{
+      headers: [{
         text: 'ID',
         align: 'start',
         sortable: true,
@@ -2146,20 +2148,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       lazyTransition: null
     };
   },
-  computed: {
-    headers: function headers() {
-      var _this = this;
-
-      return this.headers_.filter(function (e) {
-        return e.value != 'action' && _this.pimpinan;
-      });
-    }
-  },
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
     getBidang: 'kegiatan/get'
   })), {}, {
     getData: function getData() {
-      var _this2 = this;
+      var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var res, meta;
@@ -2167,30 +2160,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this2.loading = true;
+                _this.loading = true;
                 _context.next = 3;
-                return _this2.getBidang(_objectSpread(_objectSpread({}, _this2.options), {}, {
-                  search: _this2.search
+                return _this.getBidang(_objectSpread(_objectSpread({}, _this.options), {}, {
+                  search: _this.search
                 }))["catch"](function (e) {
-                  _this2.snackbar.status = true;
-                  _this2.snackbar.message = e.message;
-                  _this2.loading = false;
+                  _this.snackbar.status = true;
+                  _this.snackbar.message = e.message;
+                  _this.loading = false;
                 });
 
               case 3:
                 res = _context.sent;
-                _this2.loading = false;
+                _this.loading = false;
 
                 if (res) {
-                  _this2.items = res.data.data;
+                  _this.items = res.data.data;
                   meta = res.data.meta;
-                  _this2.options = _objectSpread(_objectSpread({}, _this2.options), {}, {
+                  _this.options = _objectSpread(_objectSpread({}, _this.options), {}, {
                     page: parseInt(meta.current_page),
                     itemsPerPage: parseInt(meta.per_page),
                     mustSort: false,
                     multiSort: false
                   });
-                  _this2.total = parseInt(meta.total);
+                  _this.total = parseInt(meta.total);
                 }
 
               case 6:
@@ -2205,12 +2198,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.getData();
     },
     lazy: function lazy(callback) {
-      var _this3 = this;
+      var _this2 = this;
 
       if (this.lazyTransition) clearTimeout(this.lazyTransition);
       this.lazyTransition = setTimeout(function () {
         callback();
-        _this3.lazyTransition = null;
+        _this2.lazyTransition = null;
       }, 800);
     },
     openModal: function openModal(t) {
@@ -2220,10 +2213,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }),
   watch: {
     search: function search(val, old) {
-      var _this4 = this;
+      var _this3 = this;
 
       if (val != old) this.lazy(function (_) {
-        return _this4.getData();
+        return _this3.getData();
       });
     }
   },
@@ -2470,6 +2463,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2482,7 +2477,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       items: [],
-      headers_: [{
+      headers: [{
         text: 'ID',
         align: 'start',
         sortable: true,
@@ -2538,20 +2533,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       lazyTransition: null
     };
   },
-  computed: {
-    headers: function headers() {
-      var _this = this;
-
-      return this.headers_.filter(function (e) {
-        return e.value != 'action' && _this.pimpinan;
-      });
-    }
-  },
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
     getBidang: 'petugas/get'
   })), {}, {
     getData: function getData() {
-      var _this2 = this;
+      var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var res, meta;
@@ -2559,30 +2545,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this2.loading = true;
+                _this.loading = true;
                 _context.next = 3;
-                return _this2.getBidang(_objectSpread(_objectSpread({}, _this2.options), {}, {
-                  search: _this2.search
+                return _this.getBidang(_objectSpread(_objectSpread({}, _this.options), {}, {
+                  search: _this.search
                 }))["catch"](function (e) {
-                  _this2.snackbar.status = true;
-                  _this2.snackbar.message = e.message;
-                  _this2.loading = false;
+                  _this.snackbar.status = true;
+                  _this.snackbar.message = e.message;
+                  _this.loading = false;
                 });
 
               case 3:
                 res = _context.sent;
-                _this2.loading = false;
+                _this.loading = false;
 
                 if (res) {
-                  _this2.items = res.data.data;
+                  _this.items = res.data.data;
                   meta = res.data.meta;
-                  _this2.options = _objectSpread(_objectSpread({}, _this2.options), {}, {
+                  _this.options = _objectSpread(_objectSpread({}, _this.options), {}, {
                     page: parseInt(meta.current_page),
                     itemsPerPage: parseInt(meta.per_page),
                     mustSort: false,
                     multiSort: false
                   });
-                  _this2.total = parseInt(meta.total);
+                  _this.total = parseInt(meta.total);
                 }
 
               case 6:
@@ -2597,12 +2583,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.getData();
     },
     lazy: function lazy(callback) {
-      var _this3 = this;
+      var _this2 = this;
 
       if (this.lazyTransition) clearTimeout(this.lazyTransition);
       this.lazyTransition = setTimeout(function () {
         callback();
-        _this3.lazyTransition = null;
+        _this2.lazyTransition = null;
       }, 800);
     },
     openModal: function openModal(t) {
@@ -2612,10 +2598,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }),
   watch: {
     search: function search(val, old) {
-      var _this4 = this;
+      var _this3 = this;
 
       if (val != old) this.lazy(function (_) {
-        return _this4.getData();
+        return _this3.getData();
       });
     }
   },
@@ -2749,6 +2735,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2761,7 +2749,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       items: [],
-      headers_: [{
+      headers: [{
         text: 'ID',
         align: 'start',
         sortable: true,
@@ -2812,20 +2800,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       lazyTransition: null
     };
   },
-  computed: {
-    headers: function headers() {
-      var _this = this;
-
-      return this.headers_.filter(function (e) {
-        return e.value != 'action' && _this.pimpinan;
-      });
-    }
-  },
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
     getSatker: 'satker/get'
   })), {}, {
     getData: function getData() {
-      var _this2 = this;
+      var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var res, meta;
@@ -2833,30 +2812,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this2.loading = true;
+                _this.loading = true;
                 _context.next = 3;
-                return _this2.getSatker(_objectSpread(_objectSpread({}, _this2.options), {}, {
-                  search: _this2.search
+                return _this.getSatker(_objectSpread(_objectSpread({}, _this.options), {}, {
+                  search: _this.search
                 }))["catch"](function (e) {
-                  _this2.snackbar.status = true;
-                  _this2.snackbar.message = e.message;
-                  _this2.loading = false;
+                  _this.snackbar.status = true;
+                  _this.snackbar.message = e.message;
+                  _this.loading = false;
                 });
 
               case 3:
                 res = _context.sent;
-                _this2.loading = false;
+                _this.loading = false;
 
                 if (res) {
-                  _this2.items = res.data.data;
+                  _this.items = res.data.data;
                   meta = res.data.meta;
-                  _this2.options = _objectSpread(_objectSpread({}, _this2.options), {}, {
+                  _this.options = _objectSpread(_objectSpread({}, _this.options), {}, {
                     page: parseInt(meta.current_page),
                     itemsPerPage: parseInt(meta.per_page),
                     mustSort: false,
                     multiSort: false
                   });
-                  _this2.total = parseInt(meta.total);
+                  _this.total = parseInt(meta.total);
                 }
 
               case 6:
@@ -2871,12 +2850,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.getData();
     },
     lazy: function lazy(callback) {
-      var _this3 = this;
+      var _this2 = this;
 
       if (this.lazyTransition) clearTimeout(this.lazyTransition);
       this.lazyTransition = setTimeout(function () {
         callback();
-        _this3.lazyTransition = null;
+        _this2.lazyTransition = null;
       }, 800);
     },
     openModal: function openModal(t) {
@@ -2886,10 +2865,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }),
   watch: {
     search: function search(val, old) {
-      var _this4 = this;
+      var _this3 = this;
 
       if (val != old) this.lazy(function (_) {
-        return _this4.getData();
+        return _this3.getData();
       });
     }
   },
@@ -2975,6 +2954,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2987,7 +2968,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       items: [],
-      headers_: [{
+      headers: [{
         text: 'ID',
         align: 'start',
         sortable: true,
@@ -3028,20 +3009,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       lazyTransition: null
     };
   },
-  computed: {
-    headers: function headers() {
-      var _this = this;
-
-      return this.headers_.filter(function (e) {
-        return e.value != 'action' && _this.pimpinan;
-      });
-    }
-  },
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
     getStruktur: 'struktur/get'
   })), {}, {
     getData: function getData() {
-      var _this2 = this;
+      var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var res, meta;
@@ -3049,30 +3021,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this2.loading = true;
+                _this.loading = true;
                 _context.next = 3;
-                return _this2.getStruktur(_objectSpread(_objectSpread({}, _this2.options), {}, {
-                  search: _this2.search
+                return _this.getStruktur(_objectSpread(_objectSpread({}, _this.options), {}, {
+                  search: _this.search
                 }))["catch"](function (e) {
-                  _this2.snackbar.status = true;
-                  _this2.snackbar.message = e.message;
-                  _this2.loading = false;
+                  _this.snackbar.status = true;
+                  _this.snackbar.message = e.message;
+                  _this.loading = false;
                 });
 
               case 3:
                 res = _context.sent;
-                _this2.loading = false;
+                _this.loading = false;
 
                 if (res) {
-                  _this2.items = res.data.data;
+                  _this.items = res.data.data;
                   meta = res.data.meta;
-                  _this2.options = _objectSpread(_objectSpread({}, _this2.options), {}, {
+                  _this.options = _objectSpread(_objectSpread({}, _this.options), {}, {
                     page: parseInt(meta.current_page),
                     itemsPerPage: parseInt(meta.per_page),
                     mustSort: false,
                     multiSort: false
                   });
-                  _this2.total = parseInt(meta.total);
+                  _this.total = parseInt(meta.total);
                 }
 
               case 6:
@@ -3087,12 +3059,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.getData();
     },
     lazy: function lazy(callback) {
-      var _this3 = this;
+      var _this2 = this;
 
       if (this.lazyTransition) clearTimeout(this.lazyTransition);
       this.lazyTransition = setTimeout(function () {
         callback();
-        _this3.lazyTransition = null;
+        _this2.lazyTransition = null;
       }, 800);
     },
     openModal: function openModal(t) {
@@ -3102,10 +3074,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }),
   watch: {
     search: function search(val, old) {
-      var _this4 = this;
+      var _this3 = this;
 
       if (val != old) this.lazy(function (_) {
-        return _this4.getData();
+        return _this3.getData();
       });
     }
   },
@@ -4284,6 +4256,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4296,7 +4270,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       items: [],
-      headers_: [{
+      headers: [{
         text: 'ID',
         align: 'start',
         sortable: true,
@@ -4342,20 +4316,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       lazyTransition: null
     };
   },
-  computed: {
-    headers: function headers() {
-      var _this = this;
-
-      return this.headers_.filter(function (e) {
-        return e.value != 'action' && _this.pimpinan;
-      });
-    }
-  },
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
     getBidang: 'bidang/get'
   })), {}, {
     getData: function getData() {
-      var _this2 = this;
+      var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var res, meta;
@@ -4363,30 +4328,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this2.loading = true;
+                _this.loading = true;
                 _context.next = 3;
-                return _this2.getBidang(_objectSpread(_objectSpread({}, _this2.options), {}, {
-                  search: _this2.search
+                return _this.getBidang(_objectSpread(_objectSpread({}, _this.options), {}, {
+                  search: _this.search
                 }))["catch"](function (e) {
-                  _this2.snackbar.status = true;
-                  _this2.snackbar.message = e.message;
-                  _this2.loading = false;
+                  _this.snackbar.status = true;
+                  _this.snackbar.message = e.message;
+                  _this.loading = false;
                 });
 
               case 3:
                 res = _context.sent;
-                _this2.loading = false;
+                _this.loading = false;
 
                 if (res) {
-                  _this2.items = res.data.data;
+                  _this.items = res.data.data;
                   meta = res.data.meta;
-                  _this2.options = _objectSpread(_objectSpread({}, _this2.options), {}, {
+                  _this.options = _objectSpread(_objectSpread({}, _this.options), {}, {
                     page: parseInt(meta.current_page),
                     itemsPerPage: parseInt(meta.per_page),
                     mustSort: false,
                     multiSort: false
                   });
-                  _this2.total = parseInt(meta.total);
+                  _this.total = parseInt(meta.total);
                 }
 
               case 6:
@@ -4401,12 +4366,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.getData();
     },
     lazy: function lazy(callback) {
-      var _this3 = this;
+      var _this2 = this;
 
       if (this.lazyTransition) clearTimeout(this.lazyTransition);
       this.lazyTransition = setTimeout(function () {
         callback();
-        _this3.lazyTransition = null;
+        _this2.lazyTransition = null;
       }, 800);
     },
     openModal: function openModal(t) {
@@ -4416,10 +4381,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }),
   watch: {
     search: function search(val, old) {
-      var _this4 = this;
+      var _this3 = this;
 
       if (val != old) this.lazy(function (_) {
-        return _this4.getData();
+        return _this3.getData();
       });
     }
   },
@@ -42582,41 +42547,45 @@ var render = function() {
             fn: function(ref) {
               var item = ref.item
               return [
-                _c(
-                  "v-btn",
-                  {
-                    attrs: { icon: "" },
-                    on: {
-                      click: function($event) {
-                        return _vm.openModal("ubah", item.id_kegiatan)
-                      }
-                    }
-                  },
-                  [
-                    _c("v-icon", { attrs: { small: "" } }, [
-                      _vm._v("mdi-pencil")
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-btn",
-                  {
-                    attrs: { icon: "" },
-                    on: {
-                      click: function($event) {
-                        return _vm.openModal("hapus", item.id_kegiatan)
-                      }
-                    }
-                  },
-                  [
-                    _c("v-icon", { attrs: { small: "" } }, [
-                      _vm._v("mdi-delete")
-                    ])
-                  ],
-                  1
-                ),
+                !_vm.pimpinan
+                  ? [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          on: {
+                            click: function($event) {
+                              return _vm.openModal("ubah", item.id_kegiatan)
+                            }
+                          }
+                        },
+                        [
+                          _c("v-icon", { attrs: { small: "" } }, [
+                            _vm._v("mdi-pencil")
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          on: {
+                            click: function($event) {
+                              return _vm.openModal("hapus", item.id_kegiatan)
+                            }
+                          }
+                        },
+                        [
+                          _c("v-icon", { attrs: { small: "" } }, [
+                            _vm._v("mdi-delete")
+                          ])
+                        ],
+                        1
+                      )
+                    ]
+                  : _vm._e(),
                 _vm._v(" "),
                 _c(
                   "v-btn",
@@ -43077,41 +43046,45 @@ var render = function() {
             fn: function(ref) {
               var item = ref.item
               return [
-                _c(
-                  "v-btn",
-                  {
-                    attrs: { icon: "" },
-                    on: {
-                      click: function($event) {
-                        return _vm.openModal("ubah", item.id_petugas)
-                      }
-                    }
-                  },
-                  [
-                    _c("v-icon", { attrs: { small: "" } }, [
-                      _vm._v("mdi-pencil")
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-btn",
-                  {
-                    attrs: { icon: "" },
-                    on: {
-                      click: function($event) {
-                        return _vm.openModal("hapus", item.id_petugas)
-                      }
-                    }
-                  },
-                  [
-                    _c("v-icon", { attrs: { small: "" } }, [
-                      _vm._v("mdi-delete")
-                    ])
-                  ],
-                  1
-                ),
+                !_vm.pimpinan
+                  ? [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          on: {
+                            click: function($event) {
+                              return _vm.openModal("ubah", item.id_petugas)
+                            }
+                          }
+                        },
+                        [
+                          _c("v-icon", { attrs: { small: "" } }, [
+                            _vm._v("mdi-pencil")
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          on: {
+                            click: function($event) {
+                              return _vm.openModal("hapus", item.id_petugas)
+                            }
+                          }
+                        },
+                        [
+                          _c("v-icon", { attrs: { small: "" } }, [
+                            _vm._v("mdi-delete")
+                          ])
+                        ],
+                        1
+                      )
+                    ]
+                  : _vm._e(),
                 _vm._v(" "),
                 _c(
                   "v-btn",
@@ -43472,41 +43445,45 @@ var render = function() {
             fn: function(ref) {
               var item = ref.item
               return [
-                _c(
-                  "v-btn",
-                  {
-                    attrs: { icon: "" },
-                    on: {
-                      click: function($event) {
-                        return _vm.openModal("ubah", item.id_satker)
-                      }
-                    }
-                  },
-                  [
-                    _c("v-icon", { attrs: { small: "" } }, [
-                      _vm._v("mdi-pencil")
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-btn",
-                  {
-                    attrs: { icon: "" },
-                    on: {
-                      click: function($event) {
-                        return _vm.openModal("hapus", item.id_satker)
-                      }
-                    }
-                  },
-                  [
-                    _c("v-icon", { attrs: { small: "" } }, [
-                      _vm._v("mdi-delete")
-                    ])
-                  ],
-                  1
-                ),
+                !_vm.pimpinan
+                  ? [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          on: {
+                            click: function($event) {
+                              return _vm.openModal("ubah", item.id_satker)
+                            }
+                          }
+                        },
+                        [
+                          _c("v-icon", { attrs: { small: "" } }, [
+                            _vm._v("mdi-pencil")
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          on: {
+                            click: function($event) {
+                              return _vm.openModal("hapus", item.id_satker)
+                            }
+                          }
+                        },
+                        [
+                          _c("v-icon", { attrs: { small: "" } }, [
+                            _vm._v("mdi-delete")
+                          ])
+                        ],
+                        1
+                      )
+                    ]
+                  : _vm._e(),
                 _vm._v(" "),
                 _c(
                   "v-btn",
@@ -43733,41 +43710,45 @@ var render = function() {
             fn: function(ref) {
               var item = ref.item
               return [
-                _c(
-                  "v-btn",
-                  {
-                    attrs: { icon: "" },
-                    on: {
-                      click: function($event) {
-                        return _vm.openModal("ubah", item.id_struktur)
-                      }
-                    }
-                  },
-                  [
-                    _c("v-icon", { attrs: { small: "" } }, [
-                      _vm._v("mdi-pencil")
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-btn",
-                  {
-                    attrs: { icon: "" },
-                    on: {
-                      click: function($event) {
-                        return _vm.openModal("hapus", item.id_struktur)
-                      }
-                    }
-                  },
-                  [
-                    _c("v-icon", { attrs: { small: "" } }, [
-                      _vm._v("mdi-delete")
-                    ])
-                  ],
-                  1
-                ),
+                !_vm.pimpinan
+                  ? [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          on: {
+                            click: function($event) {
+                              return _vm.openModal("ubah", item.id_struktur)
+                            }
+                          }
+                        },
+                        [
+                          _c("v-icon", { attrs: { small: "" } }, [
+                            _vm._v("mdi-pencil")
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          on: {
+                            click: function($event) {
+                              return _vm.openModal("hapus", item.id_struktur)
+                            }
+                          }
+                        },
+                        [
+                          _c("v-icon", { attrs: { small: "" } }, [
+                            _vm._v("mdi-delete")
+                          ])
+                        ],
+                        1
+                      )
+                    ]
+                  : _vm._e(),
                 _vm._v(" "),
                 _c(
                   "v-btn",
@@ -45115,41 +45096,45 @@ var render = function() {
             fn: function(ref) {
               var item = ref.item
               return [
-                _c(
-                  "v-btn",
-                  {
-                    attrs: { icon: "" },
-                    on: {
-                      click: function($event) {
-                        return _vm.openModal("ubah", item.id_bidang)
-                      }
-                    }
-                  },
-                  [
-                    _c("v-icon", { attrs: { small: "" } }, [
-                      _vm._v("mdi-pencil")
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-btn",
-                  {
-                    attrs: { icon: "" },
-                    on: {
-                      click: function($event) {
-                        return _vm.openModal("hapus", item.id_bidang)
-                      }
-                    }
-                  },
-                  [
-                    _c("v-icon", { attrs: { small: "" } }, [
-                      _vm._v("mdi-delete")
-                    ])
-                  ],
-                  1
-                ),
+                !_vm.pimpinan
+                  ? [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          on: {
+                            click: function($event) {
+                              return _vm.openModal("ubah", item.id_bidang)
+                            }
+                          }
+                        },
+                        [
+                          _c("v-icon", { attrs: { small: "" } }, [
+                            _vm._v("mdi-pencil")
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { icon: "" },
+                          on: {
+                            click: function($event) {
+                              return _vm.openModal("hapus", item.id_bidang)
+                            }
+                          }
+                        },
+                        [
+                          _c("v-icon", { attrs: { small: "" } }, [
+                            _vm._v("mdi-delete")
+                          ])
+                        ],
+                        1
+                      )
+                    ]
+                  : _vm._e(),
                 _vm._v(" "),
                 _c(
                   "v-btn",

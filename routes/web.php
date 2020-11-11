@@ -26,6 +26,6 @@ Route::middleware('auth:web')->prefix('/admin')->group(function($app){
     Route::get('/{any}', 'AdminController@index')->where('any', '.*');
 });
 Route::middleware('auth:pimpinan')->prefix('/pimpinan')->group(function($app){
-    Route::get('/', 'PimpinanController@index')->name('admin');
+    Route::get('/', 'PimpinanController@index')->name('admin.pimpinan');
     Route::get('/{any}', 'PimpinanController@index')->where('any', '.*');
 });

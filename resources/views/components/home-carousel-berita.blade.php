@@ -2,7 +2,7 @@
     <div class="h-100 grid-carousel-berita--main bg-white p-lg-4 pt-lg-5 position-relative" style="background-image: url('{{ asset('img/random.jpg') }}'); background-size: cover; background-position: center">
         <div class="position-absolute h-100 w-100" style="background: rgba(0, 0, 0, .5); top: 0; left: 0;"></div>
         <div class="position-relative h-100 d-flex justify-content-end flex-column">
-            <div class="text-justify w-100 text-white pl-lg-3">
+            <div class="text-justify w-100 text-white pl-lg-3 p-3">
                 <h4 style="font-family: Roboto">
                     {{ $kegiatan->first()->nama_kegiatan }}
                 </h4>

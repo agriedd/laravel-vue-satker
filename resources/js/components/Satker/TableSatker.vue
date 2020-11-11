@@ -43,12 +43,14 @@
                 </v-chip>
             </template>
             <template #item.action="{ item }">
-                <v-btn icon @click="openModal('ubah', item.id_satker)">
-                    <v-icon small>mdi-pencil</v-icon>
-                </v-btn>
-                <v-btn icon @click="openModal('hapus', item.id_satker)">
-                    <v-icon small>mdi-delete</v-icon>
-                </v-btn>
+                <template v-if="!pimpinan">
+                    <v-btn icon @click="openModal('ubah', item.id_satker)">
+                        <v-icon small>mdi-pencil</v-icon>
+                    </v-btn>
+                    <v-btn icon @click="openModal('hapus', item.id_satker)">
+                        <v-icon small>mdi-delete</v-icon>
+                    </v-btn>
+                </template>
                 <v-btn icon @click="openModal('info', item.id_satker)">
                     <v-icon small>mdi-arrow-left</v-icon>
                 </v-btn>
@@ -71,7 +73,7 @@ export default {
     data(){
         return {
             items: [],
-            headers_: [
+            headers: [
                 { text: 'ID', align: 'start', sortable: true, value: 'id_satker' },
                 { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
                 { text: 'Alamat', align: 'start', sortable: true, value: 'alamat' },
@@ -97,11 +99,6 @@ export default {
                 message: "Error!",
             },
             lazyTransition: null,
-        }
-    },
-    computed: {
-        headers(){
-            return this.headers_.filter(e => e.value != 'action' && this.pimpinan)
         }
     },
     methods: {

@@ -5,18 +5,12 @@
                 <li data-target="#carouselExampleSlidesOnly" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleSlidesOnly" data-slide-to="1"></li>
                 <li data-target="#carouselExampleSlidesOnly" data-slide-to="2"></li>
-                <li data-target="#carouselExampleSlidesOnly" data-slide-to="3"></li>
-                <li data-target="#carouselExampleSlidesOnly" data-slide-to="4"></li>
             </ol>
-            <div class="carousel-item active" style="background-image: url('{{ asset('img/bg.jpg') }}'); background-position: 10% center; background-size: cover"></div>
-            <div class="carousel-item" style="background: #dee2e6 !important;">
-                <div class="d-flex flex-column h-100">
-                    <x-home-carousel-profil></x-home-carousel-profil>
-                </div>
-            </div>
-            <div class="carousel-item" style="background: #dee2e6 !important;">
-                <div class="d-flex flex-column h-100">
-                    <x-home-carousel-renungan></x-home-carousel-renungan>
+            <div class="carousel-item active" style="background-image: url('{{ asset('img/bg.jpg') }}'); background-position: 10% center; background-size: cover">
+                <div class="h-100 d-flex flex-column justify-content-center text-white p-4" style="max-width: 500px">
+                    <h3 class="font-weight-bold">
+                        Website Dinas Pekerjaan Umum dan Perumahan Rakyat Satuan Kerja Wilayah 1 Provinsi Nusa Tenggara Timur
+                    </h3>
                 </div>
             </div>
             <div class="carousel-item" style="background: #dee2e6 !important;">

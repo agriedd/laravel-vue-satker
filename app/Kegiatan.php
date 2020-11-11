@@ -10,6 +10,7 @@ class Kegiatan extends Model{
     protected $primaryKey = 'id_kegiatan';
     protected $guarded = [];
     protected $with = ['bidang'];
+    protected $casts = ['tanggal' => 'date:Y-m-d'];
 
     public function bidang(){
         return $this->belongsTo(Bidang::class, 'id_bidang', 'id_bidang');

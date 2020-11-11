@@ -29,17 +29,28 @@
         </div>
         <div class="d-flex flex-column justify-center fill-height ml-auto">
             <slot>
-                <v-btn text>
-                    Keluar
-                    <v-icon right>mdi-power</v-icon>
-                </v-btn>
+                <div class="d-inline-block">
+                    <form :action="host('logout')" class="wrap d-inline-block" method="POST">
+                        <input type="hidden" name="_token" :value="token">
+                        <v-tooltip bottom>
+                            <template v-slot:activator="{ on, attrs }">
+                                <v-btn text icon type="submit"
+                                    v-bind="attrs"
+                                    v-on="on">
+                                    <v-icon>mdi-power</v-icon>
+                                </v-btn>
+                            </template>
+                            <span>Keluar</span>
+                        </v-tooltip>
+                    </form>
+                </div>
             </slot>
         </div>
     </v-app-bar>
 </template>
 <script>
 import { mapMutations } from 'vuex'
-import { host } from '../../configs/main'
+import { host, csrf_token } from '../../configs/main'
 export default {
     props: {
         title: {
@@ -49,6 +60,11 @@ export default {
         img: { default: null },
         height: { default: "100px" },
         colorAccent: {},
+    },
+    data(){
+        return {
+            token: csrf_token
+        }
     },
     methods: {
         host,

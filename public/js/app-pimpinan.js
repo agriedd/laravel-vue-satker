@@ -1967,6 +1967,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1982,6 +1993,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       "default": "100px"
     },
     colorAccent: {}
+  },
+  data: function data() {
+    return {
+      token: _configs_main__WEBPACK_IMPORTED_MODULE_1__["csrf_token"]
+    };
   },
   methods: _objectSpread(_objectSpread({
     host: _configs_main__WEBPACK_IMPORTED_MODULE_1__["host"]
@@ -42357,15 +42373,61 @@ var render = function() {
         },
         [
           _vm._t("default", [
-            _c(
-              "v-btn",
-              { attrs: { text: "" } },
-              [
-                _vm._v("\n                Keluar\n                "),
-                _c("v-icon", { attrs: { right: "" } }, [_vm._v("mdi-power")])
-              ],
-              1
-            )
+            _c("div", { staticClass: "d-inline-block" }, [
+              _c(
+                "form",
+                {
+                  staticClass: "wrap d-inline-block",
+                  attrs: { action: _vm.host("logout"), method: "POST" }
+                },
+                [
+                  _c("input", {
+                    attrs: { type: "hidden", name: "_token" },
+                    domProps: { value: _vm.token }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-tooltip",
+                    {
+                      attrs: { bottom: "" },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "activator",
+                          fn: function(ref) {
+                            var on = ref.on
+                            var attrs = ref.attrs
+                            return [
+                              _c(
+                                "v-btn",
+                                _vm._g(
+                                  _vm._b(
+                                    {
+                                      attrs: {
+                                        text: "",
+                                        icon: "",
+                                        type: "submit"
+                                      }
+                                    },
+                                    "v-btn",
+                                    attrs,
+                                    false
+                                  ),
+                                  on
+                                ),
+                                [_c("v-icon", [_vm._v("mdi-power")])],
+                                1
+                              )
+                            ]
+                          }
+                        }
+                      ])
+                    },
+                    [_vm._v(" "), _c("span", [_vm._v("Keluar")])]
+                  )
+                ],
+                1
+              )
+            ])
           ])
         ],
         2

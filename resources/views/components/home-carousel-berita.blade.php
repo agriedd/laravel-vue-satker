@@ -4,10 +4,13 @@
         <div class="position-relative h-100 d-flex justify-content-end flex-column">
             <div class="text-justify w-100 text-white pl-lg-3">
                 <h4 style="font-family: Roboto">
-                    Judul Berita
+                    {{ $kegiatan->first()->nama_kegiatan }}
                 </h4>
+                <div class="small">
+                    {{ $kegiatan->first()->tanggal->format('d M Y') }}
+                </div>
                 <div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur aliquid facilis minima quo laudantium corrupti et similique ipsum, doloribus deleniti voluptatibus molestiae hic vel dolorem repellendus, atque est voluptates dignissimos sit delectus omnis ab. Sapiente consequuntur id incidunt quae doloribus.
+                    {{ $kegiatan->first()->rincian_kegiatan }}
                 </div>
             </div>
         </div>
@@ -15,22 +18,28 @@
     <div class="h-100 grid-carousel-berita--item-1 bg-white">
         <div class="card-body">
             <h5 class="font-weight-bolder text-dark">
-                Judul Berita Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam.
+                {{ optional($kegiatan->get(1))->nama_kegiatan }}
             </h5>
         </div>
         <div class="card-body">
+            <div class="small text-muted">
+                {{ optional($kegiatan->get(1))->tanggal->format('d M Y') }}
+            </div>
             <div class="small">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nulla iure magnam itaque inventore blanditiis, earum quod molestiae ad placeat illum harum sit. Ab sit ipsam, enim distinctio nisi animi?...
+                {{ optional($kegiatan->get(1))->rincian_kegiatan }}
             </div>
         </div>
     </div>
     <div class="h-100 grid-carousel-berita--item-2 bg-white">
         <div class="card-body">
             <h6>
-                Judul Berita Lorem ipsum dolor sit.
+                {{ optional($kegiatan->get(2))->nama_kegiatan }}
             </h6>
+            <div class="small text-muted">
+                {{ optional($kegiatan->get(2))->tanggal->format('d M Y') }}
+            </div>
             <div class="small">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam nulla iure magnam itaque inventore blanditiis, earum quod molestiae ad placeat illum harum sit. Ab sit ipsam, enim distinctio nisi animi?...
+                {{ optional($kegiatan->get(2))->rincian_kegiatan }}
             </div>
         </div>
     </div>

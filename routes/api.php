@@ -25,4 +25,5 @@ Route::resources([
     'pimpinan' => 'Api\PimpinanController',
     'bidang' => 'Api\BidangController',
     'petugas' => 'Api\PetugasController',
+    'kegiatan' => 'Api\KegiatanController',
 ]);

@@ -13,5 +13,5 @@
  import kegiatan from './kegiatan'
 
  export default {
-    admin, navbar, satker, struktur, pimpinan, bidang, petugas, petugas,
+    admin, navbar, satker, struktur, pimpinan, bidang, petugas, kegiatan,
  }

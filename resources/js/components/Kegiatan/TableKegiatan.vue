@@ -55,11 +55,10 @@ export default {
         return {
             items: [],
             headers: [
-                { text: 'ID', align: 'start', sortable: true, value: 'id_petugas' },
-                { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
-                { text: 'NIP', align: 'start', sortable: true, value: 'nip' },
-                { text: 'Pangkat', align: 'start', sortable: true, value: 'pangkat' },
-                { text: 'Status', align: 'start', sortable: true, value: 'status' },
+                { text: 'ID', align: 'start', sortable: true, value: 'id_kegiatan' },
+                { text: 'Nama Kegiatan', align: 'start', sortable: true, value: 'nama_kegiatan' },
+                { text: 'Tanggal', align: 'start', sortable: true, value: 'tanggal' },
+                { text: 'Lokasi', align: 'start', sortable: true, value: 'lokasi' },
                 { text: 'Bidang', align: 'start', sortable: true, value: 'id_bidang' },
                 { text: '', align: 'end', sortable: false, value: 'action' },
             ],
@@ -85,7 +84,7 @@ export default {
     },
     methods: {
         ...mapActions({
-            getBidang: 'petugas/get',
+            getBidang: 'kegiatan/get',
         }),
         async getData(){
             this.loading = true

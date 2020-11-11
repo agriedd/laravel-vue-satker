@@ -15,18 +15,18 @@
                     </v-toolbar>
                     <v-divider/>
                     <div>
-                        <!-- <table-kegiatan 
+                        <table-kegiatan 
                             @modal:tambah="openModal('tambah')" 
                             @modal:ubah="openModal('ubah', true, $event)" 
                             @modal:hapus="openModal('hapus', true, $event)"
                             @modal:info="openModal('info', true, $event)">
                             <template #default="{ update }">
-                                <modal-tambah-kegiatan @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
+                                <!-- <modal-tambah-kegiatan @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
                                 <modal-ubah-kegiatan @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
                                 <modal-hapus-kegiatan @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
-                                <modal-info-kegiatan @modal:info="openModal('info', $event)" @done="update(null)"/>
+                                <modal-info-kegiatan @modal:info="openModal('info', $event)" @done="update(null)"/> -->
                             </template>
-                        </table-kegiatan> -->
+                        </table-kegiatan>
                     </div>
                 </v-card>
             </v-container>
@@ -35,7 +35,7 @@
 </template>
 <script>
 import AppBar from '../AppBar/AppBarDefault.vue'
-// import TablePetugas from './TablePetugas.vue'
+import TableKegiatan from './TableKegiatan.vue'
 // import ModalTambahPetugas from './ModalTambahPetugas.vue'
 // import ModalUbahPetugas from './ModalUbahPetugas.vue'
 // import ModalHapusPetugas from './ModalHapusPetugas.vue'
@@ -44,7 +44,7 @@ import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
         AppBar,
-        // TablePetugas,
+        TableKegiatan,
         // ModalTambahPetugas,
         // ModalUbahPetugas,
         // ModalHapusPetugas,

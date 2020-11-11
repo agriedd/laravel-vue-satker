@@ -39,11 +39,7 @@
                                 <tab-petugas/>
                             </v-tab-item>
                             <v-tab-item key="bidang">
-                                <v-card flat>
-                                    <v-card-text>
-                                        Bidang
-                                    </v-card-text>
-                                </v-card>
+                                <tab-bidang/>
                             </v-tab-item>
                             <v-tab-item key="kegiatan">
                                 <v-card flat>
@@ -66,6 +62,7 @@ import TabAwal from '../Tabs/TabAwal.vue'
 import TabSankter from '../Tabs/TabSankter.vue'
 import TabStruktur from '../Tabs/TabStruktur.vue'
 import TabPetugas from '../Tabs/TabPetugas.vue'
+import TabBidang from '../Tabs/TabBidang.vue'
 export default {
     components: {
         AppBar,
@@ -73,6 +70,7 @@ export default {
         TabSankter,
         TabStruktur,
         TabPetugas,
+        TabBidang,
     },
     data(){
         return {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestStoreSatker;
 use App\Http\Requests\RequestUpdateSatker;
+use App\Http\Resources\CountCollection;
 use App\Http\Resources\SatkerCollection;
 use App\Response\Res;
 use App\Satker;
@@ -26,6 +27,19 @@ class SatkerController extends Controller{
                 return $query->orderBy($sortBy, $sortDesc == 'true' ? 'DESC' : 'ASC');
             })
             ->paginate(request('itemsPerPage') ?? 10)
+        );
+    }
+
+    public function count(){
+        return new CountCollection(
+            Satker::when(request()->filled('search'), function($query){
+                $search = request('search');
+                return $query->where('nama', 'like', "%{$search}%");
+            })
+            ->when(request()->filled('id_satker'), function($query){
+                return $query->orWhere('id_satker', (int) request('id_satker'));
+            })
+            ->count()
         );
     }
 

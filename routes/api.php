@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/self', 'Api\UserController@index');
 
+Route::get('satker/count', 'Api\SatkerController@count');
 Route::resources([
     'admin' => 'Api\AdminController',
     'satker' => 'Api\SatkerController',

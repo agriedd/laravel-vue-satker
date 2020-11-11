@@ -1,7 +1,7 @@
 <template>
     <v-app-bar
-        :color="color"
-        dark
+        :color="'orange'"
+        light
         extended
         flat
         app
@@ -30,13 +30,17 @@
         </div>
         <div class="d-flex flex-column justify-center fill-height ml-auto">
             <slot>
-                
+                <v-btn text :href="host('')" link target="_blank">
+                    Lihat Webiste
+                    <v-icon right>mdi-chevron-right</v-icon>
+                </v-btn>
             </slot>
         </div>
     </v-app-bar>
 </template>
 <script>
 import { mapMutations } from 'vuex'
+import { host } from '../../configs/main'
 export default {
     props: {
         title: {
@@ -48,6 +52,7 @@ export default {
         colorAccent: {},
     },
     methods: {
+        host,
         ...mapMutations({
             toggleDrawer: 'navbar/TOGGLE_DRAWER'
         }),

@@ -26,7 +26,7 @@ class BidangController extends Controller{
             ->when(request()->filled('sortBy'), function($query){
                 $sortBy = is_array(request('sortBy')) ? request('sortBy')[0] : request('sortBy');
                 $sortDesc = is_array(request('sortDesc')) ? request('sortDesc')[0] : request('sortDesc');
-                return $query->orderBy($sortBy, $sortDesc ? 'DESC' : 'ASC');
+                return $query->orderBy($sortBy, $sortDesc == 'true' ? 'DESC' : 'ASC');
             })
             ->paginate(request('itemsPerPage') ?? 10)
         );

@@ -41,6 +41,11 @@ return [
             'provider' => 'users',
         ],
 
+        'pimpinan' => [
+            'driver' => 'session',
+            'provider' => 'pimpinan',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -69,6 +74,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        
+        'pimpinan' => [
+            'driver' => 'eloquent',
+            'model' => App\Pimpinan::class,
         ],
 
         // 'users' => [

@@ -30,7 +30,8 @@ const app = new Vue({
     el: '#app',
     data(){
         return {
-            carousel: {}
+            carousel: {},
+            login: true,
         }
     },
     methods: {
@@ -43,6 +44,9 @@ const app = new Vue({
             if(carousel) carousel.prev()
         },
         previousSlide(name = 'main'){ this.prevSlide(name) },
+        toggleLogin(){
+            this.login = !this.login
+        }
     },
     mounted(){
         let carousel = document.getElementById('main-slide')

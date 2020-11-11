@@ -22,6 +22,7 @@ class CreatePimpinansTable extends Migration
             $table->string('pangkat');
             $table->date('tanggal_lahir');
             $table->string('tempat_lahir');
+            $table->string('api_token')->nullable();
             $table->string('alamat');
             $table->unsignedBigInteger('id_satker');
             

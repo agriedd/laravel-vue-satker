@@ -20548,7 +20548,8 @@ var app = new Vue({
   el: '#app',
   data: function data() {
     return {
-      carousel: {}
+      carousel: {},
+      login: true
     };
   },
   methods: {
@@ -20565,6 +20566,9 @@ var app = new Vue({
     previousSlide: function previousSlide() {
       var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'main';
       this.prevSlide(name);
+    },
+    toggleLogin: function toggleLogin() {
+      this.login = !this.login;
     }
   },
   mounted: function mounted() {

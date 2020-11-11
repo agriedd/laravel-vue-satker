@@ -21,7 +21,7 @@ class RequestUpdatePetugas extends FormRequest{
         return [
             'nama'      => 'required',
             'id_bidang' => 'required|exists:bidang,id_bidang',
-            'nip'       => "required|unique:petugas,nip,{$id}",
+            'nip'       => "required|unique:petugas,nip,{$id},id_petugas",
             'pangkat'   => 'required',
             'status'    => 'required|in:PNS,Kontrak',
             'alamat'    => 'nullable',

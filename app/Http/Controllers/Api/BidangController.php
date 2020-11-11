@@ -21,6 +21,9 @@ class BidangController extends Controller{
             ->when(request()->filled('id_satker'), function($query){
                 return $query->where('id_satker', request('id_satker'));
             })
+            ->when(request()->filled('id_bidang'), function($query){
+                return $query->orWhere('id_bidang', request('id_bidang'));
+            })
             ->when(request()->filled('sortBy'), function($query){
                 $sortBy = is_array(request('sortBy')) ? request('sortBy')[0] : request('sortBy');
                 $sortDesc = is_array(request('sortDesc')) ? request('sortDesc')[0] : request('sortDesc');

@@ -14,12 +14,17 @@
                     <v-list-item>
                         <v-list-item-content>
                             <v-list-item-title>
-                                Nama Admin Login
+                                {{ admin.nama }}
                             </v-list-item-title>
                             <v-list-item-subtitle>
-                                Email@domain.com
+                                {{ admin.email }}
                             </v-list-item-subtitle>
                         </v-list-item-content>
+                        <v-list-item-icon>
+                            <v-chip small color="green">
+                                On
+                            </v-chip>
+                        </v-list-item-icon>
                     </v-list-item>
                 </v-list>
                 <v-divider/>
@@ -31,9 +36,9 @@
             <v-row v-if="!minidrawer">
                 <v-col cols="12" class="mx-auto" style="max-width: 250px">
                     <div class="flex-wrap d-flex">
-                        <v-btn text icon @click="openSettings()">
+                        <!-- <v-btn text icon @click="openSettings()">
                             <v-icon>mdi-cog</v-icon>
-                        </v-btn>
+                        </v-btn> -->
                         <v-tooltip top>
                             <template v-slot:activator="{ on, attrs }">
                                 <v-btn text icon @click="toggleMode"
@@ -79,9 +84,9 @@
                     <v-list-item @click="toggleMini()">
                         <v-icon>mdi-chevron-right</v-icon>
                     </v-list-item>
-                    <v-list-item>
+                    <!-- <v-list-item>
                         <v-icon>mdi-cog</v-icon>
-                    </v-list-item>
+                    </v-list-item> -->
                 </v-list>
             </template>
         </template>
@@ -104,6 +109,7 @@ export default {
         ...mapState({
             'statusDrawer': state => state.navbar.drawer,
             'statusMiniDrawer': state  => state.navbar.mini_drawer,
+            admin: state => state.admin.user
         }),
         drawer: {
             get(){ return this.statusDrawer },

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { api } from '../configs/main'
+import { api, host } from '../configs/main'
 
 export default {
     namespaced: true,
@@ -31,7 +31,19 @@ export default {
                 if(res) resolve(res)
             })
         },
-        async show(context, params){
+        user(context, params = {}){
+            return new Promise(async(resolve, reject)=>{
+                let res = await axios.get(api('self'), { params: params }).catch(e => reject(e))
+                if(res) resolve(res)
+            })
+        },
+        logout(context, params = {}){
+            return new Promise(async(resolve, reject)=>{
+                let res = await axios.post(host('logout'), { params: params }).catch(e => reject(e))
+                if(res) resolve(res)
+            })
+        },
+        show(context, params){
             let id = params.id
             if(id)
                 return new Promise(async(resolve, reject)=>{
@@ -45,7 +57,7 @@ export default {
                 if(res) resolve(res)
             })
         },
-        async update(context, data){
+        update(context, data){
             let id = context.state.selected.id
             if(id)
                 return new Promise(async(resolve, reject)=>{
@@ -53,7 +65,7 @@ export default {
                     if(res) resolve(res)
                 })
         },
-        async destroy(context, data){
+        destroy(context, data){
             let id = context.state.selected.id
             if(id)
                 return new Promise(async(resolve, reject)=>{
@@ -83,6 +95,9 @@ export default {
         },
         SET_ID(state, payload){
             state.selected.id = payload
+        },
+        SET_USER(state, payload){
+            state.user = payload
         }
     },
 }

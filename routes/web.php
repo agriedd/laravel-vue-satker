@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::post('/logout', 'Api\UserController@logout');
 
 Route::middleware('auth:web')->prefix('/admin')->group(function($app){
     Route::get('/', 'AdminController@index')->name('admin');

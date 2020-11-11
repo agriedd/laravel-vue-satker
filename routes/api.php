@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:api')->get('/self', 'Api\UserController@index');
+Route::get('/pimpinan/self', 'Api\UserController@pimpinan');
 
 Route::get('satker/count', 'Api\SatkerController@count');
 Route::get('struktur/count', 'Api\StrukturController@count');

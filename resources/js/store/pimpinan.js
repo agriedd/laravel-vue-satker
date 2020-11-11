@@ -38,6 +38,18 @@ export default {
                 if(res) resolve(res)
             })
         },
+        user(context, params = {}){
+            return new Promise(async(resolve, reject)=>{
+                let res = await axios.get(api('pimpinan/self'), { params: params }).catch(e => reject(e))
+                if(res) resolve(res)
+            })
+        },
+        logout(context, params = {}){
+            return new Promise(async(resolve, reject)=>{
+                let res = await axios.post(host('api/logout'), { params: params }).catch(e => reject(e))
+                if(res) resolve(res)
+            })
+        },
         async show(context, params){
             let id = params.id
             if(id)
@@ -93,6 +105,9 @@ export default {
         },
         SET_ID(state, payload){
             state.selected.id = payload
+        },
+        SET_USER(state, payload){
+            state.user = payload
         }
     },
 }

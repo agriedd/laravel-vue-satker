@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PimpinanController extends Controller{
+    
+    public function __construct(){
+        $this->middleware('auth:pimpinan');
+    }
+
     public function index(){
-        return "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda natus molestiae beatae nemo, possimus alias sit quos aperiam voluptatum, amet eos consequuntur similique, veniam optio ducimus nam sapiente vel ipsum.";
+        return view('pages.pimpinan.index', [
+            'user'  => Auth::guard('pimpinan')->user()
+        ]);
     }
 }

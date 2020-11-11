@@ -21,7 +21,7 @@
                             @modal:hapus="openModal('hapus', true, $event)"
                             @modal:info="openModal('info', true, $event)">
                             <template #default="{ update }">
-                                <!-- <modal-tambah-petugas @modal:tambah="openModal('tambah', $event)" @done="update(null)"/> -->
+                                <modal-tambah-petugas @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
                                 <!-- <modal-ubah-petugas @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
                                 <modal-hapus-petugas @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
                                 <modal-info-petugas @modal:info="openModal('info', $event)" @done="update(null)"/> -->
@@ -36,7 +36,7 @@
 <script>
 import AppBar from '../AppBar/AppBarDefault.vue'
 import TablePetugas from './TablePetugas.vue'
-// import ModalTambahBidang from './ModalTambahBidang.vue'
+import ModalTambahPetugas from './ModalTambahPetugas.vue'
 // import ModalUbahBidang from './ModalUbahBidang.vue'
 // import ModalHapusBidang from './ModalHapusBidang.vue'
 // import ModalInfoBidang from './ModalInfoBidang.vue'
@@ -45,7 +45,7 @@ export default {
     components: {
         AppBar,
         TablePetugas,
-        // ModalTambahBidang,
+        ModalTambahPetugas,
         // ModalUbahBidang,
         // ModalHapusBidang,
         // ModalInfoBidang,

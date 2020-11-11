@@ -50,7 +50,6 @@
     </div>
 </template>
 <script>
-import statusSatker from './statusSatker'
 import InputPilihSatker from '../Satker/InputPilihSatker.vue'
 import InputTanggalLahir from './InputPilihTanggalLahir.vue'
 import { mapMutations, mapState } from 'vuex'
@@ -67,7 +66,6 @@ export default {
                 encode_gambar: null,
             },
             rules: {},
-            status_satker: statusSatker,
         }
     },
     computed: {

@@ -27,35 +27,10 @@
                     <v-divider/>
                     <v-row no-gutters>
                         <v-col cols="12" sm="6" class="pa-3">
-                            <item-info-satker/>
+                            <item-info-satker @update:jumlah="jumlah_satker = $event"/>
                         </v-col>
                         <v-col cols="12" sm="6">
-                            <v-card flat class="pa-lg-10">
-                                <v-card-title>
-                                    Struktur Organisasi
-                                </v-card-title>
-                                <div class="d-flex flex-wrap justify-space-between">
-                                    <div>
-                                        <div class="fill-height d-flex justify-center flex-column">
-                                            <v-card-text>
-                                                <v-progress-circular :value="20"/>
-                                            </v-card-text>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="fill-height d-flex justify-center flex-column">
-                                            <v-card-text>
-                                                <div class="display-2 m-0">
-                                                    92
-                                                </div>
-                                                <div>
-                                                    Jumlah Struktur
-                                                </div>
-                                            </v-card-text>
-                                        </div>
-                                    </div>
-                                </div>
-                            </v-card>
+                            <item-info-struktur-organisasi :jumlah_satker="jumlah_satker"/>
                         </v-col>
                         <v-col cols="12" sm="6">
                             <v-card flat class="pa-lg-10" dark>
@@ -109,11 +84,18 @@
 <script>
 import AppBar from '../AppBar/AppBarDefault.vue'
 import ItemInfoSatker from './ItemInfoSatker.vue'
+import ItemInfoStrukturOrganisasi from './ItemInfoStrukturOrganisasi.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
         AppBar,
         ItemInfoSatker,
+        ItemInfoStrukturOrganisasi,
+    },
+    data(){
+        return {
+            jumlah_satker: 0
+        }
     },
     computed: {
     },

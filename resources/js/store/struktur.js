@@ -32,6 +32,12 @@ export default {
                 if(res) resolve(res)
             })
         },
+        count(context, params = {}){
+            return new Promise(async(resolve, reject)=>{
+                let res = await axios.get(api('struktur/count'), { params: params }).catch(e => reject(e))
+                if(res) resolve(res)
+            })
+        },
         async show(context, params){
             let id = params.id
             if(id)

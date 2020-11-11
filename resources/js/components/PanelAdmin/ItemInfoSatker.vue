@@ -48,7 +48,14 @@ export default {
 
             this.loading = false
             
-            if(res) this.jumlah = res.data.data
+            if(res) {
+                this.jumlah = res.data.data
+            }
+        }
+    },
+    watch: {
+        jumlah(val){
+            this.$emit('update:jumlah', val)
         }
     },
     created(){

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestStoreStruktur;
 use App\Http\Requests\RequestUpdateStruktur;
+use App\Http\Resources\CountCollection;
 use App\Http\Resources\StrukturCollection;
 use App\Response\Res;
 use App\StrukturOrganisasi;
@@ -28,6 +29,24 @@ class StrukturController extends Controller{
                 return $query->orderBy($sortBy, $sortDesc == 'true' ? 'DESC' : 'ASC');
             })
             ->paginate(request('itemsPerPage') ?? 10)
+        );
+    }
+
+    public function count(){
+        return new CountCollection(
+            StrukturOrganisasi::when(request()->filled('search'), function($query){
+                $search = request('search');
+                // return $query->where('id_', 'like', "%{$search}%");
+            })
+            ->when(request()->filled('id_satker'), function($query){
+                return $query->where('id_satker', request('id_satker'));
+            })
+            ->when(request()->filled('sortBy'), function($query){
+                $sortBy = is_array(request('sortBy')) ? request('sortBy')[0] : request('sortBy');
+                $sortDesc = is_array(request('sortDesc')) ? request('sortDesc')[0] : request('sortDesc');
+                return $query->orderBy($sortBy, $sortDesc == 'true' ? 'DESC' : 'ASC');
+            })
+            ->count()
         );
     }
 

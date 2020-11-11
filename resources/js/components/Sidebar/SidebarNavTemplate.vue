@@ -7,7 +7,8 @@
                 :to="item.link"
                 :color="color"
                 link
-                exact>
+                exact
+                dense>
                 <v-list-item-icon>
                     <v-icon>{{ item.icon }}</v-icon>
                 </v-list-item-icon>
@@ -32,7 +33,7 @@
                         :color="color"
                         class="px-5"
                         link
-                        :dense="dense"
+                        dense
                         exact>
                         <v-list-item-icon>
                             <v-icon small>{{ child.icon }}</v-icon>
@@ -62,7 +63,7 @@
                                 :color="color"
                                 class="px-5"
                                 link
-                                :dense="false"
+                                dense
                                 exact>
                                 <v-list-item-icon>
                                     <v-icon small>{{ child.icon }}</v-icon>
@@ -80,6 +81,7 @@
                         :to="item.link"
                         :color="color"
                         link
+                        dense
                         exact>
                         <v-list-item-icon>
                             <v-icon>{{ item.icon }}</v-icon>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Bidang;
+use App\Kegiatan;
 use App\Petugas;
 use App\Pimpinan;
 use App\Satker;
@@ -17,11 +18,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         factory(User::class, 1)->create();
-        factory(Satker::class, 3)->create()->each(function($satker){
-            factory(Bidang::class, rand(1,2))->create([
+        factory(Satker::class, rand(1, 6))->create()->each(function($satker){
+            factory(Bidang::class, rand(1,5))->create([
                 'id_satker' => $satker->id_satker
             ])->each(function($bidang){
                 factory(Petugas::class, rand(1, 10))->create([
+                    'id_bidang' => $bidang->id_bidang
+                ]);
+                factory(Kegiatan::class, rand(1, 10))->create([
                     'id_bidang' => $bidang->id_bidang
                 ]);
             });

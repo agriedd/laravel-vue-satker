@@ -8,7 +8,6 @@ use App\Http\Requests\RequestStoreBidang;
 use App\Http\Requests\RequestUpdateBidang;
 use App\Http\Resources\BidangCollection;
 use App\Response\Res;
-use Illuminate\Http\Request;
 
 class BidangController extends Controller{
 

@@ -9,7 +9,7 @@
                     <v-divider/>
                 </div>
                 <v-card-text class="pa-0">
-                    <info-bidang v-if="dialog" @loading="loading = $event"/>
+                    <!-- <info-petugas v-if="dialog" @loading="loading = $event"/> -->
                 </v-card-text>
                 <div>
                     <v-divider/>
@@ -29,10 +29,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import InfoBidang from './InfoBidangFull.vue'
+// import InfoBidang from './InfoBidangFull.vue'
 export default {
     components: {
-        InfoBidang,
+        // InfoBidang,
     },
     data(){
         return {
@@ -45,7 +45,7 @@ export default {
     },
     computed: {
         ...mapState({
-            modal_info: state => state.bidang.modal.info,
+            modal_info: state => state.petugas.modal.info,
         }),
         dialog: {
             set(val){

@@ -23,8 +23,8 @@
                             <template #default="{ update }">
                                 <modal-tambah-petugas @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
                                 <modal-ubah-petugas @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
-                                <!-- <modal-hapus-petugas @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
-                                <modal-info-petugas @modal:info="openModal('info', $event)" @done="update(null)"/> -->
+                                <modal-hapus-petugas @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
+                                <modal-info-petugas @modal:info="openModal('info', $event)" @done="update(null)"/>
                             </template>
                         </table-petugas>
                     </div>
@@ -38,8 +38,8 @@ import AppBar from '../AppBar/AppBarDefault.vue'
 import TablePetugas from './TablePetugas.vue'
 import ModalTambahPetugas from './ModalTambahPetugas.vue'
 import ModalUbahPetugas from './ModalUbahPetugas.vue'
-// import ModalHapusBidang from './ModalHapusBidang.vue'
-// import ModalInfoBidang from './ModalInfoBidang.vue'
+import ModalHapusPetugas from './ModalHapusPetugas.vue'
+import ModalInfoPetugas from './ModalInfoPetugas.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
@@ -47,8 +47,8 @@ export default {
         TablePetugas,
         ModalTambahPetugas,
         ModalUbahPetugas,
-        // ModalHapusBidang,
-        // ModalInfoBidang,
+        ModalHapusPetugas,
+        ModalInfoPetugas,
     },
     computed: {
     },

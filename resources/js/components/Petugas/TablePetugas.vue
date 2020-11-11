@@ -12,15 +12,21 @@
             @update:options="update($event)"
             fixed-header
             :footer-props="{'items-per-page-options':[5, 10, 20, 30, 50, 100]}">
-            <template #item.id_satker="{ item }">
+            <template #item.id_bidang="{ item }">
                 <v-menu content-class="shadow-lg" open-on-hover max-width="400" min-width="300">
                     <template #activator="{ attrs, on }">
                         <div v-bind="attrs" v-on="on">
-                            {{ item.satker.nama }}
+                            {{ item.bidang.nama_bidang }}
                         </div>
                     </template>
-                    <info-satker-hover :value="item.satker"/>
+                    <!-- <info-satker-hover :value="item.satker"/> -->
                 </v-menu>
+            </template>
+            <template #item.status="{ item }">
+                <v-chip small :color="item.status == 'PNS' ? 'yellow' : null">
+                    <v-icon v-if="item.status == 'PNS'" x-small left>mdi-asterisk</v-icon>
+                    {{ item.status }}
+                </v-chip>
             </template>
             <template #item.action="{ item }">
                 <v-btn icon @click="openModal('ubah', item.id_bidang)">
@@ -49,10 +55,12 @@ export default {
         return {
             items: [],
             headers: [
-                { text: 'ID', align: 'start', sortable: true, value: 'id_bidang' },
-                { text: 'Nama Bidang', align: 'start', sortable: true, value: 'nama_bidang' },
-                { text: 'Nama Kepala', align: 'start', sortable: true, value: 'nama_kepala_b' },
-                { text: 'Satker', align: 'start', sortable: true, value: 'id_satker' },
+                { text: 'ID', align: 'start', sortable: true, value: 'id_petugas' },
+                { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
+                { text: 'NIP', align: 'start', sortable: true, value: 'nip' },
+                { text: 'Pangkat', align: 'start', sortable: true, value: 'pangkat' },
+                { text: 'Status', align: 'start', sortable: true, value: 'status' },
+                { text: 'Bidang', align: 'start', sortable: true, value: 'id_bidang' },
                 { text: '', align: 'end', sortable: false, value: 'action' },
             ],
             options: {
@@ -77,7 +85,7 @@ export default {
     },
     methods: {
         ...mapActions({
-            getBidang: 'bidang/get',
+            getBidang: 'petugas/get',
         }),
         async getData(){
             this.loading = true

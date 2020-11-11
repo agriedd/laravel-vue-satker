@@ -24,4 +24,5 @@ Route::resources([
     'struktur' => 'Api\StrukturController',
     'pimpinan' => 'Api\PimpinanController',
     'bidang' => 'Api\BidangController',
+    'petugas' => 'Api\PetugasController',
 ]);

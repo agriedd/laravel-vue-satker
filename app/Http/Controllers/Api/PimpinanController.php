@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestStorePimpinan;
 use App\Http\Requests\RequestUpdatePimpinan;
+use App\Http\Resources\CountCollection;
 use App\Http\Resources\PimpinanCollection;
 use App\Pimpinan;
 use App\Response\Res;
@@ -27,6 +28,19 @@ class PimpinanController extends Controller{
                 return $query->orderBy($sortBy, $sortDesc == 'true' ? 'DESC' : 'ASC');
             })
             ->paginate(request('itemsPerPage') ?? 10)
+        );
+    }
+    
+    public function count(){
+        return new CountCollection(
+            Pimpinan::when(request()->filled('search'), function($query){
+                $search = request('search');
+                return $query->where('nama', 'like', "%{$search}%");
+            })
+            ->when(request()->filled('id_satker'), function($query){
+                return $query->where('id_satker', request('id_satker'));
+            })
+            ->count()
         );
     }
 

@@ -33,40 +33,7 @@
                             <item-info-struktur-organisasi :jumlah_satker="jumlah_satker"/>
                         </v-col>
                         <v-col cols="12" sm="6">
-                            <v-card flat class="pa-lg-10" dark>
-                                <v-card-title>
-                                    Pimpinan / Petugas
-                                </v-card-title>
-                                <div class="d-flex flex-wrap justify-space-between">
-                                    <div>
-                                        <div class="fill-height d-flex justify-center flex-column">
-                                            <v-card-text>
-                                                <div class="display-2 m-0">
-                                                    92
-                                                </div>
-                                                <div>
-                                                    Jumlah Pimpinan
-                                                </div>
-                                            </v-card-text>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="fill-height d-flex justify-center flex-column">
-                                            <v-card-text>
-                                                <div class="display-2 m-0 text-right">
-                                                    92
-                                                </div>
-                                                <div>
-                                                    Jumlah Petugas
-                                                </div>
-                                            </v-card-text>
-                                        </div>
-                                    </div>
-                                </div>
-                                <v-card-text>
-                                    <v-progress-linear :value="45"/>
-                                </v-card-text>
-                            </v-card>
+                            <item-info-pimpinan-petugas/>
                         </v-col>
                         <v-col cols="12" sm="6">
                             <v-card flat v-ripple class="pa-lg-10">
@@ -85,12 +52,14 @@
 import AppBar from '../AppBar/AppBarDefault.vue'
 import ItemInfoSatker from './ItemInfoSatker.vue'
 import ItemInfoStrukturOrganisasi from './ItemInfoStrukturOrganisasi.vue'
+import ItemInfoPimpinanPetugas from './ItemInfoPimpinanPetugas.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
         AppBar,
         ItemInfoSatker,
         ItemInfoStrukturOrganisasi,
+        ItemInfoPimpinanPetugas,
     },
     data(){
         return {

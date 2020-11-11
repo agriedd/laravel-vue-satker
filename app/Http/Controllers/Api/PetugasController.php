@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestStorePetugas;
 use App\Http\Requests\RequestUpdatePetugas;
+use App\Http\Resources\CountCollection;
 use App\Http\Resources\PetugasCollection;
 use App\Petugas;
 use App\Response\Res;
@@ -30,6 +31,18 @@ class PetugasController extends Controller{
         );
     }
 
+    public function count(){
+        return new CountCollection(
+            Petugas::when(request()->filled('search'), function($query){
+                $search = request('search');
+                return $query->where('nama', 'like', "%{$search}%");
+            })
+            ->when(request()->filled('id_bidang'), function($query){
+                return $query->where('id_bidang', request('id_bidang'));
+            })
+            ->count()
+        );
+    }
     public function store(RequestStorePetugas $request){
         $data = $request->validated();
         return Res::store(

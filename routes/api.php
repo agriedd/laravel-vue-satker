@@ -18,6 +18,8 @@ Route::middleware('auth:api')->get('/self', 'Api\UserController@index');
 
 Route::get('satker/count', 'Api\SatkerController@count');
 Route::get('struktur/count', 'Api\StrukturController@count');
+Route::get('pimpinan/count', 'Api\PimpinanController@count');
+Route::get('petugas/count', 'Api\PetugasController@count');
 
 Route::resources([
     'admin' => 'Api\AdminController',

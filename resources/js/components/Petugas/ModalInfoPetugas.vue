@@ -4,12 +4,12 @@
             <v-card rounded="0">
                 <div>
                     <v-card-text>
-                        Informasi Bidang
+                        Informasi Petugas
                     </v-card-text>
                     <v-divider/>
                 </div>
                 <v-card-text class="pa-0">
-                    <!-- <info-petugas v-if="dialog" @loading="loading = $event"/> -->
+                    <info-petugas v-if="dialog" @loading="loading = $event"/>
                 </v-card-text>
                 <div>
                     <v-divider/>
@@ -29,10 +29,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-// import InfoBidang from './InfoBidangFull.vue'
+import InfoPetugas from './InfoPetugasFull.vue'
 export default {
     components: {
-        // InfoBidang,
+        InfoPetugas,
     },
     data(){
         return {

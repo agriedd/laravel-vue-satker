@@ -40,6 +40,12 @@ class PetugasController extends Controller{
             ->when(request()->filled('id_bidang'), function($query){
                 return $query->where('id_bidang', request('id_bidang'));
             })
+            ->when(request()->filled('pns'), function($query){
+                return $query->where('status', 'PNS');
+            })
+            ->when(request()->filled('kontrak'), function($query){
+                return $query->where('status', 'Kontrak');
+            })
             ->count()
         );
     }

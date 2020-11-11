@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestStoreBidang;
 use App\Http\Requests\RequestUpdateBidang;
 use App\Http\Resources\BidangCollection;
+use App\Http\Resources\CountCollection;
 use App\Response\Res;
 
 class BidangController extends Controller{
@@ -32,6 +33,21 @@ class BidangController extends Controller{
         );
     }
 
+    public function count(){
+        return new CountCollection(
+            Bidang::when(request()->filled('search'), function($query){
+                $search = request('search');
+                return $query->where('nama_bidang', 'like', "%{$search}%");
+            })
+            ->when(request()->filled('id_satker'), function($query){
+                return $query->where('id_satker', request('id_satker'));
+            })
+            ->when(request()->filled('id_bidang'), function($query){
+                return $query->orWhere('id_bidang', request('id_bidang'));
+            })
+            ->count()
+        );
+    }
     public function store(RequestStoreBidang $request){
         $data = $request->validated();
         return Res::store(

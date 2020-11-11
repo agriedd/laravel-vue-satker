@@ -13,15 +13,17 @@
                             <v-icon>mdi-plus</v-icon>
                         </v-btn>
                     </v-toolbar>
-                    <v-tabs centered v-model="tab">
-                        <v-tab key="awal">Awal</v-tab>
-                        <v-tab key="sankter">Sankter</v-tab>
-                        <v-tab key="struktur">Struktur Organisasi</v-tab>
-                        <v-tab key="petugas">Petugas</v-tab>
-                        <v-tab key="bidang">Bidang</v-tab>
-                        <v-tab key="kegiatan">Kegiatan</v-tab>
-                    </v-tabs>
-                    <v-divider/>
+                    <div style="position: sticky; top: 0px; z-index: 2;">
+                        <v-tabs centered v-model="tab">
+                            <v-tab key="awal">Awal</v-tab>
+                            <v-tab key="sankter">Sankter</v-tab>
+                            <v-tab key="struktur">Struktur Organisasi</v-tab>
+                            <v-tab key="petugas">Petugas</v-tab>
+                            <v-tab key="bidang">Bidang</v-tab>
+                            <v-tab key="kegiatan">Kegiatan</v-tab>
+                        </v-tabs>
+                        <v-divider/>
+                    </div>
                     <div>
                         <v-tabs-items v-model="tab">
                             <v-tab-item key="awal">

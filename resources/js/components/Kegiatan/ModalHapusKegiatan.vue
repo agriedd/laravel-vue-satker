@@ -10,7 +10,7 @@
                         <v-divider/>
                     </div>
                     <v-card-text>
-                        <info-petugas v-if="dialog" @loading="loading = $event"/>
+                        <info-kegiatan v-if="dialog" @loading="loading = $event"/>
                     </v-card-text>
                     <div>
                         <v-divider/>
@@ -34,10 +34,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import InfoPetugas from './InfoPetugas.vue'
+import InfoKegiatan from './InfoKegiatan.vue'
 export default {
     components: {
-        InfoPetugas,
+        InfoKegiatan,
     },
     data(){
         return {
@@ -50,7 +50,7 @@ export default {
     },
     computed: {
         ...mapState({
-            modal_hapus: state => state.petugas.modal.hapus,
+            modal_hapus: state => state.kegiatan.modal.hapus,
         }),
         dialog: {
             set(val){
@@ -63,10 +63,10 @@ export default {
     },
     methods: {
         ...mapActions({
-            deleteStruktur: 'petugas/destroy',
+            deleteStruktur: 'kegiatan/destroy',
         }),
         ...mapMutations({
-            setError: 'petugas/SET_ERRORS',
+            setError: 'kegiatan/SET_ERRORS',
         }),
         async submit(e){
             this.loading = true

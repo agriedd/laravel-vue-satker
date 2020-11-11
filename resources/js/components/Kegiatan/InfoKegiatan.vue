@@ -2,14 +2,14 @@
     <div class="px-3">
         <div>
             <h3>
-                {{ petugas.nama }}
+                {{ kegiatan.nama_kegiatan }}
             </h3>
             <div>
                 <div class="text--disabled">
-                    {{ petugas.nip }}
+                    {{ kegiatan.detail_kegiatan }}
                 </div>
                 <div class="text--disabled">
-                    {{ petugas.bidang.nama_bidang }}
+                    {{ kegiatan.lokasi }} | {{ kegiatan.tanggal }}
                 </div>
             </div>
         </div>
@@ -25,21 +25,21 @@ import { mapActions, mapMutations, mapState } from 'vuex'
 export default {
     data(){
         return {
-            petugas: {},
+            kegiatan: {},
         }
     },
     computed: {
         ...mapState({
-            errors: state => state.petugas.errors,
-            id: state => state.petugas.selected.id,
+            errors: state => state.kegiatan.errors,
+            id: state => state.kegiatan.selected.id,
         }),
     },
     methods: {
         ...mapMutations({
-            clear: 'petugas/CLEAR_ERROR'
+            clear: 'kegiatan/CLEAR_ERROR'
         }),
         ...mapActions({
-            showpimpinan: 'petugas/show',
+            showpimpinan: 'kegiatan/show',
         }),
         async getData(){
             
@@ -53,7 +53,7 @@ export default {
                 let data = res.data.data
                 for (const key in data) {
                     if (data.hasOwnProperty(key)) {
-                        this.$set(this.petugas, key, data[key])
+                        this.$set(this.kegiatan, key, data[key])
                     }
                 }
             }

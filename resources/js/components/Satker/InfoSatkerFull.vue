@@ -73,7 +73,7 @@ import { mapActions, mapMutations, mapState } from 'vuex'
 import ListItem from '../List/ListItem.vue'
 import ListStruktur from '../StrukturOrganisasi/ListStruktur.vue'
 import ListPimpinan from '../Pimpinan/ListPimpinan.vue'
-import ListBidang from '../Bidang/ListBidang.vue'
+import ListBidang from '../bidang/ListBidang.vue'
 export default {
     components: {
         ListItem,

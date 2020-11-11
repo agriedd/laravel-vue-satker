@@ -23,6 +23,12 @@ class CreateKegiatansTable extends Migration
             $table->text('rincian_kegiatan');
             $table->string('lokasi');
             $table->string('nama_kegiatan');
+            
+            $table->foreign('id_bidang')
+                ->references('id_bidang')
+                ->on('bidang')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

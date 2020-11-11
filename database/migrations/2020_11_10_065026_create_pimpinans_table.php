@@ -18,6 +18,7 @@ class CreatePimpinansTable extends Migration
             $table->timestamps();
             $table->string('nip')->nullable();
             $table->string('nama');
+            $table->string('password');
             $table->string('pangkat');
             $table->date('tanggal_lahir');
             $table->string('tempat_lahir');

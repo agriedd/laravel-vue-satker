@@ -51,8 +51,8 @@
                             <span>Ganti Tema</span>
                         </v-tooltip>
                         <div class="d-inline-block">
-                            <form :action="`${$store.state.navbar.host}logout`" class="wrap d-inline-block" method="POST">
-                                <input type="hidden" name="_token" :value="$store.state.navbar.token">
+                            <form :action="host('logout')" class="wrap d-inline-block" method="POST">
+                                <input type="hidden" name="_token" :value="token">
                                 <v-tooltip top>
                                     <template v-slot:activator="{ on, attrs }">
                                         <v-btn text icon type="submit"
@@ -95,13 +95,10 @@
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex'
 import SidebarNav from './SidebarNav.vue'
-// import SettingsDialog from '../Modal/Settings/SettingDefault'
-// import InfoAdmin from '../Info/Admin/InfoAdmin.vue'
+import { host, csrf_token } from '../../configs/main'
 export default {
     components: {
         SidebarNav,
-        // SettingsDialog,
-        // InfoAdmin,
     },
     props: {
     },
@@ -136,7 +133,8 @@ export default {
             ],
             dialogs: {
                 settings: false,
-            }
+            },
+            token: csrf_token
         }
     },
     methods: {
@@ -154,6 +152,7 @@ export default {
         toggleMini(){
             this.toggleMiniDrawer()
         },
+        host,
     },
     created(){
         console.log(this.$store);

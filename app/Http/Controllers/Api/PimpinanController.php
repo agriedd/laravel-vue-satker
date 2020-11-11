@@ -10,6 +10,7 @@ use App\Http\Resources\PimpinanCollection;
 use App\Pimpinan;
 use App\Response\Res;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class PimpinanController extends Controller{
 
@@ -46,6 +47,9 @@ class PimpinanController extends Controller{
 
     public function store(RequestStorePimpinan $request){
         $data = $request->validated();
+        
+        $data['password'] = Hash::make($data['nip']);
+
         return Res::store(
             Pimpinan::create($data)
         );
@@ -57,6 +61,9 @@ class PimpinanController extends Controller{
 
     public function update(RequestUpdatePimpinan $request, Pimpinan $pimpinan){
         $data = $request->validated();
+
+        $data['password'] = Hash::make($data['nip']);
+        
         return Res::update(
             $pimpinan->update($data)
         );

@@ -39,7 +39,7 @@ export default {
         },
         logout(context, params = {}){
             return new Promise(async(resolve, reject)=>{
-                let res = await axios.post(host('logout'), { params: params }).catch(e => reject(e))
+                let res = await axios.post(host('api/logout'), { params: params }).catch(e => reject(e))
                 if(res) resolve(res)
             })
         },

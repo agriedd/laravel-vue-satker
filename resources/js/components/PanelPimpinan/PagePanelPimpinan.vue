@@ -30,11 +30,7 @@
                                 <tab-awal/>
                             </v-tab-item>
                             <v-tab-item key="sankter">
-                                <v-card flat>
-                                    <v-card-text>
-                                        Sankter
-                                    </v-card-text>
-                                </v-card>
+                                <tab-sankter/>
                             </v-tab-item>
                             <v-tab-item key="struktur">
                                 <v-card flat>
@@ -75,10 +71,12 @@
 import AppBar from '../AppBar/AppBarPimpinan.vue'
 
 import TabAwal from '../Tabs/TabAwal.vue'
+import TabSankter from '../Tabs/TabSankter.vue'
 export default {
     components: {
         AppBar,
         TabAwal,
+        TabSankter,
     },
     data(){
         return {

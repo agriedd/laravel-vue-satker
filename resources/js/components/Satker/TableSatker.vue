@@ -62,13 +62,16 @@
 import { mapActions } from 'vuex'
 import ListItem from '../List/ListItem.vue'
 export default {
+    props: {
+        pimpinan: Boolean,
+    },
     components: {
         ListItem,
     },
     data(){
         return {
             items: [],
-            headers: [
+            headers_: [
                 { text: 'ID', align: 'start', sortable: true, value: 'id_satker' },
                 { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
                 { text: 'Alamat', align: 'start', sortable: true, value: 'alamat' },
@@ -94,6 +97,11 @@ export default {
                 message: "Error!",
             },
             lazyTransition: null,
+        }
+    },
+    computed: {
+        headers(){
+            return this.headers_.filter(e => e.value != 'action' && this.pimpinan)
         }
     },
     methods: {

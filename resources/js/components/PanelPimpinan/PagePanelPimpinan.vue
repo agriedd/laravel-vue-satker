@@ -13,7 +13,7 @@
                             <v-icon>mdi-plus</v-icon>
                         </v-btn>
                     </v-toolbar>
-                    <div style="position: sticky; top: 0px; z-index: 2;">
+                    <div style="position: sticky; top: 0px; z-index: 3;">
                         <v-tabs centered v-model="tab">
                             <v-tab key="awal">Awal</v-tab>
                             <v-tab key="sankter">Sankter</v-tab>
@@ -33,18 +33,10 @@
                                 <tab-sankter/>
                             </v-tab-item>
                             <v-tab-item key="struktur">
-                                <v-card flat>
-                                    <v-card-text>
-                                        Struktur Organisasi
-                                    </v-card-text>
-                                </v-card>
+                                <tab-struktur/>
                             </v-tab-item>
                             <v-tab-item key="petugas">
-                                <v-card flat>
-                                    <v-card-text>
-                                        Petugas
-                                    </v-card-text>
-                                </v-card>
+                                <tab-petugas/>
                             </v-tab-item>
                             <v-tab-item key="bidang">
                                 <v-card flat>
@@ -72,11 +64,15 @@ import AppBar from '../AppBar/AppBarPimpinan.vue'
 
 import TabAwal from '../Tabs/TabAwal.vue'
 import TabSankter from '../Tabs/TabSankter.vue'
+import TabStruktur from '../Tabs/TabStruktur.vue'
+import TabPetugas from '../Tabs/TabPetugas.vue'
 export default {
     components: {
         AppBar,
         TabAwal,
         TabSankter,
+        TabStruktur,
+        TabPetugas,
     },
     data(){
         return {

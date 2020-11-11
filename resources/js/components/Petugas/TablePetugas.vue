@@ -48,13 +48,16 @@
 import { mapActions } from 'vuex'
 import InfoSatkerHover from '../Satker/InfoSatkerHover.vue'
 export default {
+    props: {
+        pimpinan: Boolean,
+    },
     components: {
         InfoSatkerHover,
     },
     data(){
         return {
             items: [],
-            headers: [
+            headers_: [
                 { text: 'ID', align: 'start', sortable: true, value: 'id_petugas' },
                 { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
                 { text: 'NIP', align: 'start', sortable: true, value: 'nip' },
@@ -81,6 +84,11 @@ export default {
                 message: "Error!",
             },
             lazyTransition: null,
+        }
+    },
+    computed: {
+        headers(){
+            return this.headers_.filter(e => e.value != 'action' && this.pimpinan)
         }
     },
     methods: {

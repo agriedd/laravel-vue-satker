@@ -5,12 +5,12 @@
                 <v-card rounded="0">
                     <div>
                         <v-card-text>
-                            Form Ubah Data Petugas
+                            Form Ubah Data Kegiatan
                         </v-card-text>
                         <v-divider/>
                     </div>
                     <v-card-text>
-                        <form-ubah-petugas v-if="dialog" @loading="loading = $event"/>
+                        <form-ubah-kegiatan v-if="dialog" @loading="loading = $event"/>
                     </v-card-text>
                     <div>
                         <v-divider/>
@@ -34,10 +34,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormUbahPetugas from './FormUbahPetugas.vue'
+import FormUbahKegiatan from './FormUbahKegiatan.vue'
 export default {
     components: {
-        FormUbahPetugas,
+        FormUbahKegiatan,
     },
     data(){
         return {
@@ -50,7 +50,7 @@ export default {
     },
     computed: {
         ...mapState({
-            modal_ubah: state => state.petugas.modal.ubah,
+            modal_ubah: state => state.kegiatan.modal.ubah,
         }),
         dialog: {
             set(val){
@@ -63,10 +63,10 @@ export default {
     },
     methods: {
         ...mapActions({
-            updatePimpinan: 'petugas/update',
+            updatePimpinan: 'kegiatan/update',
         }),
         ...mapMutations({
-            setError: 'petugas/SET_ERRORS',
+            setError: 'kegiatan/SET_ERRORS',
         }),
         async submit(e){
             this.loading = true

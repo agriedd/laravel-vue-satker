@@ -29,13 +29,13 @@
                 </v-chip>
             </template>
             <template #item.action="{ item }">
-                <v-btn icon @click="openModal('ubah', item.id_petugas)">
+                <v-btn icon @click="openModal('ubah', item.id_kegiatan)">
                     <v-icon small>mdi-pencil</v-icon>
                 </v-btn>
-                <v-btn icon @click="openModal('hapus', item.id_petugas)">
+                <v-btn icon @click="openModal('hapus', item.id_kegiatan)">
                     <v-icon small>mdi-delete</v-icon>
                 </v-btn>
-                <v-btn icon @click="openModal('info', item.id_petugas)">
+                <v-btn icon @click="openModal('info', item.id_kegiatan)">
                     <v-icon small>mdi-arrow-left</v-icon>
                 </v-btn>
             </template>

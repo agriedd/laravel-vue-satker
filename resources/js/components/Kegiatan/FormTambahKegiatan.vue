@@ -40,7 +40,6 @@
 </template>
 <script>
 import InputPilihBidang from '../bidang/InputPilihBidang.vue'
-import statusPetugas from './statusPetugas'
 import InputPilihTanggal from './InputPilihTanggal.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
@@ -54,7 +53,6 @@ export default {
                 tanggal: null
             },
             rules: {},
-            status_petugas: statusPetugas,
         }
     },
     computed: {

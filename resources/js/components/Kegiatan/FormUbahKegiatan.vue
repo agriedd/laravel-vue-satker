@@ -10,75 +10,64 @@
         </div>
         <div>
             <v-text-field
-                label="Nama Petugas" 
-                name="nama" 
-                :error-messages="errors.nama"
-                @change="clear('nama')"
-                v-model="form.nama"/>
+                label="Nama Kegiatan" 
+                name="nama_kegiatan" 
+                :error-messages="errors.nama_kegiatan"
+                @change="clear('nama_kegiatan')"
+                v-model="form.nama_kegiatan"/>
+        </div>
+        <div>
+            <input-pilih-tanggal 
+                v-model="form.tanggal" 
+                :errors="errors" 
+                @clear:error="clear('tanggal')"/>
         </div>
         <div>
             <v-text-field
-                label="NIP" 
-                name="nip" 
-                :error-messages="errors.nip"
-                @change="clear('nip')"
-                v-model="form.nip"/>
-        </div>
-        <div>
-            <v-text-field
-                label="Pangkat | Golongan" 
-                name="pangkat" 
-                :error-messages="errors.pangkat"
-                @change="clear('pangkat')"
-                v-model="form.pangkat"/>
-        </div>
-        <div>
-            <v-select 
-                label="Status Petugas" 
-                name="status" 
-                :items="status_petugas"
-                :error-messages="errors.status" 
-                @change="clear('status')"
-                v-model="form.status"/>
-        </div>
-        <div>
-            <v-text-field
-                label="Alamat" 
-                name="alamat" 
-                :error-messages="errors.alamat"
-                @change="clear('alamat')"
+                label="Lokasi" 
+                name="lokasi" 
+                :error-messages="errors.lokasi"
+                @change="clear('lokasi')"
                 append-icon="mdi-map-marker"
-                v-model="form.alamat"/>
+                v-model="form.lokasi"/>
+        </div>
+        <div>
+            <v-textarea
+                label="Rincian Kegiatan" 
+                name="rincian_kegiatan" 
+                :error-messages="errors.rincian_kegiatan"
+                @change="clear('rincian_kegiatan')"
+                v-model="form.rincian_kegiatan"/>
         </div>
     </div>
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
 import InputPilihBidang from '../bidang/InputPilihBidang.vue'
-import statusPetugas from './statusPetugas'
+import InputPilihTanggal from './InputPilihTanggal.vue'
 export default {
     components: {
         InputPilihBidang,
+        InputPilihTanggal,
     },
     data(){
         return {
             form: {},
             rules: {},
-            status_petugas: statusPetugas,
         }
     },
     computed: {
         ...mapState({
-            errors: state => state.petugas.errors,
-            id: state => state.petugas.selected.id,
+            errors: state => state.kegiatan.errors,
+            id: state => state.kegiatan.selected.id,
         }),
     },
     methods: {
         ...mapMutations({
-            clear: 'petugas/CLEAR_ERROR'
+            clear: 'kegiatan/CLEAR_ERROR'
         }),
         ...mapActions({
-            showpetugas: 'petugas/show',
+            showpetugas: 'kegiatan/show',
         }),
         async getData(){
             

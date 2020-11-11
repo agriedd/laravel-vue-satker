@@ -24,7 +24,7 @@
                                 <modal-tambah-kegiatan @modal:tambah="openModal('tambah', $event)" @done="update(null)"/>
                                 <modal-ubah-kegiatan @modal:ubah="openModal('ubah', $event)" @done="update(null)"/>
                                 <modal-hapus-kegiatan @modal:hapus="openModal('hapus', $event)" @done="update(null)"/>
-                                <!-- <modal-info-kegiatan @modal:info="openModal('info', $event)" @done="update(null)"/> -->
+                                <modal-info-kegiatan @modal:info="openModal('info', $event)" @done="update(null)"/>
                             </template>
                         </table-kegiatan>
                     </div>
@@ -39,7 +39,7 @@ import TableKegiatan from './TableKegiatan.vue'
 import ModalTambahKegiatan from './ModalTambahKegiatan.vue'
 import ModalUbahKegiatan from './ModalUbahKegiatan.vue'
 import ModalHapusKegiatan from './ModalHapusKegiatan.vue'
-// import ModalInfoPetugas from './ModalInfoPetugas.vue'
+import ModalInfoKegiatan from './ModalInfoKegiatan.vue'
 import { mapMutations, mapState } from 'vuex'
 export default {
     components: {
@@ -48,7 +48,7 @@ export default {
         ModalTambahKegiatan,
         ModalUbahKegiatan,
         ModalHapusKegiatan,
-        // ModalInfoPetugas,
+        ModalInfoKegiatan,
     },
     computed: {
     },

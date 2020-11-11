@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import routes from '../route/main'
+import routes from '../route/pimpinan'
 import store from './vuex'
 import { host } from '../configs/main'
 

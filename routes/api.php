@@ -22,6 +22,7 @@ Route::get('struktur/count', 'Api\StrukturController@count');
 Route::get('pimpinan/count', 'Api\PimpinanController@count');
 Route::get('petugas/count', 'Api\PetugasController@count');
 Route::get('bidang/count', 'Api\BidangController@count');
+Route::get('kegiatan/count', 'Api\KegiatanController@count');
 
 Route::resources([
     'admin' => 'Api\AdminController',

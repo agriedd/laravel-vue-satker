@@ -66,7 +66,7 @@ export default {
     },
     methods: {
         ...mapActions({
-            getCount: 'bidang/count'
+            getCount: 'kegiatan/count'
         }),
         async getData(){
             this.loading = true

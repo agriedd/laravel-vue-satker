@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestStoreKegiatan;
 use App\Http\Requests\RequestUpdateKegiatan;
+use App\Http\Resources\CountCollection;
 use App\Http\Resources\KegiatanCollection;
 use App\Kegiatan;
 use App\Response\Res;
@@ -29,6 +30,18 @@ class KegiatanController extends Controller{
         );
     }
 
+    public function count(){
+        return new CountCollection(
+            Kegiatan::when(request()->filled('search'), function($query){
+                $search = request('search');
+                return $query->where('nama_kegiatan', 'like', "%{$search}%");
+            })
+            ->when(request()->filled('id_kegiatan'), function($query){
+                return $query->where('id_kegiatan', request('id_kegiatan'));
+            })
+            ->count()
+        );
+    }
     public function store(RequestStoreKegiatan $request){
         $data = $request->validated();
         return Res::store(

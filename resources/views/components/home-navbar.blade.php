@@ -12,7 +12,7 @@
     <div class="navbar-collapse collapse" id="navbar-home">
         <ul class="navbar-nav ml-auto">
             <x-navbar.top-item :label="'Home'" :url="route('home')" :param="'/'"></x-navbar.top-item>
-            <x-navbar.top-item :label="'Petugas'" :url="route('home')" :param="'/'"></x-navbar.top-item>
+            <x-navbar.top-item :label="'Petugas'" :url="route('home.petugas')" :param="'petugas*'"></x-navbar.top-item>
             <x-navbar.top-item :label="'Bidang'" :url="route('home')" :param="'/'"></x-navbar.top-item>
             <x-navbar.top-item :label="'Galeri'" :url="route('home')" :param="'/'"></x-navbar.top-item>
             <x-navbar.top-item :label="'Kegiatan'" :url="route('home')" :param="'/'"></x-navbar.top-item>

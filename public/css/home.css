@@ -11330,11 +11330,28 @@ fieldset:disabled .btn {
   background-color: var(--background-color);
 }
 
+.grid-petugas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: minmax(100px, 1fr);
+  grid-gap: 1px;
+}
+
+.grid-petugas > div {
+  background-color: #fff;
+  transition: all 0.25s ease;
+}
+
+.grid-petugas > div:hover {
+  background-color: #f2f2f2;
+}
+
 .home-grid {
   --bg-dark: #343a40;
   --text-dark: #fff;
   --sidebar-item-size: 80px;
   --primary-color: var(--bs-gray);
+  --secondary-color: #dee2e6;
   /**
       ------ divider
   **/
@@ -11388,6 +11405,10 @@ fieldset:disabled .btn {
   font-size: var(--font-size-nav-item);
   font-weight: var(--font-weight-nav-item);
   text-transform: var(--text-transform-nav-item);
+}
+
+.home-grid > .home-grid--banner-full {
+  grid-area: 2/2/12/13;
 }
 
 .home-grid > .home-grid--sidebar {
@@ -11505,6 +11526,10 @@ fieldset:disabled .btn {
 
   .home-grid > .home-grid--banner {
     grid-area: 2/1/10/13;
+  }
+
+  .home-grid > .home-grid--banner-full {
+    grid-area: 2/1/12/13;
   }
 
   .home-grid > .home-grid--item-1 {

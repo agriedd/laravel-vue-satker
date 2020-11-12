@@ -10,6 +10,7 @@
 @import './home/carousel_galeri.scss';
 @import './home/carousel_berita.scss';
 @import './home/login_page.scss';
+@import './home/grid_petugas.scss';
 
 .home-grid{
 
@@ -28,6 +29,7 @@
     --sidebar-item-size: 80px;
 
     --primary-color: var(--bs-gray);
+    --secondary-color: #dee2e6;
 
     /**
         ------ divider
@@ -67,7 +69,6 @@
                 }
 
                 &:hover{
-
                     &>.nav-link{
                         color: $gray-800;
                     }
@@ -88,6 +89,9 @@
                 }
             }
         }
+    }
+    &>.home-grid--banner-full{
+        grid-area: 2/2/12/13;
     }
     &>.home-grid--sidebar{
         grid-area: 1/1/17/1;
@@ -200,6 +204,9 @@
         }
         &>.home-grid--banner{
             grid-area: 2/1/10/13;
+        }
+        &>.home-grid--banner-full{
+            grid-area: 2/1/12/13;
         }
         &>.home-grid--item{
             &-1{

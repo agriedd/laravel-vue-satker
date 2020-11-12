@@ -15,6 +15,6 @@ class HomeController extends Controller{
         return view('pages.home.petugas');
     }
     public function bidang(){
-        return view('pages.home.petugas');
+        return view('pages.home.bidang');
     }
 }

@@ -11346,6 +11346,45 @@ fieldset:disabled .btn {
   background-color: #f2f2f2;
 }
 
+.grid-bidang {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-auto-rows: minmax(350px, 1fr);
+  grid-gap: 1px;
+}
+
+.grid-bidang > div {
+  background-color: #fff;
+  transition: all 0.25s ease;
+}
+
+.grid-bidang > div .show-on-hover {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  transform: translateY(-100%);
+  transition: all 0.25s ease;
+}
+
+.grid-bidang > div .main-content {
+  transition: all 0.25s ease;
+}
+
+.grid-bidang > div:hover {
+  grid-row-end: span 2;
+  background-color: #f2f2f2;
+}
+
+.grid-bidang > div:hover .main-content {
+  transform: translateY(100%);
+}
+
+.grid-bidang > div:hover .show-on-hover {
+  transform: translateY(0%);
+}
+
 .home-grid {
   --bg-dark: #343a40;
   --text-dark: #fff;

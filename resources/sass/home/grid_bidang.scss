@@ -1,0 +1,28 @@
+.grid-bidang{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-auto-rows: minmax(350px, 1fr);
+    grid-gap: 1px;
+    & > div{
+        background-color: $white;
+        transition: all .25s ease;
+        .show-on-hover{
+            top: 0px; left: 0px; width: 100%; height: auto; min-height: 100%;
+            transform: translateY(-100%);
+            transition: all .25s ease;
+        }
+        .main-content{
+            transition: all .25s ease;
+        }
+        &:hover{
+            grid-row-end: span 2;
+            background-color: darken($white, 5);
+            .main-content{
+                transform: translateY(100%);
+            }
+            .show-on-hover{
+                transform: translateY(0%);
+            }
+        }
+    }
+}

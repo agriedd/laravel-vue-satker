@@ -14,6 +14,9 @@ class GridPetugas extends Component{
             $search = request('q');
             $query->where('nama', 'like', "%{$search}%");
         })
+        ->when(request()->filled('id_bidang'), function($query){
+            $query->where('id_bidang', request('id_bidang'));
+        })
         ->get();
     }
 

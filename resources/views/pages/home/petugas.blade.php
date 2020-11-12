@@ -21,6 +21,9 @@
                     </form>
                 </div>
             </div>
+            <div class="container">
+                <x-info-bidang-get></x-info-bidang-get>
+            </div>
             <x-grid-petugas></x-grid-petugas>
         </div>
     </div>

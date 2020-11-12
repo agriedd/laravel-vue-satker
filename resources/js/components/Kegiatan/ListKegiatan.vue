@@ -12,7 +12,7 @@
                             </v-list-item-action>
                         </v-list-item>
                         <v-divider></v-divider>
-                        <info-bidang-template :bidang="bidang"/>
+                        <info-kegiatan-template :kegiatan="kegiatan"/>
                     </v-list>
                 </div>
                 <div v-else>
@@ -28,10 +28,13 @@
                                     </v-list-item-icon>
                                     <v-list-item-content>
                                         <v-list-item-title>
-                                            {{ item.nama_bidang }}
+                                            {{ item.nama_kegiatan }}
                                         </v-list-item-title>
                                         <v-list-item-subtitle>
-                                            {{ item.nama_kepala_b }}
+                                            {{ item.rincian_kegiatan }}
+                                        </v-list-item-subtitle>
+                                        <v-list-item-subtitle>
+                                            {{ item.tanggal }}
                                         </v-list-item-subtitle>
                                     </v-list-item-content>
                                 </v-list-item>
@@ -41,15 +44,15 @@
                     </v-list>
                     <v-list v-else-if="!loading">
                         <div class="text-center">
-                            Tidak Ada Data Bidang
+                            Tidak Ada Data Kegiatan
                         </div>
                         <div class="d-flex justify-center py-5">
-                            <v-btn icon large :to="{ name: 'page.bidang' }" link color="primary">
+                            <v-btn icon large :to="{ name: 'page.kegiatan' }" link color="primary">
                                 <v-icon large>mdi-plus</v-icon>
                             </v-btn>
                         </div>
                         <div class="text-center">
-                            Tambah Bidang
+                            Tambah Kegiatan
                         </div>
                     </v-list>
                     <v-list v-else-if="loading">
@@ -66,16 +69,16 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import InfoBidangTemplate from './InfoBidangTemplate.vue'
+import InfoKegiatanTemplate from './InfoKegiatanTemplate.vue'
 export default {
     components: {
-        InfoBidangTemplate,
+        InfoKegiatanTemplate,
     },
     props: {
         params: Object,
     },
     computed: {
-        bidang(){
+        kegiatan(){
             return this.items[this.id]
         }
     },
@@ -105,12 +108,12 @@ export default {
     },
     methods: {
         ...mapActions({
-            getpimpinan: 'bidang/get',
+            getkegiatan: 'kegiatan/get',
         }),
         async getData(){
             this.loading = true
 
-            let res = await this.getpimpinan({...this.options, search: this.search, ...this.params}).catch(e => {
+            let res = await this.getkegiatan({...this.options, search: this.search, ...this.params}).catch(e => {
                 this.snackbar.status = true
                 this.snackbar.message = e.message
                 this.loading = false

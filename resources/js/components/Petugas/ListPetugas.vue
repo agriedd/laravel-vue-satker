@@ -44,7 +44,7 @@
                     </v-list>
                     <v-list v-else-if="!loading">
                         <div class="text-center">
-                            Tidak Ada Data Bidang
+                            Tidak Ada Data Petugas
                         </div>
                         <div class="d-flex justify-center py-5">
                             <v-btn icon large :to="{ name: 'page.petugas' }" link color="primary">
@@ -52,7 +52,7 @@
                             </v-btn>
                         </div>
                         <div class="text-center">
-                            Tambah Bidang
+                            Tambah Petugas
                         </div>
                     </v-list>
                     <v-list v-else-if="loading">

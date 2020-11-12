@@ -11385,6 +11385,22 @@ fieldset:disabled .btn {
   transform: translateY(0%);
 }
 
+.grid-kegiatan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-auto-rows: minmax(200px, 1fr);
+  grid-gap: 1px;
+}
+
+.grid-kegiatan > div {
+  background-color: #fff;
+  transition: all 0.25s ease;
+}
+
+.grid-kegiatan > div:hover {
+  background-color: #f2f2f2;
+}
+
 .home-grid {
   --bg-dark: #343a40;
   --text-dark: #fff;

@@ -14,6 +14,9 @@ class HomeController extends Controller{
     public function petugas(){
         return view('pages.home.petugas');
     }
+    public function kegiatan(){
+        return view('pages.home.kegiatan');
+    }
     public function bidang(){
         return view('pages.home.bidang');
     }

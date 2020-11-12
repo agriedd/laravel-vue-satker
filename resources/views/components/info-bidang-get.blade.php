@@ -1,5 +1,5 @@
 @if($bidang)
-    <div class="alert alert-primary">
+    <div class="alert bg-warning">
         <div class="p-3">
             <h3 class="text-uppercase font-weight-bold">
                 Bidang: {{ $bidang->nama_bidang }}

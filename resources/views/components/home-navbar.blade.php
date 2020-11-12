@@ -15,7 +15,7 @@
             <x-navbar.top-item :label="'Petugas'" :url="route('home.petugas')" :param="'petugas*'"></x-navbar.top-item>
             <x-navbar.top-item :label="'Bidang'" :url="route('home.bidang')" :param="'bidang*'"></x-navbar.top-item>
             <x-navbar.top-item :label="'Galeri'" :url="route('home')" :param="'/'"></x-navbar.top-item>
-            <x-navbar.top-item :label="'Kegiatan'" :url="route('home')" :param="'/'"></x-navbar.top-item>
+            <x-navbar.top-item :label="'Kegiatan'" :url="route('home.kegiatan')" :param="'kegiatan*'"></x-navbar.top-item>
             {{-- <x-navbar.top-item :label="'Jemaat'" :url="route('home')"></x-navbar.top-item>
             <x-navbar.top-item-dropdown :label="'Profil'" :url="'profil'">
                 <x-navbar.top-item :label="'Sejarah'" :url="route('home')"></x-navbar.top-item>

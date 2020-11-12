@@ -21,6 +21,7 @@ Route::post('login/pimpinan', 'Auth\LoginPimpinanController@login')->name('login
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/petugas', 'HomeController@petugas')->name('home.petugas');
 Route::get('/bidang', 'HomeController@bidang')->name('home.bidang');
+Route::get('/kegiatan', 'HomeController@kegiatan')->name('home.kegiatan');
 
 Route::post('/api/logout', 'Api\UserController@logout');
 

@@ -17,7 +17,7 @@
             <div class="p-3 position-sticky" style="top: 0px">
                 <div class="container">
                     <form action="" method="GET">
-                        <input type="search" class="form-control w-100 p-3 shadow" placeholder="Temukan Petugas..." name="q" value="{{ request('q') }}">
+                        <input type="search" class="form-control w-100 p-3 shadow" placeholder="Temukan Kegiatan..." name="q" value="{{ request('q') }}">
                     </form>
                 </div>
             </div>
@@ -25,7 +25,22 @@
                 <x-info-bidang-get></x-info-bidang-get>
             </div>
             <div class="container">
-                <x-grid-petugas></x-grid-petugas>
+                <div>
+                    <div class="p-4">
+                        <h5>
+                            Kegiatan Yang Akan Datang
+                        </h5>
+                    </div>
+                    <x-grid-kegiatan :jenis="'baru'"></x-grid-kegiatan>
+                </div>
+                <div>
+                    <div class="p-4">
+                        <h5>
+                            Kegiatan Lama
+                        </h5>
+                    </div>
+                    <x-grid-kegiatan :jenis="'lama'"></x-grid-kegiatan>
+                </div>
             </div>
         </div>
     </div>

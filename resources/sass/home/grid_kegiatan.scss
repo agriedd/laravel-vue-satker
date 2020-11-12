@@ -1,0 +1,13 @@
+.grid-kegiatan{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-auto-rows: minmax(200px, 1fr);
+    grid-gap: 1px;
+    & > div{
+        background-color: $white;
+        transition: all .25s ease;
+        &:hover{
+            background-color: darken($white, 5);
+        }
+    }
+}

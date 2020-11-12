@@ -39,6 +39,7 @@
             <div class="d-flex" style="position: sticky; top: 0px">
                 <v-card-text :key="tab" class="grow pa-0">
                     <info-satker :value="bidang.satker" v-if="tab == 0"/>
+                    <list-petugas :params="{ id_bidang: bidang.id_bidang }"/>
                 </v-card-text>
             </div>
         </v-col>
@@ -49,11 +50,13 @@ import { mapActions, mapMutations, mapState } from 'vuex'
 import ListItem from '../List/ListItem.vue'
 import InfoSatker from '../Satker/InfoSatkerHover.vue'
 import InfoBidangTemplate from './InfoBidangTemplate.vue'
+import ListPetugas from '../Petugas/ListPetugas.vue'
 export default {
     components: {
         ListItem,
         InfoSatker,
         InfoBidangTemplate,
+        ListPetugas,
     },
     data(){
         return {

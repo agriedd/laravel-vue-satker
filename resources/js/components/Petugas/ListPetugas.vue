@@ -12,7 +12,7 @@
                             </v-list-item-action>
                         </v-list-item>
                         <v-divider></v-divider>
-                        <info-bidang-template :bidang="bidang"/>
+                        <info-petugas-template :petugas="petugas"/>
                     </v-list>
                 </div>
                 <div v-else>
@@ -22,20 +22,23 @@
                     <v-list v-if="total">
                         <v-list-item-group v-model="id">
                             <template v-for="item in items">
-                                <v-list-item :key="item.id">
+                                <v-list-item :key="item.id_petugas">
                                     <v-list-item-icon>
                                         <v-icon>mdi-crown</v-icon>
                                     </v-list-item-icon>
                                     <v-list-item-content>
                                         <v-list-item-title>
-                                            {{ item.nama_bidang }}
+                                            {{ item.nama }}
                                         </v-list-item-title>
                                         <v-list-item-subtitle>
-                                            {{ item.nama_kepala_b }}
+                                            {{ item.nip }}
                                         </v-list-item-subtitle>
                                     </v-list-item-content>
+                                    <v-list-item-icon v-if="item.status == 'PNS'">
+                                        <v-icon>mdi-star</v-icon>
+                                    </v-list-item-icon>
                                 </v-list-item>
-                                <v-divider :key="`${item.id}-2`"/>
+                                <v-divider :key="`${item.id_petugas}-2`"/>
                             </template>
                         </v-list-item-group>
                     </v-list>
@@ -44,7 +47,7 @@
                             Tidak Ada Data Bidang
                         </div>
                         <div class="d-flex justify-center py-5">
-                            <v-btn icon large :to="{ name: 'page.bidang' }" link color="primary">
+                            <v-btn icon large :to="{ name: 'page.petugas' }" link color="primary">
                                 <v-icon large>mdi-plus</v-icon>
                             </v-btn>
                         </div>
@@ -66,16 +69,16 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import InfoBidangTemplate from './InfoBidangTemplate.vue'
+import InfoPetugasTemplate from './InfoPetugasTemplate.vue'
 export default {
     components: {
-        InfoBidangTemplate,
+        InfoPetugasTemplate,
     },
     props: {
         params: Object,
     },
     computed: {
-        bidang(){
+        petugas(){
             return this.items[this.id]
         }
     },
@@ -105,12 +108,12 @@ export default {
     },
     methods: {
         ...mapActions({
-            getpimpinan: 'bidang/get',
+            getpetugas: 'petugas/get',
         }),
         async getData(){
             this.loading = true
 
-            let res = await this.getpimpinan({...this.options, search: this.search, ...this.params}).catch(e => {
+            let res = await this.getpetugas({...this.options, search: this.search, ...this.params}).catch(e => {
                 this.snackbar.status = true
                 this.snackbar.message = e.message
                 this.loading = false

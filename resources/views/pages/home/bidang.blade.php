@@ -17,7 +17,7 @@
             <div class="p-3 position-sticky" style="top: 0px">
                 <div class="container">
                     <form action="" method="GET">
-                        <input type="search" class="form-control w-100 p-3 shadow" placeholder="Temukan Petugas..." name="q" value="{{ request('q') }}">
+                        <input type="search" class="form-control w-100 p-3 shadow" placeholder="Temukan Bidang..." name="q" value="{{ request('q') }}">
                     </form>
                 </div>
             </div>

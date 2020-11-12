@@ -20,6 +20,8 @@ Route::post('login/pimpinan', 'Auth\LoginPimpinanController@login')->name('login
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/petugas', 'HomeController@petugas')->name('home.petugas');
+Route::get('/bidang', 'HomeController@bidang')->name('home.bidang');
+
 Route::post('/api/logout', 'Api\UserController@logout');
 
 Route::middleware('auth:web')->prefix('/admin')->group(function($app){

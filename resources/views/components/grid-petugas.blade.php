@@ -18,6 +18,12 @@
                             {{ $item->nip }}
                         </div>
                     @endif
+                    <div class="small text-muted">
+                        Pangkat: {{ $item->pangkat }}
+                    </div>
+                    <div class="small text-muted">
+                        Bidang: {{ $item->bidang->nama_bidang }}
+                    </div>
                 </div>
                 <div>
                     <div class="text-muted pl-3">

@@ -25,7 +25,7 @@ export default {
                 { title: "Satker", icon: "mdi-bookmark", link: "/admin/satker"},
             ],
             listbottom: [
-                { title: "Struktur", icon: "mdi-bookmark", link: "/admin/struktur"},
+                { title: "Struktur", icon: "mdi-file-tree", link: "/admin/struktur"},
                 { title: "Pimpinan", icon: "mdi-account", link: "/admin/pimpinan"},
                 { title: "Bidang", icon: "mdi-dropbox", link: "/admin/bidang"},
                     { title: "Petugas", icon: "mdi-account-group", link: "/admin/petugas"},

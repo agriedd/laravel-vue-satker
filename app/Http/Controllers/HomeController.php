@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\StrukturOrganisasi;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller{
@@ -19,5 +20,11 @@ class HomeController extends Controller{
     }
     public function bidang(){
         return view('pages.home.bidang');
+    }
+    public function struktur(){
+        $struktur = StrukturOrganisasi::latest()->first();
+        return view('pages.home.struktur', [
+            "struktur" => $struktur
+        ]);
     }
 }

@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import { Carousel } from 'bootstrap'
+import { Carousel, Tooltip } from 'bootstrap'
 window.Vue = require('vue');
 
 /**
@@ -56,6 +56,12 @@ const app = new Vue({
                 pause: "hover",
             })
             this.$set(this.carousel, 'main', objCarousel)
+        }
+        let tooltip = document.querySelectorAll('[data-toggle="tooltip"]')
+        if(tooltip){
+            Array.from(tooltip).forEach(e => {
+                new Tooltip(e)
+            })
         }
     }
 });

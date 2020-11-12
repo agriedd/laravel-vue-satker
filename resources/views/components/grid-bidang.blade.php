@@ -40,7 +40,7 @@
                                     <a href="{{ route('home.petugas', [ 'id_bidang' => $item->id_bidang ]) }}" class="btn-outline-primary btn py-3">
                                         Petugas
                                     </a>
-                                    <a class="btn-outline-primary btn py-3">
+                                    <a href="{{ route('home.kegiatan', [ 'id_bidang' => $item->id_bidang ]) }}" class="btn-outline-primary btn py-3">
                                         Kegiatan
                                     </a>
                                 </div>

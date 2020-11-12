@@ -20581,6 +20581,14 @@ var app = new Vue({
       });
       this.$set(this.carousel, 'main', objCarousel);
     }
+
+    var tooltip = document.querySelectorAll('[data-toggle="tooltip"]');
+
+    if (tooltip) {
+      Array.from(tooltip).forEach(function (e) {
+        new bootstrap__WEBPACK_IMPORTED_MODULE_0__["Tooltip"](e);
+      });
+    }
   }
 });
 

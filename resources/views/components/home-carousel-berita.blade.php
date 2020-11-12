@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="h-100 grid-carousel-berita--item-3 bg-white"></div>
-    <a href="#" class="h-100 grid-carousel-berita--item-3 bg-warning text-dark text-decoration-none d-flex flex-column justify-content-center" data-toggle="tooltip" title="Baca Selengkapnya">
+    <a href="{{ route('home.kegiatan') }}" class="h-100 grid-carousel-berita--item-3 bg-warning text-dark text-decoration-none d-flex flex-column justify-content-center" data-toggle="tooltip" title="Lihat kegiatan lainnya">
         <div class="p-3 d-flex justify-content-between">
             <div class="mx-auto">
                 <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

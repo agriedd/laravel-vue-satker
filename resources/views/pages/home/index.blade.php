@@ -26,18 +26,20 @@
         <div class="home-grid--item-3">
             <div class="p-3 h-100 d-flex justify-content-center flex-column h-100 text-white">
                 <div>
-                    <div class="small text-light">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, quis?
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="home-grid--item-4">
+        <div class="home-grid--item-4 position-sticky" style="top: 0px">
             <div class="p-3 h-100 d-flex justify-content-center flex-column h-100">
                 <div>
                     <div class="small text-muted">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, quis?
+                        Hubungi Kami:
                     </div>
+                    <ul>
+                        <li>
+                            +62 000000
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -54,7 +56,7 @@
         <div class="home-grid--content pt-5 bg-white pb-4 px-4">
             <div class="container">
                 <div class="display-6 font-weight-bold mb-4">
-                    Lorem ipsum dolor sit amet consectetur.
+                    Selamat datang di Website Dinas Pekerjaan Umum dan Perumahan Rakyat Satuan Kerja Wilayah 1 Provinsi Nusa Tenggara Timur
                 </div>
                 <div>
                     <p>
@@ -75,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                <img src="{{ asset('img/random.jpg') }}" alt="" style="width: 100%">
+                <img src="{{ asset('img/bg.jpg') }}" alt="" style="width: 100%">
             </div>
         </div>
         <div class="home-grid--content bg-white py-4 px-4">

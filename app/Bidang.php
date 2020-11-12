@@ -14,6 +14,12 @@ class Bidang extends Model{
     public function satker(){
         return $this->belongsTo(Satker::class, 'id_satker', 'id_satker');
     }
+    public function kegiatan(){
+        return $this->hasMany(Kegiatan::class, 'id_bidang', 'id_bidang');
+    }
+    public function petugas(){
+        return $this->hasMany(Petugas::class, 'id_bidang', 'id_bidang');
+    }
 
     public function getVisiMisiHtmlAttribute(){
         return nl2br($this->visi_misi);

@@ -29,6 +29,7 @@ class BidangController extends Controller{
                 $sortDesc = is_array(request('sortDesc')) ? request('sortDesc')[0] : request('sortDesc');
                 return $query->orderBy($sortBy, $sortDesc == 'true' ? 'DESC' : 'ASC');
             })
+            ->withCount(['petugas', 'kegiatan'])
             ->paginate(request('itemsPerPage') ?? 10)
         );
     }

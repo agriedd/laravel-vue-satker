@@ -4286,6 +4286,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         sortable: true,
         value: 'nama_kepala_b'
       }, {
+        text: 'Petugas',
+        align: 'center',
+        sortable: false,
+        value: 'petugas_count'
+      }, {
+        text: 'Kegiatan',
+        align: 'center',
+        sortable: false,
+        value: 'kegiatan_count'
+      }, {
         text: 'Satker',
         align: 'start',
         sortable: true,

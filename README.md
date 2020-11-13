@@ -181,6 +181,7 @@ php artisan serve
 ```
 
 aplikasi akan berjalan di localhost dengan port 8080
+http://localhost:8080
 
 ### Login Admin
 | Email | password |
@@ -190,7 +191,7 @@ aplikasi akan berjalan di localhost dengan port 8080
 
 ### Login Pimpinan
 Login admin, dimenu pimpinan
-tambah pimpinan dengan nip
+tambah pimpinan dengan nip 12345678910
 
 untuk login
 | NIP | password |

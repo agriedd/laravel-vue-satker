@@ -141,6 +141,18 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 ```
 
+
+#### Key
+
+penting ni
+
+```cli
+
+php artisan key:generate
+
+```
+
+
 ##### migrate
 
 untuk membuat kolom pada database **satker**

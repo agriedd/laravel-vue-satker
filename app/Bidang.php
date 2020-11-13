@@ -8,7 +8,7 @@ class Bidang extends Model{
     protected $table = 'bidang';
     protected $primaryKey = 'id_bidang';
     protected $guarded = [];
-    protected $with = ['satker'];
+    protected $with = ['satker', 'foto_kegiatan'];
     protected $appends = ['visi_misi_html'];
 
     public function satker(){
@@ -19,6 +19,9 @@ class Bidang extends Model{
     }
     public function petugas(){
         return $this->hasMany(Petugas::class, 'id_bidang', 'id_bidang');
+    }
+    public function foto_kegiatan(){
+        return $this->hasOne(Kegiatan::class, 'id_bidang', 'id_bidang')->whereNotNull('gambar')->without(['bidang']);
     }
 
     public function getVisiMisiHtmlAttribute(){

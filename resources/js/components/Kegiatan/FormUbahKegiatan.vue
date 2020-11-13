@@ -53,7 +53,7 @@
         </v-expand-transition>
         <div>
             <v-file-input
-                label="Nama Gambar" 
+                label="Gambar Kegiatan" 
                 name="gambar" 
                 :error-messages="errors.gambar" 
                 @change="clear('gambar')"

@@ -1,13 +1,13 @@
 ## Cara install pertama
 
-pastikan bro sudah install composer
+pastikan sudah install composer
 
 karena composer itu package dependensynya php bgitu mirip npm nodejs
 
 ### Minimun Requirement
 
 1. >= php v7.2
-2. NodeJs (Snde terlalu penting sih, kecuali bro mau tes ubah tampilan vue, atau mau build ulang dia pu file js)
+2. NodeJs (Snde terlalu penting sih, kecuali mau tes ubah tampilan vue, atau mau build ulang dia pu file js)
 3. 
 
 ### Langkah awal

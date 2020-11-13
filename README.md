@@ -81,7 +81,7 @@ buat database dengan nama **satker**
 
 kalau .env tidak ada
 
-copy file **.env.example** menjadi *.env* pada directory/folder yang sama
+copy file **.env.example** menjadi **.env** pada directory/folder yang sama
 
 buka .env dan ubah menjadi
 

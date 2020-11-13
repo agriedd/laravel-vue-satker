@@ -68,7 +68,9 @@ export default {
     data(){
         return {
             form: {
-                tanggal: null
+                tanggal: null,
+                file_gambar: null,
+                encode_gambar: null,
             },
             rules: {},
         }
@@ -82,6 +84,22 @@ export default {
         ...mapMutations({
             clear: 'kegiatan/CLEAR_ERROR'
         }),
+        getImage(){
+            if(this.form.file_gambar){
+                let reader = new FileReader();
+                reader.onload = e =>{
+                    this.form.encode_gambar = reader.result;
+                }
+                reader.readAsDataURL(this.form.file_gambar);
+                return
+            }
+            this.encode_gambar = null;
+        }
+    },
+    watch: {
+        'form.file_gambar': function(val){
+            this.getImage()
+        }
     },
 }
 </script>

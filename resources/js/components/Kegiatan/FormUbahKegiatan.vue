@@ -39,6 +39,28 @@
                 @change="clear('rincian_kegiatan')"
                 v-model="form.rincian_kegiatan"/>
         </div>
+        <v-expand-transition>
+            <div v-if="form.file_gambar && form.encode_gambar" class="pb-5" key="1">
+                <div class="d-flex justify-center" style="position: relative; width: 100%">
+                    <v-img :src="form.encode_gambar" class="rounded" max-width="100%" max-height="50vh"/>
+                </div>
+            </div>
+            <div v-else-if="form.gambar_url" class="pb-5" key="2">
+                <div class="d-flex justify-center" style="position: relative; width: 100%">
+                    <v-img :src="form.gambar_url" class="rounded" max-width="100%" max-height="50vh"/>
+                </div>
+            </div>
+        </v-expand-transition>
+        <div>
+            <v-file-input
+                label="Nama Gambar" 
+                name="gambar" 
+                :error-messages="errors.gambar" 
+                @change="clear('gambar')"
+                v-model="form.file_gambar"
+                prepend-icon
+                append-icon="mdi-image"/>
+        </div>
     </div>
 </template>
 <script>
@@ -52,7 +74,10 @@ export default {
     },
     data(){
         return {
-            form: {},
+            form: {
+                file_gambar: null,
+                encode_gambar: null,
+            },
             rules: {},
         }
     },
@@ -86,6 +111,22 @@ export default {
                 }
             }
         },
+        getImage(){
+            if(this.form.file_gambar){
+                let reader = new FileReader();
+                reader.onload = e =>{
+                    this.form.encode_gambar = reader.result;
+                }
+                reader.readAsDataURL(this.form.file_gambar);
+                return
+            }
+            this.encode_gambar = null;
+        }
+    },
+    watch: {
+        'form.file_gambar': function(val){
+            this.getImage()
+        }
     },
     created(){
         this.getData()

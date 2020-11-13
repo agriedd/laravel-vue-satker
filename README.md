@@ -150,7 +150,7 @@ dan directory yang sama
 
 ```cli
 
-php artisan migrate
+php artisan migrate:fresh --seed
 
 ```
 

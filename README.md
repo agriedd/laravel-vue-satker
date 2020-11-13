@@ -198,3 +198,35 @@ untuk login
 | 12345678910 | 12345678910 |
 
 password = NIP
+
+
+# Laporan
+
+untuk laporan
+
+bisanya laporan untuk php di file controller
+
+lokasinya
+
++ app
+    
+    + Http
+        + Controllers
+            + Api
+                + AdminController.php
+                    + index() 
+                        > untuk mengambil daftar admin
+                    + store(Request $request)
+                        > untuk menambah sebuah data admin baru
+                        > field / $_POST yang dikirim dari form di bind ke object $request
+                        > method validated() untuk mengambil data request yang dikirim dan sudah divalidasi
+                        > untuk melihat validasinya misalkan untuk validasi admin di directory app/Http/Request/RequestStoreAdmin.php
+                        > didalama file RequestStoreAdmin.php terdapat rule untuk setiap field request yang dikirim dari form.
+                        > lalu untuk menambah dengan memanggil method created() secara static
+                        > Res::create(), Res::update() hanya untuk parsing hasil return boolean ke array dengan pesan "sukses/gagal" agar lebih mudah dibaca manusia
+                    + show(User $admin)
+                        > untuk mengambil satu data admin berdasarkan id yang dikirim / dilaravel id langsung di cast ke object $admin
+                    + update(Request $request, User $admin)
+                        > sama seperti store pertama divalidasi dan kemudian data admin yang diparsing/hasil cast dari id (mirip show), panggil method update() dengan mengirim hasil validasi data tadi
+                    + destroy
+                        > untuk menghapus salah satu data admin, dengan memanggil method delete()

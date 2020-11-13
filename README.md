@@ -181,3 +181,20 @@ php artisan serve
 ```
 
 aplikasi akan berjalan di localhost dengan port 8080
+
+### Login Admin
+| Email | password |
+|-------|----------|
+| admin@satker.com | password |
+
+
+### Login Pimpinan
+Login admin, dimenu pimpinan
+tambah pimpinan dengan nip
+
+untuk login
+| NIP | password |
+|-----|----------|
+| 12345678910 | 12345678910 |
+
+password = NIP

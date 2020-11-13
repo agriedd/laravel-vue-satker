@@ -86,10 +86,11 @@ copy file **.env.example** menjadi **.env** pada directory/folder yang sama
 buka .env dan ubah menjadi
 
 **DB_DATABASE=laravel** jadi **DB_DATABASE=satker**
+**APP_NAME=Laravel** jadi **APP_NAME=satker**
 
 ```env
 
-APP_NAME=Laravel
+APP_NAME=Satker
 APP_ENV=local
 APP_KEY=
 APP_DEBUG=true

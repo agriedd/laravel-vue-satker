@@ -9,6 +9,7 @@ use App\Http\Resources\CountCollection;
 use App\Http\Resources\KegiatanCollection;
 use App\Kegiatan;
 use App\Response\Res;
+use Illuminate\Support\Facades\Storage;
 
 class KegiatanController extends Controller{
 
@@ -47,6 +48,10 @@ class KegiatanController extends Controller{
     }
     public function store(RequestStoreKegiatan $request){
         $data = $request->validated();
+        if($request->gambar){
+            $nama_gambar = $request->gambar->store('/kegiatan', 'public');
+            $data['gambar'] = $nama_gambar;
+        }
         return Res::store(
             Kegiatan::create($data)
         );
@@ -58,6 +63,14 @@ class KegiatanController extends Controller{
 
     public function update(RequestUpdateKegiatan $request, Kegiatan $kegiatan){
         $data = $request->validated();
+        if($request->gambar){
+            $nama_gambar_old = $kegiatan->gambar;
+            $nama_gambar = $request->gambar->store('/kegiatan', 'public');
+            $data['gambar'] = $nama_gambar;
+            if($nama_gambar && Storage::disk('public')->exists($nama_gambar_old)){
+                Storage::disk('public')->delete($nama_gambar_old);
+            }
+        }
         return Res::update(
             $kegiatan->update($data)
         );

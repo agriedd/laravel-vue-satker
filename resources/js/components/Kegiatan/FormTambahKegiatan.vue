@@ -36,6 +36,24 @@
                 :error-messages="errors.rincian_kegiatan"
                 @change="clear('rincian_kegiatan')"/>
         </div>
+        <v-expand-transition>
+            <div v-if="form.file_gambar && form.encode_gambar" class="pb-5">
+                <div class="d-flex justify-center" style="position: relative; width: 100%">
+                    <v-img :src="form.encode_gambar" class="rounded" max-width="100%" max-height="50vh"/>
+                </div>
+                <v-divider></v-divider>
+            </div>
+        </v-expand-transition>
+        <div>
+            <v-file-input
+                label="Gambar Kegiatan (Opsional)" 
+                name="gambar" 
+                :error-messages="errors.gambar" 
+                @change="clear('gambar')"
+                v-model="form.file_gambar"
+                prepend-icon
+                append-icon="mdi-image"/>
+        </div>
     </div>
 </template>
 <script>

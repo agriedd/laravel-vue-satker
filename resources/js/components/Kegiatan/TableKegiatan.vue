@@ -28,6 +28,18 @@
                     {{ item.status }}
                 </v-chip>
             </template>
+            <template #item.gambar="{ item }">
+                <v-menu content-class="shadow-lg" open-on-hover max-width="400" min-width="300">
+                    <template #activator="{ attrs, on }">
+                        <div v-bind="attrs" v-on="on" class="pa-3">
+                            <v-img max-height="3rem" height="3rem" width="3rem" class="rounded mx-auto" :src="item.gambar_url" aspect-ratio="1"></v-img>
+                        </div>
+                    </template>
+                    <v-card>
+                        <v-img :src="item.gambar_url"/>
+                    </v-card>
+                </v-menu>
+            </template>
             <template #item.action="{ item }">
                 <template v-if="!pimpinan">
                     <v-btn icon @click="openModal('ubah', item.id_kegiatan)">
@@ -61,6 +73,7 @@ export default {
             items: [],
             headers: [
                 { text: 'ID', align: 'start', sortable: true, value: 'id_kegiatan' },
+                { text: null, align: 'end', sortable: true, value: 'gambar' },
                 { text: 'Nama Kegiatan', align: 'start', sortable: true, value: 'nama_kegiatan' },
                 { text: 'Tanggal', align: 'start', sortable: true, value: 'tanggal' },
                 { text: 'Lokasi', align: 'start', sortable: true, value: 'lokasi' },

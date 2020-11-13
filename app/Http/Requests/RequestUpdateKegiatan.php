@@ -28,6 +28,7 @@ class RequestUpdateKegiatan extends FormRequest
             'id_bidang'       => 'required|exists:bidang,id_bidang',
             'rincian_kegiatan'       => 'required',
             'lokasi'       => 'required',
+            'gambar'    => 'nullable|file|image',
         ];
     }
 }

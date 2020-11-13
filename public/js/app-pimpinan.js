@@ -2085,6 +2085,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2102,6 +2114,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         align: 'start',
         sortable: true,
         value: 'id_kegiatan'
+      }, {
+        text: null,
+        align: 'end',
+        sortable: true,
+        value: 'gambar'
       }, {
         text: 'Nama Kegiatan',
         align: 'start',
@@ -42545,6 +42562,74 @@ var render = function() {
                       "\n                " +
                         _vm._s(item.status) +
                         "\n            "
+                    )
+                  ],
+                  1
+                )
+              ]
+            }
+          },
+          {
+            key: "item.gambar",
+            fn: function(ref) {
+              var item = ref.item
+              return [
+                _c(
+                  "v-menu",
+                  {
+                    attrs: {
+                      "content-class": "shadow-lg",
+                      "open-on-hover": "",
+                      "max-width": "400",
+                      "min-width": "300"
+                    },
+                    scopedSlots: _vm._u(
+                      [
+                        {
+                          key: "activator",
+                          fn: function(ref) {
+                            var attrs = ref.attrs
+                            var on = ref.on
+                            return [
+                              _c(
+                                "div",
+                                _vm._g(
+                                  _vm._b(
+                                    { staticClass: "pa-3" },
+                                    "div",
+                                    attrs,
+                                    false
+                                  ),
+                                  on
+                                ),
+                                [
+                                  _c("v-img", {
+                                    staticClass: "rounded mx-auto",
+                                    attrs: {
+                                      "max-height": "3rem",
+                                      height: "3rem",
+                                      width: "3rem",
+                                      src: item.gambar_url,
+                                      "aspect-ratio": "1"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ]
+                          }
+                        }
+                      ],
+                      null,
+                      true
+                    )
+                  },
+                  [
+                    _vm._v(" "),
+                    _c(
+                      "v-card",
+                      [_c("v-img", { attrs: { src: item.gambar_url } })],
+                      1
                     )
                   ],
                   1

@@ -45,14 +45,14 @@ composer install
 tunggu sampe selesai
 
 
-#### Install package js (Internet|Opsional)
+#### Install package js (Internet|Opsional) Bisa diabaikan
 
 ```cli
 npm install
 ```
 
 
-#### Build File Js / Css Untuk Asset
+#### Build File Js / Css Untuk Asset (Opsional) Bisa diabaikan
 
 
 ```cli

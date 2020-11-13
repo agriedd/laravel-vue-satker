@@ -2117,7 +2117,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }, {
         text: null,
         align: 'end',
-        sortable: true,
+        sortable: false,
         value: 'gambar'
       }, {
         text: 'Nama Kegiatan',

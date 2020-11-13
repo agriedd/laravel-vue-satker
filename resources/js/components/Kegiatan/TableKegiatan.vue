@@ -73,7 +73,7 @@ export default {
             items: [],
             headers: [
                 { text: 'ID', align: 'start', sortable: true, value: 'id_kegiatan' },
-                { text: null, align: 'end', sortable: true, value: 'gambar' },
+                { text: null, align: 'end', sortable: false, value: 'gambar' },
                 { text: 'Nama Kegiatan', align: 'start', sortable: true, value: 'nama_kegiatan' },
                 { text: 'Tanggal', align: 'start', sortable: true, value: 'tanggal' },
                 { text: 'Lokasi', align: 'start', sortable: true, value: 'lokasi' },

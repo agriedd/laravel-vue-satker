@@ -166,3 +166,16 @@ dan directory yang sama
 php artisan storage:link
 
 ```
+
+## Menjalankan Aplikasi
+
+masih di cmd
+dan directory yang sama
+
+```cli
+
+php artisan serve
+
+```
+
+aplikasi akan berjalan di localhost dengan port 8080

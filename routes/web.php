@@ -25,6 +25,7 @@ Route::get('/petugas', 'HomeController@petugas')->name('home.petugas');
 Route::get('/bidang', 'HomeController@bidang')->name('home.bidang');
 Route::get('/kegiatan', 'HomeController@kegiatan')->name('home.kegiatan');
 Route::get('/struktur', 'HomeController@struktur')->name('home.struktur');
+Route::get('/visi-misi', 'HomeController@visimisi')->name('home.visi-misi');
 
 Route::post('/api/logout', 'Api\UserController@logout');
 

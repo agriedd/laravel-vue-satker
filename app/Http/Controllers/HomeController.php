@@ -27,4 +27,7 @@ class HomeController extends Controller{
             "struktur" => $struktur
         ]);
     }
+    public function visimisi(){
+        return view('pages.home.visi-misi');
+    }
 }

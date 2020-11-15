@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         factory(User::class, 1)->create();
-        factory(Satker::class, rand(1, 6))->create()->each(function($satker){
-            factory(Bidang::class, rand(1,5))->create([
+        factory(Satker::class, 1)->create()->each(function($satker){
+            factory(Bidang::class, 4)->create([
                 'id_satker' => $satker->id_satker
             ])->each(function($bidang){
                 factory(Petugas::class, rand(1, 10))->create([

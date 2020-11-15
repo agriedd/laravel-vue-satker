@@ -7,7 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Satker::class, function (Faker $faker) {
     return [
-        'nama'  => $faker->name(),
+        'nama'          => "Satker Wilayah 1",
+        'nama_pimpinan' => $faker->name,
         'alamat'    => $faker->streetAddress,
         'iso'       => $faker->randomAscii,
         'status'    => $faker->randomElement(['BUMN']),

@@ -24,13 +24,6 @@ class CreatePimpinansTable extends Migration
             $table->string('tempat_lahir');
             $table->string('api_token')->nullable();
             $table->string('alamat');
-            $table->unsignedBigInteger('id_satker');
-            
-            $table->foreign('id_satker')
-                ->references('id_satker')
-                ->on('satker_1')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
         });
     }
 

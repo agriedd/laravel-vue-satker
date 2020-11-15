@@ -18,6 +18,7 @@ class CreateSatkersTable extends Migration
             $table->timestamps();
 
             $table->string('nama');
+            $table->string('nama_pimpinan');
             $table->string('alamat');
             $table->string('iso');
             $table->string('status');

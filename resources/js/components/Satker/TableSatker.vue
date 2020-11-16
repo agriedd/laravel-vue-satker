@@ -76,6 +76,7 @@ export default {
             headers: [
                 { text: 'ID', align: 'start', sortable: true, value: 'id_satker' },
                 { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
+                { text: 'Pimpinan', align: 'start', sortable: true, value: 'nama_pimpinan' },
                 { text: 'Alamat', align: 'start', sortable: true, value: 'alamat' },
                 { text: 'ISO', align: 'start', sortable: true, value: 'iso' },
                 { text: 'Status', align: 'start', sortable: true, value: 'status' },

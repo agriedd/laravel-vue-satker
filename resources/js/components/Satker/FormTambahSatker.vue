@@ -9,6 +9,13 @@
         </div>
         <div>
             <v-text-field 
+                label="Nama Pimpinan" 
+                name="nama_pimpinan" 
+                :error-messages="errors.nama_pimpinan" 
+                @change="clear('nama_pimpinan')"/>
+        </div>
+        <div>
+            <v-text-field 
                 label="Alamat" 
                 name="alamat" 
                 :error-messages="errors.alamat" 

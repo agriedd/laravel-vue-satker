@@ -2777,6 +2777,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         sortable: true,
         value: 'nama'
       }, {
+        text: 'Pimpinan',
+        align: 'start',
+        sortable: true,
+        value: 'nama_pimpinan'
+      }, {
         text: 'Alamat',
         align: 'start',
         sortable: true,

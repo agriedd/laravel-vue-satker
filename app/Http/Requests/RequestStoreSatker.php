@@ -13,6 +13,7 @@ class RequestStoreSatker extends FormRequest{
     public function rules(){
         return [
             'nama'      => 'required',
+            'nama_pimpinan'      => 'required',
             'iso'       => 'required',
             'alamat'    => 'required',
             'status'    => 'required|in:BUMN,DINAS PEMERINTAH',

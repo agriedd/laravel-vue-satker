@@ -22,15 +22,15 @@ export default {
             },
             listtop: [
                 { title: "Awal", icon: "mdi-home", link: "/admin" },
-                { title: "Satker", icon: "mdi-bookmark", link: "/admin/satker"},
+                { title: "Satker", icon: "mdi-bookmark", link: "/admin/satker" },
             ],
             listbottom: [
-                { title: "Struktur", icon: "mdi-file-tree", link: "/admin/struktur"},
-                { title: "Bidang", icon: "mdi-dropbox", link: "/admin/bidang"},
-                    { title: "Pimpinan", icon: "mdi-account", link: "/admin/pimpinan"},
-                    { title: "Petugas", icon: "mdi-account-group", link: "/admin/petugas"},
-                    { title: "Kegiatan", icon: "mdi-bookmark", link: "/admin/kegiatan"},
-                { title: "Admin", icon: "mdi-shield-account-variant", link: "/admin/admin"},
+                { title: "Struktur", icon: "mdi-file-tree", link: "/admin/struktur" },
+                { title: "Bidang", icon: "mdi-dropbox", link: "/admin/bidang" },
+                    { title: "Pimpinan", icon: "mdi-account", link: "/admin/pimpinan" },
+                    { title: "Petugas", icon: "mdi-account-group", link: "/admin/petugas" },
+                    { title: "Kegiatan", icon: "mdi-bookmark", link: "/admin/kegiatan" },
+                { title: "Admin", icon: "mdi-shield-account-variant", link: "/admin/admin" },
             ],
             listgroup: [
             ]

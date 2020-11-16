@@ -24,7 +24,7 @@ class RequestUpdatePimpinan extends FormRequest
     {
         $id_pimpinan = request()->route('pimpinan')->id_pimpinan;
         return [
-            'id_satker'         => 'required|exists:satker_1,id_satker',
+            'id_bidang'         => 'required|exists:bidang,id_bidang',
             'nama'              => 'required',
             'nip'               => "required|unique:pimpinan,nip,{$id_pimpinan},id_pimpinan",
             'pangkat'           => 'required',

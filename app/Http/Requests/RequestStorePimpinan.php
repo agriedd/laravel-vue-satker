@@ -24,7 +24,7 @@ class RequestStorePimpinan extends FormRequest
     public function rules()
     {
         return [
-            'id_satker'         => 'required|exists:satker_1,id_satker',
+            'id_bidang'         => 'required|exists:bidang,id_bidang',
             'nama'              => 'required',
             'nip'               => 'required|unique:pimpinan,nip',
             'pangkat'           => 'required',

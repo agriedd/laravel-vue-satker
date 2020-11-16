@@ -4280,6 +4280,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4307,6 +4312,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         align: 'start',
         sortable: true,
         value: 'nama_kepala_b'
+      }, {
+        text: 'Pimpinan',
+        align: 'center',
+        sortable: false,
+        value: 'pimpinan'
       }, {
         text: 'Petugas',
         align: 'center',
@@ -45188,6 +45198,23 @@ var render = function() {
                   ],
                   1
                 )
+              ]
+            }
+          },
+          {
+            key: "item.pimpinan",
+            fn: function(ref) {
+              var item = ref.item
+              return [
+                item.pimpinan
+                  ? _c("div", [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(item.pimpinan.nama) +
+                          "\n            "
+                      )
+                    ])
+                  : _vm._e()
               ]
             }
           },

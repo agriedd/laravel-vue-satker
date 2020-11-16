@@ -12,14 +12,14 @@
             @update:options="update($event)"
             fixed-header
             :footer-props="{'items-per-page-options':[5, 10, 20, 30, 50, 100]}">
-            <template #item.id_satker="{ item }">
+            <template #item.id_bidang="{ item }">
                 <v-menu content-class="shadow-lg" open-on-hover max-width="400" min-width="300">
                     <template #activator="{ attrs, on }">
                         <div v-bind="attrs" v-on="on">
-                            {{ item.satker.nama }}
+                            {{ item.bidang.nama_bidang }}
                         </div>
                     </template>
-                    <info-satker-hover :value="item.satker"/>
+                    <info-bidang-hover :bidang="item.bidang"/>
                 </v-menu>
             </template>
             <template #item.tanggal_lahir="{ item }">
@@ -47,13 +47,13 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import InfoSatkerHover from '../Satker/InfoSatkerHover.vue'
+import InfoBidangHover from '../bidang/InfoBidangTemplate.vue'
 export default {
     props: {
         pimpinan: Boolean,
     },
     components: {
-        InfoSatkerHover,
+        InfoBidangHover,
     },
     data(){
         return {
@@ -61,7 +61,7 @@ export default {
             headers: [
                 { text: 'NIP', align: 'start', sortable: true, value: 'nip' },
                 { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
-                { text: 'Satker', align: 'start', sortable: true, value: 'id_satker' },
+                { text: 'Bidang', align: 'start', sortable: true, value: 'id_bidang' },
                 { text: 'TTL', align: 'start', sortable: true, value: 'tanggal_lahir' },
                 { text: 'Pangkat', align: 'start', sortable: true, value: 'pangkat' },
                 { text: '', align: 'end', sortable: false, value: 'action' },

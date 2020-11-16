@@ -13,9 +13,9 @@ class Pimpinan extends Authenticatable{
     protected $table = 'pimpinan';
     protected $primaryKey = 'id_pimpinan';
     protected $guarded = [];
-    protected $with = ['satker'];
+    protected $with = ['bidang'];
 
-    public function satker(){
-        return $this->belongsTo(Satker::class, 'id_satker', 'id_satker');
+    public function bidang(){
+        return $this->belongsTo(Bidang::class, 'id_bidang', 'id_bidang');
     }
 }

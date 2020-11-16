@@ -4,9 +4,9 @@
             <div>
                 <info-pimpinan-template :pimpinan="pimpinan">
                     <v-list-item-group v-model="tab" color="primary">
-                        <list-item v-model="pimpinan.satker.nama" label="Nama Satker" key="0">
+                        <list-item v-model="pimpinan.bidang.nama_bidang" label="Nama Bidang" key="0">
                             <v-list-item-action-text>
-                                Lihat Satker
+                                Lihat Bidang
                             </v-list-item-action-text>
                             <v-list-item-icon>
                                 <v-icon>mdi-chevron-right</v-icon>
@@ -24,7 +24,7 @@
                 </div>
                 <v-slide-x-transition>
                     <v-card-text :key="tab">
-                        <info-satker :value="pimpinan.satker" v-if="tab == 0"/>
+                        <info-bidang :bidang="pimpinan.bidang" v-if="tab == 0"/>
                     </v-card-text>
                 </v-slide-x-transition>
             </div>
@@ -34,6 +34,7 @@
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
 import ListItem from '../List/ListItem.vue'
+import InfoBidang from '../bidang/InfoBidangTemplate.vue'
 import InfoSatker from '../Satker/InfoSatkerHover.vue'
 import InfoPimpinanTemplate from './InfoPimpinanTemplate.vue'
 export default {
@@ -41,6 +42,7 @@ export default {
         ListItem,
         InfoSatker,
         InfoPimpinanTemplate,
+        InfoBidang,
     },
     data(){
         return {

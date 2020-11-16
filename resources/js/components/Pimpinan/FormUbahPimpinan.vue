@@ -1,12 +1,12 @@
 <template>
     <div class="px-3">
         <div>
-            <input-pilih-satker
-                label="Pilih Satker" 
-                name="id_satker"
-                :error-messages="errors.id_satker" 
-                @change="clear('id_satker')"
-                v-model="form.id_satker"/>
+            <input-pilih-bidang
+                label="Pilih Bidang" 
+                name="id_bidang"
+                :error-messages="errors.id_bidang" 
+                @change="clear('id_bidang')"
+                v-model="form.id_bidang"/>
         </div>
         <div>
             <v-text-field
@@ -56,11 +56,11 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import InputPilihSatker from '../Satker/InputPilihSatker.vue'
+import InputPilihBidang from '../bidang/InputPilihBidang.vue'
 import InputTanggalLahir from './InputPilihTanggalLahir.vue'
 export default {
     components: {
-        InputPilihSatker,
+        InputPilihBidang,
         InputTanggalLahir,
     },
     data(){

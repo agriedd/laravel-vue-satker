@@ -22,6 +22,11 @@
                     <info-satker-hover :value="item.satker"/>
                 </v-menu>
             </template>
+            <template #item.pimpinan="{ item }">
+                <div v-if="item.pimpinan">
+                    {{ item.pimpinan.nama }}
+                </div>
+            </template>
             <template #item.action="{ item }">
                 <template v-if="!pimpinan">
                     <v-btn icon @click="openModal('ubah', item.id_bidang)">
@@ -57,6 +62,7 @@ export default {
                 { text: 'ID', align: 'start', sortable: true, value: 'id_bidang' },
                 { text: 'Nama Bidang', align: 'start', sortable: true, value: 'nama_bidang' },
                 { text: 'Nama Kepala', align: 'start', sortable: true, value: 'nama_kepala_b' },
+                { text: 'Pimpinan', align: 'center', sortable: false, value: 'pimpinan' },
                 { text: 'Petugas', align: 'center', sortable: false, value: 'petugas_count' },
                 { text: 'Kegiatan', align: 'center', sortable: false, value: 'kegiatan_count' },
                 { text: 'Satker', align: 'start', sortable: true, value: 'id_satker' },

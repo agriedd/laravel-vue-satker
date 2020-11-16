@@ -9,7 +9,7 @@
                     {{ pimpinan.nip }}
                 </div>
                 <div class="text--disabled">
-                    {{ pimpinan.satker.nama }}
+                    {{ pimpinan.bidang.nama_bidang }}
                 </div>
                 <div class="text--disabled">
                     {{ pimpinan.pangkat }}

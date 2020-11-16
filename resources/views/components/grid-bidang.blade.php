@@ -21,7 +21,7 @@
                             {!! $nama !!}
                         </h3>
                         <div class="small text-light">
-                            Pimipinan: {{ $item->nama_kepala_b }}
+                            Pimipinan: {{ optional($item->pimpinan)->nama }}
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                                 {!! $nama !!}
                             </h3>
                             <div class="small text-muted">
-                                Pimipinan: {{ $item->nama_kepala_b }}
+                                Pimipinan: {{ optional($item->pimpinan)->nama }}
                             </div>
                             <div class="py-3">
                                 <div class="btn-group w-100">

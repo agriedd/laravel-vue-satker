@@ -6,7 +6,7 @@
                 <li data-target="#carouselExampleSlidesOnly" data-slide-to="1"></li>
                 <li data-target="#carouselExampleSlidesOnly" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-item active" style="background-image: url('{{ asset('img/bg.jpg') }}'); background-position: 10% center; background-size: cover">
+            <div class="carousel-item active" style="background-image: url('{{ asset('img/bg.jpg') }}'); background-position: center;  background-attachment: fixed;">
                 <div class="h-100 d-flex flex-column justify-content-center text-white p-4" style="max-width: 500px">
                     <h3 class="font-weight-bold">
                         Website Dinas Pekerjaan Umum dan Perumahan Rakyat Satuan Kerja Wilayah 1 Provinsi Nusa Tenggara Timur

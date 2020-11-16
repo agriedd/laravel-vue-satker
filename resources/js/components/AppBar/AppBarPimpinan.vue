@@ -29,21 +29,7 @@
         </div>
         <div class="d-flex flex-column justify-center fill-height ml-auto">
             <slot>
-                <div class="d-inline-block">
-                    <form :action="host('logout')" class="wrap d-inline-block" method="POST">
-                        <input type="hidden" name="_token" :value="token">
-                        <v-tooltip bottom>
-                            <template v-slot:activator="{ on, attrs }">
-                                <v-btn text icon type="submit"
-                                    v-bind="attrs"
-                                    v-on="on">
-                                    <v-icon>mdi-power</v-icon>
-                                </v-btn>
-                            </template>
-                            <span>Keluar</span>
-                        </v-tooltip>
-                    </form>
-                </div>
+                
             </slot>
         </div>
     </v-app-bar>

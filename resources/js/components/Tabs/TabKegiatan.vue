@@ -1,11 +1,11 @@
 <template>
     <div class="grid grey lighten-2">
         <div>
-            <info-kegiatan/>
+            <info-kegiatan :params="{ id_bidang: user.id_bidang }"/>
         </div>
         <div class="table">
             <v-list class="fill-height">
-                <v-list-item>
+                <!-- <v-list-item>
                     <v-list-item-icon>
                         <v-icon>mdi-bookmark</v-icon>
                     </v-list-item-icon>
@@ -23,8 +23,8 @@
                         </v-btn>
                     </v-list-item-action>
                 </v-list-item>
-                <v-divider/>
-                <table-kegiatan pimpinan/>
+                <v-divider/> -->
+                <table-kegiatan pimpinan :params="{ id_bidang: user.id_bidang }"/>
             </v-list>
         </div>
     </div>
@@ -32,6 +32,7 @@
 <script>
 import InfoKegiatan from './InfoKegiatan.vue'
 import TableKegiatan from '../Kegiatan/TableKegiatan.vue'
+import { mapState } from 'vuex'
 
 export default {
     components: {
@@ -42,6 +43,11 @@ export default {
         return {
             jumlah_satker: 0
         }
+    },
+    computed: {
+        ...mapState({
+            user: state => state.pimpinan.user
+        })
     }
 }
 </script>

@@ -5,25 +5,6 @@
         </div>
         <div class="table">
             <v-list>
-                <v-list-item>
-                    <v-list-item-icon>
-                        <v-icon>mdi-bookmark</v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-content>
-                        <v-list-item-title>
-                            Export
-                        </v-list-item-title>
-                        <v-list-item-subtitle>
-                            Laporan Satker
-                        </v-list-item-subtitle>
-                    </v-list-item-content>
-                    <v-list-item-action>
-                        <v-btn link href="#" icon>
-                            <v-icon>mdi-download</v-icon>
-                        </v-btn>
-                    </v-list-item-action>
-                </v-list-item>
-                <v-divider/>
                 <table-satker pimpinan/>
             </v-list>
         </div>

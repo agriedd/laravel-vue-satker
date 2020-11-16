@@ -34,27 +34,29 @@
                 </v-list-item-action-text>
             </v-list-item>
             <v-divider/>
-            <v-list-item>
-                <v-list-item-content>
-                    <v-list-item-title>
-                        Struktur / Satker
-                    </v-list-item-title>
-                    <v-list-item-subtitle>
-                        Jumlah Struktur Organisasi per Satker
-                    </v-list-item-subtitle>
-                </v-list-item-content>
-                <v-list-item-action-text>
-                    <h1 class="font-weight-bold">
-                        {{ jumlah }} / {{ jumlah_satker || 0 }}
-                    </h1>
-                </v-list-item-action-text>
-            </v-list-item>
-            <v-divider/>
-            <v-list-item class="py-5 px-10">
-                <v-list-item-content>
-                    <v-progress-linear :value="percent"/>
-                </v-list-item-content>
-            </v-list-item>
+            <template v-if="jumlah_satker != null">
+                <v-list-item>
+                    <v-list-item-content>
+                        <v-list-item-title>
+                            Struktur / Satker
+                        </v-list-item-title>
+                        <v-list-item-subtitle>
+                            Jumlah Struktur Organisasi per Satker
+                        </v-list-item-subtitle>
+                    </v-list-item-content>
+                    <v-list-item-action-text>
+                        <h1 class="font-weight-bold">
+                            {{ jumlah }} / {{ jumlah_satker || 0 }}
+                        </h1>
+                    </v-list-item-action-text>
+                </v-list-item>
+                <v-divider/>
+                <v-list-item class="py-5 px-10">
+                    <v-list-item-content>
+                        <v-progress-linear :value="percent"/>
+                    </v-list-item-content>
+                </v-list-item>
+            </template>
         </v-list>
     </v-card>
 </template>

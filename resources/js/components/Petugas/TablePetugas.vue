@@ -52,6 +52,7 @@ import InfoSatkerHover from '../Satker/InfoSatkerHover.vue'
 export default {
     props: {
         pimpinan: Boolean,
+        params: Object,
     },
     components: {
         InfoSatkerHover,
@@ -95,7 +96,7 @@ export default {
         async getData(){
             this.loading = true
 
-            let res = await this.getBidang({...this.options, search: this.search}).catch(e => {
+            let res = await this.getBidang({...this.options, search: this.search, ...this.params}).catch(e => {
                 this.snackbar.status = true
                 this.snackbar.message = e.message
                 this.loading = false

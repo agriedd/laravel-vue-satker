@@ -40,6 +40,9 @@ class KegiatanController extends Controller{
                 $search = request('search');
                 return $query->where('nama_kegiatan', 'like', "%{$search}%");
             })
+            ->when(request()->filled('id_bidang'), function($query){
+                return $query->where('id_bidang', request('id_bidang'));
+            })
             ->when(request()->filled('id_kegiatan'), function($query){
                 return $query->where('id_kegiatan', request('id_kegiatan'));
             })

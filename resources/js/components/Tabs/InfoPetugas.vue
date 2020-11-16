@@ -74,6 +74,7 @@ export default {
     props: {
         value: String,
         jumlah_satker: Number,
+        params: Object,
     },
     computed: {
         tab: {
@@ -106,7 +107,8 @@ export default {
             this.loading = true
 
             let res = await this.getCount({
-                count: true
+                count: true,
+                ...this.params,
             }).catch(e=>{})
 
             this.loading = false
@@ -119,6 +121,7 @@ export default {
             let res = await this.getCount({
                 count: true,
                 pns: true,
+                ...this.params,
             }).catch(e=>{})
 
             this.loading = false
@@ -131,6 +134,7 @@ export default {
             let res = await this.getCount({
                 count: true,
                 kontrak: true,
+                ...this.params
             }).catch(e=>{})
 
             this.loading = false

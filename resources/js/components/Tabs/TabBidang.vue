@@ -5,7 +5,7 @@
         </div>
         <div class="table">
             <v-list class="fill-height">
-                <v-list-item>
+                <!-- <v-list-item>
                     <v-list-item-icon>
                         <v-icon>mdi-bookmark</v-icon>
                     </v-list-item-icon>
@@ -23,7 +23,7 @@
                         </v-btn>
                     </v-list-item-action>
                 </v-list-item>
-                <v-divider/>
+                <v-divider/> -->
                 <table-bidang pimpinan/>
             </v-list>
         </div>

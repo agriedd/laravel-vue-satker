@@ -15,11 +15,11 @@
         </div>
         <div class="home-grid--banner-full" style="background-color: var(--secondary-color)">
             <div>
-                <div class="container py-5">
-                    <h5>
+                <div class="container py-5 text-center" style="font-family: Roboto">
+                    <div class="text-dark font-weight-bolder display-5">
                         Galeri
-                    </h5>
-                    <div class="small">
+                    </div>
+                    <div class="small text-muted">
                         Foto galeri kegiatan
                     </div>
                 </div>

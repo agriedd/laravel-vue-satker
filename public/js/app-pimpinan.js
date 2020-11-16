@@ -1964,20 +1964,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2101,7 +2087,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    pimpinan: Boolean
+    pimpinan: Boolean,
+    params: Object
   },
   components: {
     InfoSatkerHover: _Satker_InfoSatkerHover_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
@@ -2181,7 +2168,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _context.next = 3;
                 return _this.getBidang(_objectSpread(_objectSpread({}, _this.options), {}, {
                   search: _this.search
-                }))["catch"](function (e) {
+                }, _this.params))["catch"](function (e) {
                   _this.snackbar.status = true;
                   _this.snackbar.message = e.message;
                   _this.loading = false;
@@ -2321,12 +2308,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AppBar_AppBarPimpinan_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../AppBar/AppBarPimpinan.vue */ "./resources/js/components/AppBar/AppBarPimpinan.vue");
-/* harmony import */ var _Tabs_TabAwal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Tabs/TabAwal.vue */ "./resources/js/components/Tabs/TabAwal.vue");
-/* harmony import */ var _Tabs_TabSankter_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Tabs/TabSankter.vue */ "./resources/js/components/Tabs/TabSankter.vue");
-/* harmony import */ var _Tabs_TabStruktur_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Tabs/TabStruktur.vue */ "./resources/js/components/Tabs/TabStruktur.vue");
-/* harmony import */ var _Tabs_TabPetugas_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Tabs/TabPetugas.vue */ "./resources/js/components/Tabs/TabPetugas.vue");
-/* harmony import */ var _Tabs_TabBidang_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Tabs/TabBidang.vue */ "./resources/js/components/Tabs/TabBidang.vue");
-/* harmony import */ var _Tabs_TabKegiatan_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Tabs/TabKegiatan.vue */ "./resources/js/components/Tabs/TabKegiatan.vue");
+/* harmony import */ var _configs_main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../configs/main */ "./resources/js/configs/main.js");
+/* harmony import */ var _Tabs_TabAwal_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Tabs/TabAwal.vue */ "./resources/js/components/Tabs/TabAwal.vue");
+/* harmony import */ var _Tabs_TabSankter_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Tabs/TabSankter.vue */ "./resources/js/components/Tabs/TabSankter.vue");
+/* harmony import */ var _Tabs_TabStruktur_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Tabs/TabStruktur.vue */ "./resources/js/components/Tabs/TabStruktur.vue");
+/* harmony import */ var _Tabs_TabPetugas_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Tabs/TabPetugas.vue */ "./resources/js/components/Tabs/TabPetugas.vue");
+/* harmony import */ var _Tabs_TabBidang_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Tabs/TabBidang.vue */ "./resources/js/components/Tabs/TabBidang.vue");
+/* harmony import */ var _Tabs_TabKegiatan_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Tabs/TabKegiatan.vue */ "./resources/js/components/Tabs/TabKegiatan.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2380,6 +2375,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 
 
@@ -2390,20 +2399,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     AppBar: _AppBar_AppBarPimpinan_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    TabAwal: _Tabs_TabAwal_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    TabSankter: _Tabs_TabSankter_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    TabStruktur: _Tabs_TabStruktur_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    TabPetugas: _Tabs_TabPetugas_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    TabBidang: _Tabs_TabBidang_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    TabKegiatan: _Tabs_TabKegiatan_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+    TabAwal: _Tabs_TabAwal_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    TabSankter: _Tabs_TabSankter_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    TabStruktur: _Tabs_TabStruktur_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    TabPetugas: _Tabs_TabPetugas_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    TabBidang: _Tabs_TabBidang_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+    TabKegiatan: _Tabs_TabKegiatan_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
   },
   data: function data() {
     return {
-      tab: 'awal'
+      tab: 'awal',
+      token: _configs_main__WEBPACK_IMPORTED_MODULE_1__["csrf_token"]
     };
   },
-  computed: {},
-  methods: {},
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_8__["mapState"])({
+    user: function user(state) {
+      return state.pimpinan.user;
+    }
+  })),
+  methods: {
+    host: _configs_main__WEBPACK_IMPORTED_MODULE_1__["host"]
+  },
   created: function created() {}
 });
 
@@ -2486,7 +2502,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    pimpinan: Boolean
+    pimpinan: Boolean,
+    params: Object
   },
   components: {
     InfoSatkerHover: _Satker_InfoSatkerHover_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
@@ -2566,7 +2583,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _context.next = 3;
                 return _this.getBidang(_objectSpread(_objectSpread({}, _this.options), {}, {
                   search: _this.search
-                }))["catch"](function (e) {
+                }, _this.params))["catch"](function (e) {
                   _this.snackbar.status = true;
                   _this.snackbar.message = e.message;
                   _this.loading = false;
@@ -3191,6 +3208,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -3323,7 +3342,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     value: String,
-    jumlah_satker: Number
+    jumlah_satker: Number,
+    params: Object
   },
   computed: {
     tab: {
@@ -3360,9 +3380,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               case 0:
                 _this.loading = true;
                 _context.next = 3;
-                return _this.getCount({
+                return _this.getCount(_objectSpread({
                   count: true
-                })["catch"](function (e) {});
+                }, _this.params))["catch"](function (e) {});
 
               case 3:
                 res = _context.sent;
@@ -3483,7 +3503,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     value: String,
-    jumlah_satker: Number
+    jumlah_satker: Number,
+    params: Object
   },
   computed: {
     tab: {
@@ -3522,9 +3543,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               case 0:
                 _this.loading = true;
                 _context.next = 3;
-                return _this.getCount({
+                return _this.getCount(_objectSpread({
                   count: true
-                })["catch"](function (e) {});
+                }, _this.params))["catch"](function (e) {});
 
               case 3:
                 res = _context.sent;
@@ -3550,10 +3571,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               case 0:
                 _this2.loading = true;
                 _context2.next = 3;
-                return _this2.getCount({
+                return _this2.getCount(_objectSpread({
                   count: true,
                   pns: true
-                })["catch"](function (e) {});
+                }, _this2.params))["catch"](function (e) {});
 
               case 3:
                 res = _context2.sent;
@@ -3579,10 +3600,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               case 0:
                 _this3.loading = true;
                 _context3.next = 3;
-                return _this3.getCount({
+                return _this3.getCount(_objectSpread({
                   count: true,
                   kontrak: true
-                })["catch"](function (e) {});
+                }, _this3.params))["catch"](function (e) {});
 
               case 3:
                 res = _context3.sent;
@@ -3821,6 +3842,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -3901,6 +3924,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _InfoPetugas_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InfoPetugas.vue */ "./resources/js/components/Tabs/InfoPetugas.vue");
 /* harmony import */ var _InfoBidang_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./InfoBidang.vue */ "./resources/js/components/Tabs/InfoBidang.vue");
 /* harmony import */ var _InfoKegiatan_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./InfoKegiatan.vue */ "./resources/js/components/Tabs/InfoKegiatan.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -3920,6 +3950,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 
@@ -3937,7 +3968,12 @@ __webpack_require__.r(__webpack_exports__);
     return {
       jumlah_satker: 0
     };
-  }
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_5__["mapState"])({
+    user: function user(state) {
+      return state.pimpinan.user;
+    }
+  }))
 });
 
 /***/ }),
@@ -4011,6 +4047,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _InfoKegiatan_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InfoKegiatan.vue */ "./resources/js/components/Tabs/InfoKegiatan.vue");
 /* harmony import */ var _Kegiatan_TableKegiatan_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Kegiatan/TableKegiatan.vue */ "./resources/js/components/Kegiatan/TableKegiatan.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -4042,6 +4085,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4053,7 +4097,12 @@ __webpack_require__.r(__webpack_exports__);
     return {
       jumlah_satker: 0
     };
-  }
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapState"])({
+    user: function user(state) {
+      return state.pimpinan.user;
+    }
+  }))
 });
 
 /***/ }),
@@ -4069,6 +4118,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _InfoPetugas_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InfoPetugas.vue */ "./resources/js/components/Tabs/InfoPetugas.vue");
 /* harmony import */ var _Petugas_TablePetugas_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Petugas/TablePetugas.vue */ "./resources/js/components/Petugas/TablePetugas.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -4100,6 +4156,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4111,7 +4168,12 @@ __webpack_require__.r(__webpack_exports__);
     return {
       jumlah_satker: 0
     };
-  }
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapState"])({
+    user: function user(state) {
+      return state.pimpinan.user;
+    }
+  }))
 });
 
 /***/ }),
@@ -4127,25 +4189,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _InfoSatker_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InfoSatker.vue */ "./resources/js/components/Tabs/InfoSatker.vue");
 /* harmony import */ var _Satker_TableSatker_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Satker/TableSatker.vue */ "./resources/js/components/Satker/TableSatker.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -42378,65 +42421,7 @@ var render = function() {
         {
           staticClass: "d-flex flex-column justify-center fill-height ml-auto"
         },
-        [
-          _vm._t("default", [
-            _c("div", { staticClass: "d-inline-block" }, [
-              _c(
-                "form",
-                {
-                  staticClass: "wrap d-inline-block",
-                  attrs: { action: _vm.host("logout"), method: "POST" }
-                },
-                [
-                  _c("input", {
-                    attrs: { type: "hidden", name: "_token" },
-                    domProps: { value: _vm.token }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "v-tooltip",
-                    {
-                      attrs: { bottom: "" },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "activator",
-                          fn: function(ref) {
-                            var on = ref.on
-                            var attrs = ref.attrs
-                            return [
-                              _c(
-                                "v-btn",
-                                _vm._g(
-                                  _vm._b(
-                                    {
-                                      attrs: {
-                                        text: "",
-                                        icon: "",
-                                        type: "submit"
-                                      }
-                                    },
-                                    "v-btn",
-                                    attrs,
-                                    false
-                                  ),
-                                  on
-                                ),
-                                [_c("v-icon", [_vm._v("mdi-power")])],
-                                1
-                              )
-                            ]
-                          }
-                        }
-                      ])
-                    },
-                    [_vm._v(" "), _c("span", [_vm._v("Keluar")])]
-                  )
-                ],
-                1
-              )
-            ])
-          ])
-        ],
+        [_vm._t("default")],
         2
       )
     ]
@@ -42872,19 +42857,64 @@ var render = function() {
                       _vm._v(" "),
                       _c("v-spacer"),
                       _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { icon: "" },
-                          on: {
-                            click: function($event) {
-                              return _vm.openModal("tambah")
+                      _c("div", { staticClass: "d-inline-block" }, [
+                        _c(
+                          "form",
+                          {
+                            staticClass: "wrap d-inline-block",
+                            attrs: {
+                              action: _vm.host("logout"),
+                              method: "POST"
                             }
-                          }
-                        },
-                        [_c("v-icon", [_vm._v("mdi-plus")])],
-                        1
-                      )
+                          },
+                          [
+                            _c("input", {
+                              attrs: { type: "hidden", name: "_token" },
+                              domProps: { value: _vm.token }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "v-tooltip",
+                              {
+                                attrs: { bottom: "" },
+                                scopedSlots: _vm._u([
+                                  {
+                                    key: "activator",
+                                    fn: function(ref) {
+                                      var on = ref.on
+                                      var attrs = ref.attrs
+                                      return [
+                                        _c(
+                                          "v-btn",
+                                          _vm._g(
+                                            _vm._b(
+                                              {
+                                                attrs: {
+                                                  text: "",
+                                                  icon: "",
+                                                  type: "submit"
+                                                }
+                                              },
+                                              "v-btn",
+                                              attrs,
+                                              false
+                                            ),
+                                            on
+                                          ),
+                                          [_c("v-icon", [_vm._v("mdi-power")])],
+                                          1
+                                        )
+                                      ]
+                                    }
+                                  }
+                                ])
+                              },
+                              [_vm._v(" "), _c("span", [_vm._v("Keluar")])]
+                            )
+                          ],
+                          1
+                        )
+                      ])
                     ],
                     1
                   ),
@@ -42914,7 +42944,7 @@ var render = function() {
                         [
                           _c("v-tab", { key: "awal" }, [_vm._v("Awal")]),
                           _vm._v(" "),
-                          _c("v-tab", { key: "sankter" }, [_vm._v("Sankter")]),
+                          _c("v-tab", { key: "sankter" }, [_vm._v("Satker")]),
                           _vm._v(" "),
                           _c("v-tab", { key: "struktur" }, [
                             _vm._v("Struktur Organisasi")
@@ -43998,62 +44028,66 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c(
-            "v-list-item",
-            [
-              _c(
-                "v-list-item-content",
-                [
-                  _c("v-list-item-title", [
-                    _vm._v(
-                      "\n                    Bidang / Satker\n                "
+          _vm.jumlah_satker != null
+            ? [
+                _c(
+                  "v-list-item",
+                  [
+                    _c(
+                      "v-list-item-content",
+                      [
+                        _c("v-list-item-title", [
+                          _vm._v(
+                            "\n                        Bidang / Satker\n                    "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("v-list-item-subtitle", [
+                          _vm._v(
+                            "\n                        Jumlah Bidang per Satker\n                    "
+                          )
+                        ])
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("v-list-item-action-text", [
+                      _c("h1", { staticClass: "font-weight-bold" }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.jumlah) +
+                            " / " +
+                            _vm._s(_vm.jumlah_satker || 0) +
+                            "\n                    "
+                        )
+                      ])
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("v-divider"),
+                _vm._v(" "),
+                _c(
+                  "v-list-item",
+                  { staticClass: "py-5 px-10" },
+                  [
+                    _c(
+                      "v-list-item-content",
+                      [
+                        _c("v-progress-linear", {
+                          attrs: { value: _vm.percent, color: "green" }
+                        })
+                      ],
+                      1
                     )
-                  ]),
-                  _vm._v(" "),
-                  _c("v-list-item-subtitle", [
-                    _vm._v(
-                      "\n                    Jumlah Bidang per Satker\n                "
-                    )
-                  ])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("v-list-item-action-text", [
-                _c("h1", { staticClass: "font-weight-bold" }, [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm.jumlah) +
-                      " / " +
-                      _vm._s(_vm.jumlah_satker || 0) +
-                      "\n                "
-                  )
-                ])
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("v-divider"),
-          _vm._v(" "),
-          _c(
-            "v-list-item",
-            { staticClass: "py-5 px-10" },
-            [
-              _c(
-                "v-list-item-content",
-                [
-                  _c("v-progress-linear", {
-                    attrs: { value: _vm.percent, color: "green" }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          )
+                  ],
+                  1
+                )
+              ]
+            : _vm._e()
         ],
-        1
+        2
       )
     ],
     1
@@ -44571,58 +44605,66 @@ var render = function() {
           _vm._v(" "),
           _c("v-divider"),
           _vm._v(" "),
-          _c(
-            "v-list-item",
-            [
-              _c(
-                "v-list-item-content",
-                [
-                  _c("v-list-item-title", [
-                    _vm._v(
-                      "\n                    Struktur / Satker\n                "
+          _vm.jumlah_satker != null
+            ? [
+                _c(
+                  "v-list-item",
+                  [
+                    _c(
+                      "v-list-item-content",
+                      [
+                        _c("v-list-item-title", [
+                          _vm._v(
+                            "\n                        Struktur / Satker\n                    "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("v-list-item-subtitle", [
+                          _vm._v(
+                            "\n                        Jumlah Struktur Organisasi per Satker\n                    "
+                          )
+                        ])
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("v-list-item-action-text", [
+                      _c("h1", { staticClass: "font-weight-bold" }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.jumlah) +
+                            " / " +
+                            _vm._s(_vm.jumlah_satker || 0) +
+                            "\n                    "
+                        )
+                      ])
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("v-divider"),
+                _vm._v(" "),
+                _c(
+                  "v-list-item",
+                  { staticClass: "py-5 px-10" },
+                  [
+                    _c(
+                      "v-list-item-content",
+                      [
+                        _c("v-progress-linear", {
+                          attrs: { value: _vm.percent }
+                        })
+                      ],
+                      1
                     )
-                  ]),
-                  _vm._v(" "),
-                  _c("v-list-item-subtitle", [
-                    _vm._v(
-                      "\n                    Jumlah Struktur Organisasi per Satker\n                "
-                    )
-                  ])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("v-list-item-action-text", [
-                _c("h1", { staticClass: "font-weight-bold" }, [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm.jumlah) +
-                      " / " +
-                      _vm._s(_vm.jumlah_satker || 0) +
-                      "\n                "
-                  )
-                ])
-              ])
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("v-divider"),
-          _vm._v(" "),
-          _c(
-            "v-list-item",
-            { staticClass: "py-5 px-10" },
-            [
-              _c(
-                "v-list-item-content",
-                [_c("v-progress-linear", { attrs: { value: _vm.percent } })],
-                1
-              )
-            ],
-            1
-          )
+                  ],
+                  1
+                )
+              ]
+            : _vm._e()
         ],
-        1
+        2
       )
     ],
     1
@@ -44671,7 +44713,15 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _c("div", [_c("info-petugas")], 1),
+    _c(
+      "div",
+      [
+        _c("info-petugas", {
+          attrs: { params: { id_bidang: _vm.user.id_bidang } }
+        })
+      ],
+      1
+    ),
     _vm._v(" "),
     _c(
       "div",
@@ -44679,7 +44729,15 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _c("div", [_c("info-kegiatan")], 1)
+    _c(
+      "div",
+      [
+        _c("info-kegiatan", {
+          attrs: { params: { id_bidang: _vm.user.id_bidang } }
+        })
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -44714,54 +44772,7 @@ var render = function() {
         _c(
           "v-list",
           { staticClass: "fill-height" },
-          [
-            _c(
-              "v-list-item",
-              [
-                _c(
-                  "v-list-item-icon",
-                  [_c("v-icon", [_vm._v("mdi-bookmark")])],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-list-item-content",
-                  [
-                    _c("v-list-item-title", [
-                      _vm._v(
-                        "\n                        Export\n                    "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("v-list-item-subtitle", [
-                      _vm._v(
-                        "\n                        Laporan Bidang\n                    "
-                      )
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-list-item-action",
-                  [
-                    _c(
-                      "v-btn",
-                      { attrs: { link: "", href: "#", icon: "" } },
-                      [_c("v-icon", [_vm._v("mdi-download")])],
-                      1
-                    )
-                  ],
-                  1
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("v-divider"),
-            _vm._v(" "),
-            _c("table-bidang", { attrs: { pimpinan: "" } })
-          ],
+          [_c("table-bidang", { attrs: { pimpinan: "" } })],
           1
         )
       ],
@@ -44792,7 +44803,15 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "grid grey lighten-2" }, [
-    _c("div", [_c("info-kegiatan")], 1),
+    _c(
+      "div",
+      [
+        _c("info-kegiatan", {
+          attrs: { params: { id_bidang: _vm.user.id_bidang } }
+        })
+      ],
+      1
+    ),
     _vm._v(" "),
     _c(
       "div",
@@ -44802,52 +44821,9 @@ var render = function() {
           "v-list",
           { staticClass: "fill-height" },
           [
-            _c(
-              "v-list-item",
-              [
-                _c(
-                  "v-list-item-icon",
-                  [_c("v-icon", [_vm._v("mdi-bookmark")])],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-list-item-content",
-                  [
-                    _c("v-list-item-title", [
-                      _vm._v(
-                        "\n                        Export\n                    "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("v-list-item-subtitle", [
-                      _vm._v(
-                        "\n                        Laporan Kegiatan\n                    "
-                      )
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-list-item-action",
-                  [
-                    _c(
-                      "v-btn",
-                      { attrs: { link: "", href: "#", icon: "" } },
-                      [_c("v-icon", [_vm._v("mdi-download")])],
-                      1
-                    )
-                  ],
-                  1
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("v-divider"),
-            _vm._v(" "),
-            _c("table-kegiatan", { attrs: { pimpinan: "" } })
+            _c("table-kegiatan", {
+              attrs: { pimpinan: "", params: { id_bidang: _vm.user.id_bidang } }
+            })
           ],
           1
         )
@@ -44879,7 +44855,15 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "grid grey lighten-2" }, [
-    _c("div", [_c("info-petugas")], 1),
+    _c(
+      "div",
+      [
+        _c("info-petugas", {
+          attrs: { params: { id_bidang: _vm.user.id_bidang } }
+        })
+      ],
+      1
+    ),
     _vm._v(" "),
     _c(
       "div",
@@ -44889,52 +44873,9 @@ var render = function() {
           "v-list",
           { staticClass: "fill-height" },
           [
-            _c(
-              "v-list-item",
-              [
-                _c(
-                  "v-list-item-icon",
-                  [_c("v-icon", [_vm._v("mdi-bookmark")])],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-list-item-content",
-                  [
-                    _c("v-list-item-title", [
-                      _vm._v(
-                        "\n                        Export\n                    "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("v-list-item-subtitle", [
-                      _vm._v(
-                        "\n                        Laporan Petugas\n                    "
-                      )
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-list-item-action",
-                  [
-                    _c(
-                      "v-btn",
-                      { attrs: { link: "", href: "#", icon: "" } },
-                      [_c("v-icon", [_vm._v("mdi-download")])],
-                      1
-                    )
-                  ],
-                  1
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("v-divider"),
-            _vm._v(" "),
-            _c("table-petugas", { attrs: { pimpinan: "" } })
+            _c("table-petugas", {
+              attrs: { pimpinan: "", params: { id_bidang: _vm.user.id_bidang } }
+            })
           ],
           1
         )
@@ -44983,60 +44924,7 @@ var render = function() {
     _c(
       "div",
       { staticClass: "table" },
-      [
-        _c(
-          "v-list",
-          [
-            _c(
-              "v-list-item",
-              [
-                _c(
-                  "v-list-item-icon",
-                  [_c("v-icon", [_vm._v("mdi-bookmark")])],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-list-item-content",
-                  [
-                    _c("v-list-item-title", [
-                      _vm._v(
-                        "\n                        Export\n                    "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("v-list-item-subtitle", [
-                      _vm._v(
-                        "\n                        Laporan Satker\n                    "
-                      )
-                    ])
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "v-list-item-action",
-                  [
-                    _c(
-                      "v-btn",
-                      { attrs: { link: "", href: "#", icon: "" } },
-                      [_c("v-icon", [_vm._v("mdi-download")])],
-                      1
-                    )
-                  ],
-                  1
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c("v-divider"),
-            _vm._v(" "),
-            _c("table-satker", { attrs: { pimpinan: "" } })
-          ],
-          1
-        )
-      ],
+      [_c("v-list", [_c("table-satker", { attrs: { pimpinan: "" } })], 1)],
       1
     )
   ])

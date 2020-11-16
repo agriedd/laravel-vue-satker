@@ -7,13 +7,13 @@
             <info-struktur :jumlah_satker="jumlah_satker"/>
         </div>
         <div>
-            <info-petugas/>
+            <info-petugas :params="{ id_bidang: user.id_bidang }"/>
         </div>
         <div>
             <info-bidang :jumlah_satker="jumlah_satker"/>
         </div>
         <div>
-            <info-kegiatan/>
+            <info-kegiatan :params="{ id_bidang: user.id_bidang }"/>
         </div>
     </div>
 </template>
@@ -23,6 +23,7 @@ import InfoStruktur from './InfoStruktur.vue'
 import InfoPetugas from './InfoPetugas.vue'
 import InfoBidang from './InfoBidang.vue'
 import InfoKegiatan from './InfoKegiatan.vue'
+import { mapState } from 'vuex'
 export default {
     components: {
         InfoSatker,
@@ -35,6 +36,11 @@ export default {
         return {
             jumlah_satker: 0
         }
+    },
+    computed: {
+        ...mapState({
+            user: state => state.pimpinan.user
+        })
     }
 }
 </script>

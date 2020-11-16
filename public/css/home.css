@@ -11385,6 +11385,27 @@ fieldset:disabled .btn {
   transform: translateY(0%);
 }
 
+.grid-galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-auto-rows: minmax(350px, 1fr);
+  grid-gap: 1px;
+}
+
+.grid-galeri > div {
+  background-color: #fff;
+  transition: all 0.25s ease;
+}
+
+.grid-galeri > div .show-on-hover {
+  opacity: 1;
+  transition: all 0.25s ease;
+}
+
+.grid-galeri > div:hover .show-on-hover {
+  opacity: 0;
+}
+
 .grid-kegiatan {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));

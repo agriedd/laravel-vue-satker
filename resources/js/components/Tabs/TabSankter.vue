@@ -5,7 +5,12 @@
         </div>
         <div class="table">
             <v-list>
-                <table-satker pimpinan/>
+                <table-satker pimpinan
+                    @modal:info="openModal('info', true, $event)">
+                    <template #default>
+                        <modal-info-satker @modal:info="openModal('info', $event)"/>
+                    </template>
+                </table-satker>
             </v-list>
         </div>
     </div>
@@ -13,15 +18,33 @@
 <script>
 import InfoSatker from './InfoSatker.vue'
 import TableSatker from '../Satker/TableSatker.vue'
+import { mapMutations } from 'vuex'
+import ModalInfoSatker from '../Satker/ModalInfoSatker.vue'
 
 export default {
     components: {
         InfoSatker,
         TableSatker,
+        ModalInfoSatker,
     },
     data(){
         return {
             jumlah_satker: 0
+        }
+    },
+    methods: {
+        ...mapMutations({
+            setModalInfo: 'satker/SET_MODAL_INFO',
+            setId: 'satker/SET_ID',
+        }),
+        openModal(t, e = true, id = null){
+            switch (t) {
+                default:
+                case 'info':
+                    this.setId(id)
+                    this.setModalInfo(e)
+                    break;
+            }
         }
     }
 }

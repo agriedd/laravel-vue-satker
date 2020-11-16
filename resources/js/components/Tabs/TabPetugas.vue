@@ -24,7 +24,12 @@
                     </v-list-item-action>
                 </v-list-item>
                 <v-divider/> -->
-                <table-petugas pimpinan :params="{ id_bidang: user.id_bidang }"/>
+                <table-petugas pimpinan :params="{ id_bidang: user.id_bidang }"
+                    @modal:info="openModal('info', true, $event)">
+                    <template #default>
+                        <modal-info-petugas @modal:info="openModal('info', $event)"/>
+                    </template>
+                </table-petugas>
             </v-list>
         </div>
     </div>
@@ -32,12 +37,14 @@
 <script>
 import InfoPetugas from './InfoPetugas.vue'
 import TablePetugas from '../Petugas/TablePetugas.vue'
-import { mapState } from 'vuex'
+import { mapMutations, mapState } from 'vuex'
+import ModalInfoPetugas from '../Petugas/ModalInfoPetugas.vue'
 
 export default {
     components: {
         InfoPetugas,
         TablePetugas,
+        ModalInfoPetugas,
     },
     data(){
         return {
@@ -48,7 +55,22 @@ export default {
         ...mapState({
             user: state => state.pimpinan.user
         })
-    }
+    },
+    methods: {
+        ...mapMutations({
+            setModalInfo: 'petugas/SET_MODAL_INFO',
+            setId: 'petugas/SET_ID',
+        }),
+        openModal(t, e = true, id = null){
+            switch (t) {
+                default:
+                case 'info':
+                    this.setId(id)
+                    this.setModalInfo(e)
+                    break;
+            }
+        }
+    },
 }
 </script>
 <style lang="scss" scoped>

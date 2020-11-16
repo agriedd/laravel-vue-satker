@@ -24,7 +24,12 @@
                     </v-list-item-action>
                 </v-list-item>
                 <v-divider/> -->
-                <table-kegiatan pimpinan :params="{ id_bidang: user.id_bidang }"/>
+                <table-kegiatan pimpinan :params="{ id_bidang: user.id_bidang }"
+                    @modal:info="openModal('info', true, $event)">
+                    <template #default>
+                        <modal-info-kegiatan @modal:info="openModal('info', $event)" @done="update(null)"/>
+                    </template>
+                </table-kegiatan>
             </v-list>
         </div>
     </div>
@@ -32,12 +37,14 @@
 <script>
 import InfoKegiatan from './InfoKegiatan.vue'
 import TableKegiatan from '../Kegiatan/TableKegiatan.vue'
-import { mapState } from 'vuex'
+import { mapMutations, mapState } from 'vuex'
+import ModalInfoKegiatan from '../Kegiatan/ModalInfoKegiatan.vue'
 
 export default {
     components: {
         InfoKegiatan,
         TableKegiatan,
+        ModalInfoKegiatan,
     },
     data(){
         return {
@@ -48,7 +55,22 @@ export default {
         ...mapState({
             user: state => state.pimpinan.user
         })
-    }
+    },
+    methods: {
+        ...mapMutations({
+            setModalInfo: 'kegiatan/SET_MODAL_INFO',
+            setId: 'kegiatan/SET_ID',
+        }),
+        openModal(t, e = true, id = null){
+            switch (t) {
+                default:
+                case 'info':
+                    this.setId(id)
+                    this.setModalInfo(e)
+                    break;
+            }
+        }
+    },
 }
 </script>
 <style lang="scss" scoped>

@@ -39,3 +39,7 @@ Route::middleware('auth:pimpinan')->prefix('/pimpinan')->group(function($app){
     Route::get('/', 'PimpinanController@index')->name('admin.pimpinan');
     Route::get('/{any}', 'PimpinanController@index')->where('any', '.*');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

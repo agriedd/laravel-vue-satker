@@ -28,6 +28,7 @@ router.beforeEach(async (to, from, next) => {
     let el = document.head.querySelector("meta[name='token']")
     token = el.content
     
+    console.log(token);
     if(token){
         let res = await store.dispatch('admin/user', {
             token

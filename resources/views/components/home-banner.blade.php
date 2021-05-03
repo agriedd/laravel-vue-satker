@@ -1,10 +1,10 @@
 <div class="h-100 w-100">
-    <div id="main-slide" class="carousel slide carousel-fade w-100 h-100 rounded shadow" data-ride="carousel">
+    <div id="main-slide" class="carousel slide carousel-fade w-100 h-100 rounded shadow" data-bs-ride="carousel">
         <div class="carousel-inner d-flex h-100 rounded shadow-lg">
             <ol class="carousel-indicators" style="right: unset; margin: 1rem; transform: rotate(90deg) translateX(-100%); transform-origin: bottom left;">
-                <li data-target="#carouselExampleSlidesOnly" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleSlidesOnly" data-slide-to="1"></li>
-                <li data-target="#carouselExampleSlidesOnly" data-slide-to="2"></li>
+                <li data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"></li>
             </ol>
             <div class="carousel-item active position-relative" style="background-image: url('{{ asset('img/bg.jpg') }}'); background-position: center;  background-attachment: fixed;">
                 <div class="position-absolute h-100 w-100" style="background: rgba(0, 0, 0, 0.5)"></div>

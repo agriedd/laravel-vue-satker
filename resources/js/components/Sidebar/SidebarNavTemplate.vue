@@ -6,7 +6,6 @@
                 :key="item.title"
                 :to="item.link"
                 :color="color"
-                link
                 exact
                 dense>
                 <v-list-item-icon>
@@ -32,7 +31,6 @@
                         :to="child.link"
                         :color="color"
                         class="px-5"
-                        link
                         dense
                         exact>
                         <v-list-item-icon>
@@ -62,7 +60,6 @@
                                 :to="child.link"
                                 :color="color"
                                 class="px-5"
-                                link
                                 dense
                                 exact>
                                 <v-list-item-icon>
@@ -80,7 +77,6 @@
                         :key="item.title"
                         :to="item.link"
                         :color="color"
-                        link
                         dense
                         exact>
                         <v-list-item-icon>

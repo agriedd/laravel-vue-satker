@@ -10,14 +10,14 @@
                             </div>
                         </v-list-item>
                         <v-divider/>
-                        <list-item v-model="struktur.satker.nama" label="Nama Satker">
+                        <v-list-item v-model="struktur.satker.nama" label="Nama Satker" :to="{ name: 'page.satker' }">
                             <v-list-item-action-text>
                                 Lihat Satker
                             </v-list-item-action-text>
                             <v-list-item-icon>
                                 <v-icon>mdi-chevron-right</v-icon>
                             </v-list-item-icon>
-                        </list-item>
+                        </v-list-item>
                         <v-divider/>
                     </v-list>
                 </div>

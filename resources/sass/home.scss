@@ -32,7 +32,7 @@
     --sidebar-item-size: 80px;
 
     --primary-color: var(--bs-gray);
-    --secondary-color: #dee2e6;
+    --secondary-color: #f1b01e;
 
     /**
         ------ divider
@@ -42,7 +42,7 @@
     grid-template-rows: minmax(80px, auto) repeat(10, 1fr) repeat(5, auto);
     grid-template-columns: var(--sidebar-item-size) repeat(11, 1fr);
     min-height: 100vh;
-    background-color: #dee2e6!important;
+    background-color: #f1b01e!important;
     
     &>.home-grid--container{
         grid-area: 1/1/13/13;
@@ -185,6 +185,12 @@
     }
 }
 
+table.table-grid{
+    td,
+    th{
+        background-color: var(--white);
+    }
+}
 
 @include media-breakpoint-down('md'){
     .home-grid{

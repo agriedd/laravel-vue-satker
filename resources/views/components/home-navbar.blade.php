@@ -1,6 +1,6 @@
 <div class="container-lg">
     <div class="navbar-brand">
-        Satker
+        Satker Bidang Cipta Karya
     </div>
     <div class="d-flex justify-content-center flex-column h-100">
         <button class="btn btn-link shadow-none text-dark navbar-toggler" data-toggle="collapse" data-target="#navbar-home">
@@ -12,7 +12,7 @@
     <div class="navbar-collapse collapse" id="navbar-home">
         <ul class="navbar-nav ml-auto">
             <x-navbar.top-item :label="'Home'" :url="route('home')" :param="'/'"></x-navbar.top-item>
-            <x-navbar.top-item :label="'Petugas'" :url="route('home.petugas')" :param="'petugas*'"></x-navbar.top-item>
+            <x-navbar.top-item :label="'Pegawai'" :url="route('home.pegawai')" :param="'pegawai*'"></x-navbar.top-item>
             <x-navbar.top-item :label="'Bidang'" :url="route('home.bidang')" :param="'bidang*'"></x-navbar.top-item>
             <x-navbar.top-item :label="'Galeri'" :url="route('home.galeri')" :param="'galeri'"></x-navbar.top-item>
             <x-navbar.top-item :label="'Kegiatan'" :url="route('home.kegiatan')" :param="'kegiatan*'"></x-navbar.top-item>

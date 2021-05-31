@@ -1,4 +1,4 @@
-<div class="grid-bidang">
+<div class="grid-bidang" style="gap: 10px">
     @forelse ($bidang as $item)
         @php
             $nama = $item->nama_bidang;
@@ -7,7 +7,7 @@
                 $nama = preg_replace("/({$search})/im", "<span class='bg-warning'>$1</span>", $nama);
             }
         @endphp
-        <div class="position-relative bg-dark overflow-hidden" style="background-image: url('{{ Storage::disk('public')->url(optional($item->foto_kegiatan)->gambar) }}'); background-size: cover; background-position: center">
+        <a href="{{ route('home.bidang.info', [ 'bidang' => $item->id_bidang ]) }}" class="position-relative bg-dark overflow-hidden rounded-lg" style="background-image: url('{{ Storage::disk('public')->url(optional($item->foto_kegiatan)->gambar) }}'); background-size: cover; background-position: center; overflow: hidden">
             <div class="h-100 w-100 position-absolute" style="background: rgba(0, 0, 0, .5)"></div>
             <div class="p-3 h-100 d-flex flex-column justify-content-center text-white main-content position-relative" style="z-index: 1">
                 <div class="d-flex justify-content-between">
@@ -26,48 +26,7 @@
                     </div>
                 </div>
             </div>
-            <div class="position-absolute show-on-hover bg-white">
-                <div class="p-3 h-100 d-flex flex-column justify-content-start">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <h3 class="text-uppercase font-weight-bold">
-                                {!! $nama !!}
-                            </h3>
-                            <div class="small text-muted">
-                                Pimipinan: {{ optional($item->pimpinan)->nama }}
-                            </div>
-                            <div class="py-3">
-                                <div class="btn-group w-100">
-                                    <a href="{{ route('home.petugas', [ 'id_bidang' => $item->id_bidang ]) }}" class="btn-outline-primary btn py-3">
-                                        Petugas
-                                    </a>
-                                    <a href="{{ route('home.kegiatan', [ 'id_bidang' => $item->id_bidang ]) }}" class="btn-outline-primary btn py-3">
-                                        Kegiatan
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="py-3">
-                                <h5>
-                                    Visi Misi
-                                </h5>
-                                <div class="small">
-                                    {!! $item->visi_misi !!}
-                                    {{ $item->tujuan }}
-                                </div>
-                            </div>
-                            <div class="py-3">
-                                <h5>
-                                    Tujuan
-                                </h5>
-                                <div class="small">
-                                    {{ $item->tujuan }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </a>
     @empty
         
     @endforelse

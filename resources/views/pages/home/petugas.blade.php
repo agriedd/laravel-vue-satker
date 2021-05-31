@@ -2,10 +2,11 @@
     'theme_color' => '#fff', 
     'appjs' => 'home.js',
     'appcss' => 'home.css',
+    'title' => 'Daftar Pegawai'
 ])
 
 @section('content')
-    <div class="home-grid">
+    <div class="home-grid" style="background-image: url('{{ asset('img/bg.svg') }}'); background-position: top right; background-size: 90vw; background-repeat: no-repeat">
         <div class="home-grid--container"></div>
         <div class="home-grid--navbar px-lg-4 px-md-2 d-flex navbar navbar-expand-lg">
             <x-home-navbar></x-home-navbar>
@@ -15,9 +16,9 @@
         </div>
         <div class="home-grid--banner-full" style="background-color: var(--secondary-color)">
             <div class="p-3 position-sticky" style="top: 0px">
-                <div class="container">
+                <div class="container" style="max-width: 400px">
                     <form action="" method="GET">
-                        <input type="search" class="form-control w-100 p-4 shadow" placeholder="Temukan Petugas..." name="q" value="{{ request('q') }}">
+                        <input type="search" class="form-control w-100 p-4 shadow" placeholder="Temukan Pegawai..." name="q" value="{{ request('q') }}">
                     </form>
                 </div>
             </div>
@@ -25,7 +26,7 @@
                 <x-info-bidang-get></x-info-bidang-get>
             </div>
             <div class="container">
-                <x-grid-petugas></x-grid-petugas>
+                <x-table-petugas></x-table-petugas>
             </div>
         </div>
     </div>

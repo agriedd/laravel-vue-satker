@@ -9,13 +9,16 @@ class GridKegiatan extends Component{
 
     private $kegiatan;
 
-    public function __construct($jenis = null){
+    public function __construct($jenis = null, $bidang = null){
         $this->kegiatan = Kegiatan::when(request()->filled('q'), function($query){
             $search = request('q');
             $query->where('nama_kegiatan', 'like', "%{$search}%");
         })
         ->when(request()->filled('id_bidang'), function($query){
             $query->where('id_bidang', request('id_bidang'));
+        })
+        ->when($bidang, function($query, $bidang){
+            $query->where('id_bidang', $bidang);
         })
         ->when($jenis, function($query, $jenis){
             if($jenis == 'baru'){

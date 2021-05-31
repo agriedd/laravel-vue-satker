@@ -14,15 +14,20 @@
         .main-content{
             transition: all .25s ease;
         }
-        &:hover{
-            grid-row-end: span 2;
-            background-color: darken($white, 5);
-            .main-content{
-                transform: translateY(100%);
-            }
-            .show-on-hover{
-                transform: translateY(0%);
-            }
-        }
+        // &:hover{
+        //     grid-row-end: span 2;
+        //     background-color: darken($white, 5);
+        //     .main-content{
+        //         transform: translateY(100%);
+        //     }
+        //     .show-on-hover{
+        //         transform: translateY(0%);
+        //     }
+        // }
+    }
+}
+@include media-breakpoint-up(md){
+    .main-info-bidang{
+        border-right: 1px solid #0003;
     }
 }

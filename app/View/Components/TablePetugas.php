@@ -5,10 +5,9 @@ namespace App\View\Components;
 use App\Petugas;
 use Illuminate\View\Component;
 
-class GridPetugas extends Component{
-
+class TablePetugas extends Component{
     private $petugas;
-
+    
     public function __construct($bidang = null){
         $this->petugas = Petugas::when(request()->filled('q'), function($query){
             $search = request('q');
@@ -22,14 +21,8 @@ class GridPetugas extends Component{
         })
         ->get();
     }
-
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\View\View|string
-     */
     public function render(){
-        return view('components.grid-petugas', [
+        return view('components.table-petugas', [
             'petugas'   => $this->petugas
         ]);
     }

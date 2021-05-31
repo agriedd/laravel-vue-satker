@@ -5,7 +5,7 @@
 ])
 
 @section('content')
-    <div class="home-grid">
+    <div class="home-grid" style="background-image: url('{{ asset('img/bg.svg') }}'); background-position: top right; background-size: 90vw; background-repeat: no-repeat">
         <div class="home-grid--container"></div>
         <div class="home-grid--navbar px-lg-4 px-md-2 d-flex navbar navbar-expand-lg">
             <x-home-navbar></x-home-navbar>
@@ -32,12 +32,14 @@
         <div class="home-grid--item-4 position-sticky" style="top: 0px">
             <div class="p-3 h-100 d-flex justify-content-center flex-column h-100">
                 <div>
-                    <div class="small text-muted">
+                    <div class="small text-dark">
                         Hubungi Kami:
                     </div>
                     <ul>
                         <li>
-                            +62 000000
+                            <h5>
+                                +62 000000
+                            </h5>
                         </li>
                     </ul>
                 </div>
@@ -65,21 +67,6 @@
                 </div>
             </div>
         </div>
-        <div class="home-grid--content-cover">
-            <div class="d-flex flex-column position-relative overflow-hidden" style="max-height: 100vh">
-                <div class="position-absolute h-100 w-100 d-flex flex-column justify-content-center" style="top: 0px; left: 0px; background-color: rgba(0,0,0,.5)">
-                    <div class="text-white p-4 mx-auto" style="max-width: 600px">
-                        <h5 class="display-4 text-center">
-                            Lorem ipsum dolor sit amet consectetur.
-                        </h5>
-                        <div>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laudantium ipsum velit reiciendis officiis repellat non, a explicabo rerum aliquid, provident temporibus commodi officia iusto, quod ullam ipsam consequuntur odio eligendi excepturi quam? Voluptatem saepe, voluptatibus laudantium aliquid, cupiditate modi ipsum ipsa officiis ullam voluptas architecto sunt! Beatae, incidunt corporis?
-                        </div>
-                    </div>
-                </div>
-                <img src="{{ asset('img/bg.jpg') }}" alt="" style="width: 100%">
-            </div>
-        </div>
         <div class="home-grid--content bg-white py-4 px-4">
             <div class="container">
                 <div>
@@ -92,6 +79,7 @@
                 </div>
             </div>
         </div>
+        <x-footer></x-footer>
     </div>
 @endsection
 @push('css')

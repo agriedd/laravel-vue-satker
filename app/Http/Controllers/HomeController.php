@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bidang;
 use App\Kegiatan;
 use App\StrukturOrganisasi;
 
@@ -12,7 +13,7 @@ class HomeController extends Controller{
     public function index(){
         return view('pages.home.index');
     }
-    public function petugas(){
+    public function pegawai(){
         return view('pages.home.petugas');
     }
     public function kegiatan(){
@@ -20,6 +21,11 @@ class HomeController extends Controller{
     }
     public function bidang(){
         return view('pages.home.bidang');
+    }
+    public function bidangInfo(Bidang $bidang){
+        return view('pages.home.bidang-show', [
+            'bidang' => $bidang
+        ]);
     }
     public function galeri(){
         return view('pages.home.galeri');

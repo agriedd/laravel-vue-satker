@@ -21,8 +21,9 @@ Auth::routes([
 Route::post('login/pimpinan', 'Auth\LoginPimpinanController@login')->name('login.pimpinan');
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/petugas', 'HomeController@petugas')->name('home.petugas');
+Route::get('/pegawai', 'HomeController@pegawai')->name('home.pegawai');
 Route::get('/bidang', 'HomeController@bidang')->name('home.bidang');
+Route::get('/bidang/{bidang}', 'HomeController@bidangInfo')->name('home.bidang.info');
 Route::get('/kegiatan', 'HomeController@kegiatan')->name('home.kegiatan');
 Route::get('/struktur', 'HomeController@struktur')->name('home.struktur');
 Route::get('/visi-misi', 'HomeController@visimisi')->name('home.visi-misi');

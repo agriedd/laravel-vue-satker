@@ -11136,17 +11136,10 @@ a.text-dark:focus {
   transition: all 0.25s ease;
 }
 
-.grid-bidang > div:hover {
-  grid-row-end: span 2;
-  background-color: #f2f2f2;
-}
-
-.grid-bidang > div:hover .main-content {
-  transform: translateY(100%);
-}
-
-.grid-bidang > div:hover .show-on-hover {
-  transform: translateY(0%);
+@media (min-width: 768px) {
+  .main-info-bidang {
+    border-right: 1px solid #0003;
+  }
 }
 
 .grid-galeri {
@@ -11191,7 +11184,7 @@ a.text-dark:focus {
   --text-dark: #fff;
   --sidebar-item-size: 80px;
   --primary-color: var(--bs-gray);
-  --secondary-color: #dee2e6;
+  --secondary-color: #f1b01e;
   /**
       ------ divider
   **/
@@ -11199,7 +11192,7 @@ a.text-dark:focus {
   grid-template-rows: minmax(80px, auto) repeat(10, 1fr) repeat(5, auto);
   grid-template-columns: var(--sidebar-item-size) repeat(11, 1fr);
   min-height: 100vh;
-  background-color: #dee2e6 !important;
+  background-color: #f1b01e !important;
 }
 
 .home-grid > .home-grid--container {
@@ -11344,6 +11337,11 @@ a.text-dark:focus {
   z-index: 0;
   transform: translateY(100%);
   transition: all 0.25s linear;
+}
+
+table.table-grid td,
+table.table-grid th {
+  background-color: var(--white);
 }
 
 @media (max-width: 991.98px) {

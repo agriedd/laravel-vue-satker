@@ -5,7 +5,7 @@
 ])
 
 @section('content')
-    <div class="home-grid">
+    <div class="home-grid" style="background-image: url('{{ asset('img/bg.svg') }}'); background-position: top right; background-size: 90vw; background-repeat: no-repeat">
         <div class="home-grid--container"></div>
         <div class="home-grid--navbar px-lg-4 px-md-2 d-flex navbar navbar-expand-lg">
             <x-home-navbar></x-home-navbar>

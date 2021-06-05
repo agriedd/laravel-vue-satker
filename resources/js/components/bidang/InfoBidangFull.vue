@@ -13,9 +13,9 @@
                             </v-list-item-icon>
                         </list-item>
                         <v-divider/>
-                        <list-item value="Petugas" label="Daftar Petugas" key="1">
+                        <list-item value="Pegawai" label="Daftar Pegawai" key="1">
                             <v-list-item-action-text>
-                                Lihat Daftar Petugas
+                                Lihat Daftar Pegawai
                             </v-list-item-action-text>
                             <v-list-item-icon>
                                 <v-icon>mdi-chevron-right</v-icon>

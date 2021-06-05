@@ -1,5 +1,6 @@
 <?php
 
+use App\Petugas;
 use Illuminate\Database\Seeder;
 
 class PetugasSeeder extends Seeder
@@ -9,8 +10,7 @@ class PetugasSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        //
+    public function run(){
+        
     }
 }

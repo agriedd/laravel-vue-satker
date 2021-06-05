@@ -4,7 +4,7 @@
             <v-card rounded="0">
                 <div>
                     <v-card-text>
-                        Informasi Petugas
+                        Informasi Pegawai
                     </v-card-text>
                     <v-divider/>
                 </div>

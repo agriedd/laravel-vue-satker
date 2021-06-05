@@ -5,7 +5,7 @@
                 <v-card rounded="0">
                     <div>
                         <v-card-text>
-                            Form Ubah Data Petugas
+                            Form Ubah Data Pegawai
                         </v-card-text>
                         <v-divider/>
                     </div>

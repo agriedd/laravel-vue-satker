@@ -28,7 +28,7 @@ export default {
                 { title: "Struktur", icon: "mdi-file-tree", link: "/admin/struktur" },
                 { title: "Bidang", icon: "mdi-dropbox", link: "/admin/bidang" },
                     { title: "Pimpinan", icon: "mdi-account", link: "/admin/pimpinan" },
-                    { title: "Petugas", icon: "mdi-account-group", link: "/admin/petugas" },
+                    { title: "Pegawai", icon: "mdi-account-group", link: "/admin/pegawai" },
                     { title: "Kegiatan", icon: "mdi-bookmark", link: "/admin/kegiatan" },
                 { title: "Admin", icon: "mdi-shield-account-variant", link: "/admin/admin" },
             ],

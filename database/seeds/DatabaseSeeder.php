@@ -22,13 +22,151 @@ class DatabaseSeeder extends Seeder
             factory(Bidang::class, 4)->create([
                 'id_satker' => $satker->id_satker
             ])->each(function($bidang){
-                factory(Petugas::class, rand(1, 10))->create([
-                    'id_bidang' => $bidang->id_bidang
-                ]);
                 factory(Kegiatan::class, rand(1, 10))->create([
                     'id_bidang' => $bidang->id_bidang
                 ]);
             });
         });
+        $bidangs = Bidang::all();
+        foreach($bidangs as $bidang){
+            switch($bidang->nama_bidang){
+                case "PPK Air Minum":
+                default:
+                    $bidang->nama_kepala_b = "Magdalena D. Yunita, ST";
+                    $bidang->save(); 
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Magdalena D. Yunita, ST",
+                        'nip'       => "19810629 201012 2 002",
+                        'pangkat'   => "Kepala PPK Air Minum",
+                        'status'    => 'PNS',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Hans A. Adoe",
+                        'nip'       => "19790925 201412 1 002",
+                        'pangkat'   => "Petugas Teknik",
+                        'status'    => 'PNS',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Mediana A. Toepoe, S.Sos",
+                        'nip'       => "NRP. E15071981062018003",
+                        'pangkat'   => "Pengelola Keuangan",
+                        'status'    => 'Kontrak',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Debi Polin",
+                        'nip'       => "NRP. E20121984062018001",
+                        'pangkat'   => "Pengadministrasian Umum",
+                        'status'    => 'Kontrak',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Hermayono Benu",
+                        'nip'       => "NRP. E04031991062018002",
+                        'pangkat'   => "Pengadministrasian Umum",
+                        'status'    => 'Kontrak',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    break;
+                case "PPK PKP":
+                    $bidang->nama_kepala_b = "Dika Dwi Angga, ST";
+                    $bidang->save();
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Dika Dwi Angga, ST",
+                        'nip'       => "199005072014021001",
+                        'pangkat'   => "Kepala PPK PKP",
+                        'status'    => 'PNS',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Faiz Imaduddin, Amd",
+                        'nip'       => "199605112011821001",
+                        'pangkat'   => "Penata Teknik",
+                        'status'    => 'PNS',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Alysa Tatia Dami, ST",
+                        'nip'       => "NRP. E03031991062018001",
+                        'pangkat'   => "Penata Teknik",
+                        'status'    => 'Kontrak',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Damaris Ello",
+                        'nip'       => "19651215 200212 2 001",
+                        'pangkat'   => "Pengadministrasian Umum",
+                        'status'    => 'PNS',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Kanisius Fallo",
+                        'nip'       => "NRP. E08021974062018001",
+                        'pangkat'   => "Pengadministrasian Umum",
+                        'status'    => 'Kontrak',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    break;
+                case "PPK PSP POP Dan PBL":
+                    $bidang->nama_kepala_b = "Nyoman Ary Yudia Prawira, ST";
+                    $bidang->save();
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Nyoman Ary Yudia Prawira, ST",
+                        'nip'       => "19791229 200801 1 020",
+                        'pangkat'   => "Kepala PPK PSP POP Dan PBL",
+                        'status'    => 'PNS',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Fajar Pratama, ST",
+                        'nip'       => "198904102018021001",
+                        'pangkat'   => "Pelaksana Teknik",
+                        'status'    => 'PNS',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Yosep Beda Wotan, ST",
+                        'nip'       => "NRP. E06081987062018002",
+                        'pangkat'   => "Penata Teknik",
+                        'status'    => 'Kontrak',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Yoachim G. Yuven, ST",
+                        'nip'       => "NRP. E14031989062018001",
+                        'pangkat'   => "Penata Teknik",
+                        'status'    => 'Kontrak',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    break;
+                case "PPK Pengembangan PLP":
+                    $bidang->nama_kepala_b = "Hendro Ndolu, ST";
+                    $bidang->save();
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Hendro Ndolu, ST",
+                        'nip'       => "19870317 201101 1 006",
+                        'pangkat'   => "Kepala PPK Pengembangan PLP",
+                        'status'    => 'PNS',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Philip J. Dethan, ST",
+                        'nip'       => "NRP. E14011989062018001",
+                        'pangkat'   => "Penata Teknik",
+                        'status'    => 'Kontrak',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Petugas::class, 1)->create([
+                        'nama'      => "Novianto Benu, SE",
+                        'nip'       => "NRP. E28111989062018002",
+                        'pangkat'   => "Pengelola Keuangan",
+                        'status'    => 'Kontrak',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    break;
+            }
+        }
     }
 }

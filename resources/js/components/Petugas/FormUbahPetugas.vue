@@ -10,7 +10,7 @@
         </div>
         <div>
             <v-text-field
-                label="Nama Petugas" 
+                label="Nama Pegawai" 
                 name="nama" 
                 :error-messages="errors.nama"
                 @change="clear('nama')"
@@ -34,7 +34,7 @@
         </div>
         <div>
             <v-select 
-                label="Status Petugas" 
+                label="Status Pegawai" 
                 name="status" 
                 :items="status_petugas"
                 :error-messages="errors.status" 

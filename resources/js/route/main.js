@@ -19,6 +19,6 @@ export default [
     { path: '/admin/struktur', component: PageStruktur, name: 'page.struktur' },
     { path: '/admin/pimpinan', component: PagePimpinan, name: 'page.pimpinan' },
     { path: '/admin/bidang', component: PageBidang, name: 'page.bidang' },
-    { path: '/admin/petugas', component: PagePetugas, name: 'page.petugas' },
+    { path: '/admin/pegawai', component: PagePetugas, name: 'page.petugas' },
     { path: '/admin/kegiatan', component: PageKegiatan, name: 'page.kegiatan' },
 ]

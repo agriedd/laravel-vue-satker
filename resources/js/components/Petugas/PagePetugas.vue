@@ -6,7 +6,7 @@
                 <v-card class="shadow">
                     <v-toolbar flat>
                         <v-toolbar-title class="grey--text">
-                            Daftar Petugas
+                            Daftar Pegawai
                         </v-toolbar-title>
                         <v-spacer></v-spacer>
                         <v-btn icon @click="openModal('tambah')">

@@ -21,11 +21,7 @@ class DatabaseSeeder extends Seeder
         factory(Satker::class, 1)->create()->each(function($satker){
             factory(Bidang::class, 4)->create([
                 'id_satker' => $satker->id_satker
-            ])->each(function($bidang){
-                factory(Kegiatan::class, rand(1, 10))->create([
-                    'id_bidang' => $bidang->id_bidang
-                ]);
-            });
+            ]);
         });
         $bidangs = Bidang::all();
         foreach($bidangs as $bidang){
@@ -69,6 +65,27 @@ class DatabaseSeeder extends Seeder
                         'status'    => 'Kontrak',
                         'id_bidang' => $bidang->id_bidang
                     ]);
+
+                    factory(Kegiatan::class, 1)->create([
+                        'rincian_kegiatan'  => 'OPTIMALISASI SPAM IKK SEMAU KABUPATEN KUPANG',
+                        'lokasi'            => 'SEMAU KABUPATEN KUPANG, Koordinat Reservoir 50 m3 E.10°09.890` S.123°26.915` Elevasi 120 M/dpl',
+                        'nama_kegiatan'     => 'OPTIMALISASI SPAM IKK SEMAU KABUPATEN KUPANG',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Kegiatan::class, 1)->create([
+                        'rincian_kegiatan'  => 'OPTIMALISASI SPAM IKK TOBUKABUPATEN TIMOR TENGAH SELATAN',
+                        'lokasi'            => 'TOBUKABUPATEN TIMOR TENGAH SELATAN, Koordinat Reservoir 200 m3 E.124°15`51.28`` S.9°38`49.17``
+                        Elevasi 1.306 M/dpl ',
+                        'nama_kegiatan'     => 'OPTIMALISASI SPAM IKK TOBUKABUPATEN TIMOR TENGAH SELATAN',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    factory(Kegiatan::class, 1)->create([
+                        'rincian_kegiatan'  => 'OPTIMALISASI SPAM KAWASAN RAWAN AIR DI KECAMATAN ROTE TIMUR KABUPATEN ROTE NDAO',
+                        'lokasi'            => 'KECAMATAN ROTE TIMUR KABUPATEN ROTE NDAO, Koordinat Reservoir 200 m3 E.123°17`59.07`` S.10°38`29.66`` Elevasi 90 M/dpl`` Elevasi 1.306 M/dpl',
+                        'nama_kegiatan'     => 'OPTIMALISASI SPAM KAWASAN RAWAN AIR DI KECAMATAN ROTE TIMUR KABUPATEN ROTE NDAO',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+
                     break;
                 case "PPK PKP":
                     $bidang->nama_kepala_b = "Dika Dwi Angga, ST";
@@ -108,6 +125,15 @@ class DatabaseSeeder extends Seeder
                         'status'    => 'Kontrak',
                         'id_bidang' => $bidang->id_bidang
                     ]);
+
+                    factory(Kegiatan::class, 1)->create([
+                        'rincian_kegiatan'  => 'REHABILITASI DAN RENOVASI SARANA PRASARANA SEKOLAH KABUPATEN TIMOR TENGAH SELATAN I',
+                        'lokasi'            => 'KABUPATEN TIMOR TENGAH SELATAN',
+                        'nama_kegiatan'     => 'REHABILITASI DAN RENOVASI SARANA PRASARANA SEKOLAH KABUPATEN TIMOR TENGAH SELATAN I',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+
+
                     break;
                 case "PPK PSP POP Dan PBL":
                     $bidang->nama_kepala_b = "Nyoman Ary Yudia Prawira, ST";
@@ -140,6 +166,13 @@ class DatabaseSeeder extends Seeder
                         'status'    => 'Kontrak',
                         'id_bidang' => $bidang->id_bidang
                     ]);
+                    
+                    factory(Kegiatan::class, 1)->create([
+                        'rincian_kegiatan'  => 'REHABILITASI DAN RENOVASI MADRASAH KAB. TIMOR TENGAH SELATANMIN Oeue Kab. TTS',
+                        'lokasi'            => 'TIMOR TENGAH SELATANMIN Oeue Kab. TTS',
+                        'nama_kegiatan'     => 'REHABILITASI DAN RENOVASI MADRASAH KAB. TIMOR TENGAH SELATANMIN Oeue Kab. TTS',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
                     break;
                 case "PPK Pengembangan PLP":
                     $bidang->nama_kepala_b = "Hendro Ndolu, ST";
@@ -163,6 +196,13 @@ class DatabaseSeeder extends Seeder
                         'nip'       => "NRP. E28111989062018002",
                         'pangkat'   => "Pengelola Keuangan",
                         'status'    => 'Kontrak',
+                        'id_bidang' => $bidang->id_bidang
+                    ]);
+                    
+                    factory(Kegiatan::class, 1)->create([
+                        'rincian_kegiatan'  => 'REHABILITASI STADION OEPOI KOTA KUPANG',
+                        'lokasi'            => 'OEPOI KOTA KUPANG',
+                        'nama_kegiatan'     => 'REHABILITASI STADION OEPOI KOTA KUPANG',
                         'id_bidang' => $bidang->id_bidang
                     ]);
                     break;

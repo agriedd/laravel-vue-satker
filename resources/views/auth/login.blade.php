@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 @section('content')
-<div class="container">
+<div class="container" style="min-height: 100vh; background: var(--orange)">
     <div class="row justify-content-center">
         <div class="col-md-8 py-5">
             <div class="card mx-auto shadow border-0 py-5" style="max-width: 400px">

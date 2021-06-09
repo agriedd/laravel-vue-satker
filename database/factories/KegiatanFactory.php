@@ -10,6 +10,6 @@ $factory->define(Kegiatan::class, function (Faker $faker) {
         'rincian_kegiatan'  => $faker->paragraph,
         'lokasi'            => $faker->city,
         'nama_kegiatan'     => 'Kegiatan '.$faker->city,
-        'tanggal'           => $faker->date()
+        'tanggal'           => $faker->dateTimeBetween('-2 years')
     ];
 });

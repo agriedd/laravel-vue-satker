@@ -44,11 +44,9 @@
                         {!! $nama !!}
                     </td>
                     <td>
-                        @if($item->status == 'PNS')
                         <div class="small text-muted">
                             {{ $item->nip }}
                         </div>
-                        @endif
                     </td>
                     <td>
                         <div class="text-center">

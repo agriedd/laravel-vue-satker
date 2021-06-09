@@ -22,6 +22,11 @@ class TablePetugas extends Component{
         ->get();
     }
     public function render(){
+        if(request()->filled('q')){
+            return view('components.table-info-petugas', [
+                'petugas'   => $this->petugas[0]
+            ]);
+        }
         return view('components.table-petugas', [
             'petugas'   => $this->petugas
         ]);

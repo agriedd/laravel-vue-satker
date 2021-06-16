@@ -62,7 +62,6 @@ export default {
                 { text: 'ID', align: 'start', sortable: true, value: 'id_bidang' },
                 { text: 'Nama Bidang', align: 'start', sortable: true, value: 'nama_bidang' },
                 { text: 'Nama Kepala', align: 'start', sortable: true, value: 'nama_kepala_b' },
-                { text: 'Pimpinan', align: 'center', sortable: false, value: 'pimpinan' },
                 { text: 'Pegawai', align: 'center', sortable: false, value: 'petugas_count' },
                 { text: 'Kegiatan', align: 'center', sortable: false, value: 'kegiatan_count' },
                 { text: 'Satker', align: 'start', sortable: true, value: 'id_satker' },

@@ -1,4 +1,1 @@
-.v-dialog:not(.v-dialog--fullscreen) {
-  max-height: 100vh !important;
-}
-
+.v-dialog:not(.v-dialog--fullscreen){max-height:100vh!important}
